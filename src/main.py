@@ -4,10 +4,16 @@ from typing import Callable
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 
+from src.config import settings
 from src.home.routers import router as home_router
 from src.products.routers import router as product_router
 from src.web_sources.routers import router as web_sources_router
 from src.whatsapp.routers import router as whatsapp_router
+
+app_configs = {"title": "Wassfire API"}
+if settings.ENVIRONMENT.is_deployed:
+    app_configs["docs_url"] = None
+    app_configs["redoc_url"] = None
 
 app = FastAPI()
 

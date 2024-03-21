@@ -1,4 +1,3 @@
-import os
 import ssl
 from typing import Annotated
 
@@ -13,11 +12,8 @@ from src.constants import DB_NAMING_CONVENTION
 
 DATABASE_URL = str(settings.DATABASE_URL)
 
-# Get the SSL certificate path from Render.com environment variable or fallback to local
-ssl_cert_path = os.getenv("SSL_CERT_PATH", "/etc/ssl/cert.pem")
-
-# Create an SSL context
-ssl_context = ssl.create_default_context(cafile=ssl_cert_path)
+# Create an SSL context with path depending on environment
+ssl_context = ssl.create_default_context(cafile=settings.SSL_CERT_PATH)
 ssl_context.check_hostname = True  # Enable hostname verification
 ssl_context.verify_mode = ssl.CERT_REQUIRED  # Ensure the certificate is required
 
