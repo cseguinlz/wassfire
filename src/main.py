@@ -15,7 +15,7 @@ if settings.ENVIRONMENT.is_deployed:
     app_configs["docs_url"] = None
     app_configs["redoc_url"] = None
 
-app = FastAPI()
+app = FastAPI(**app_configs)
 
 
 # Middleware to detect user's locale
