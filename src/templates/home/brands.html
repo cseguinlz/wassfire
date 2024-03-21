@@ -1,4 +1,26 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+    <meta name="description" content="Wassfire empowers brands to unlock the full potential of social commerce, directly engaging with consumers through exclusive deals and innovative marketing strategies.">
+    <meta name="keywords" content="social commerce, Omnichannel, WhatsApp marketing, direct-to-consumer, exclusive deals, brand engagement">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.wassfire.com/brands">
+    <meta property="og:title" content="Wassfire | Your social media outlet">
+    <meta property="og:description" content="Discover how Wassfire revolutionizes brand engagement, offering a platform for exclusive deals and direct consumer interaction.">
+    <meta property="og:image" content="/static/images/social-share-wassfire.webp">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.wassfire.com/brands">
+    <meta property="twitter:title" content="Wassfire | Your social media outlet">
+    <meta property="twitter:description" content="Unlock the potential of social commerce with Wassfire. Engage directly with your audience and drive sales through exclusive WhatsApp deals.">
+    <meta property="twitter:image" content="/static/images/social-share-wassfire.webp">
+{% endblock %}
+
+
+{% block content %}
 <div class="overflow-hidden bg-white py-14 sm:py-24">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div

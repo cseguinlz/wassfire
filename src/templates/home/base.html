@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Discounted fashion in your fav social media" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover exclusive fashion deals up to 70% off on your favorite brands, delivered directly to your WhatsApp.">
+    <meta name="keywords" content="fashion deals, WhatsApp shopping, discounted fashion, social commerce, exclusive deals, brand discounts, outlet">
+    <meta name="author" content="Wassfire">
     
-    <title>{% block title %}Wassfire | The Social Commerce Platform{% endblock %}</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Wassfire" />
+    <meta property="og:url" content="https://www.wassfire.com/">
+    <meta property="og:title" content="Wassfire | Only top discounts. Only top brands">
+    <meta property="og:description" content="Skip the hunt. Exclusive up to 70% discounts on your favorite brands, delivered directly to your WhatsApp.">
+    <meta property="og:image" content="/static/images/social-share-wassfire.webp">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:site" content="@wassfire_es">
+    <meta property="twitter:title" content="Wassfire | Only top discounts. Only top brands">
+    <meta property="twitter:description" content="Discover exclusive fashion deals up to 70% off on your favorite brands, delivered directly to your WhatsApp.">
+    <meta property="twitter:image" content="/static/images/social-share-wassfire.webp">
+    
+    <title>{% block title %}Wassfire | The Social Commerce Platform. Only top discounts. Only top brands{% endblock %}</title>
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
     <link href="/static/css/tailwind.css" rel="stylesheet" />
     <link href="/static/css/main.css" rel="stylesheet" />
@@ -21,5 +38,4 @@
       {% block footer %} {% include "footer.html" %} {% endblock %}
     </div>
   </body>
- <!--  <script src="/static/js/home.js"></script> -->
 </html>

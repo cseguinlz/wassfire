@@ -21,3 +21,6 @@
 
 **Tailwind auto-rebuild:**
 `tailwindcss -i ./static/css/tw.css -o ./static/css/tailwind.css --watch`
+
+**Optimize images:**
+`cwebp [options] -q quality input.png -o output.webp`
