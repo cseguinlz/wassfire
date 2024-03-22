@@ -8,7 +8,7 @@
           <dl class="space-y-10">
             <div>
               <dt class="text-base font-semibold leading-7 text-gray-900">{{home.faqs_q1}}</dt>
-              <dd class="mt-2 text-base leading-7 text-gray-600">{{home.faqs_a1}}</dd>
+              <dd class="mt-2 text-base leading-7 text-gray-600" v-html="home.faqs_a1 | safe">{{home.faqs_a1 | safe}}</dd>
             </div>
             <div>
               <dt class="text-base font-semibold leading-7 text-gray-900">{{home.faqs_q2}}</dt>
