@@ -7,26 +7,26 @@
     "hero_subtitle": "Skip the hunt. Exclusive <span class='text-2xl' style='color: #20B256; font-weight: bold;'>up to 70% discounts</span> on your favorite brands, delivered directly to your WhatsApp.",
     "hero_button": "Follow for Exclusive Deals",
     "cta_title": "Final Stock.<br />Up to 70% off.",
-    "cta_button": "Shop the sale", 
+    "cta_button": "Shop the sale",
     "logos_title": "Only top discounts. Only top brands",
     "faqs_title": "Frequently asked questions",
-    "faqs_subtitle": "Can’t find the answer you’re looking for? Reach out to our <a href='#' class='font-semibold text-indigo-600 hover:text-indigo-500'>customer support</a> team.</p>",
-    
-    "faqs_q1": "What kind of discounts can I expect from Wassfire deals?", 
-    "faqs_a1": "At Wassfire, we're committed to bringing you the most significant savings. That's why every deal we publish offers a discount of 40% or more. We believe in offering real value, so you can trust that the deals popping up on your phone are always worth a look.", 
-    
-    "faqs_q2": "Does Wassfire sell products directly?", 
-    "faqs_a2": "No, Wassfire does not sell products directly. All the deals we share link directly to the original source, typically the brand's own ecommerce site. For example, if we share a deal on Adidas sneakers, you'll be directed to their official site like <a href='https://www.adidas.com/shoe-oznova/HP6364.html' target='_blank'>https://www.adidas.com/shoe-oznova/HP6364.html</a> to make your purchase. This way, you shop directly from the brands you love, ensuring authenticity and quality.", 
-    
-    "faqs_q3": "Will following Wassfire fill my phone with SPAM?", 
-    "faqs_a3": "Absolutely not! Wassfire respects your privacy and your peace of mind. You can follow or unfollow our channels at any time. WhatsApp Channels are designed with privacy in mind, meaning your number and details remain invisible to us and other followers. Your interactions on our channel, like reactions or poll votes, are private, and only limited information is accessible to us as channel admins. WhatsApp's end-to-end encryption ensures your personal messages stay private.", 
-    
-    "faqs_q4": "How often does Wassfire update its deals?", 
-    "faqs_a4": "We update our channel three times per day to ensure you're always in the loop with the latest fashion deals.", 
-    
-    "faqs_q5": "Why does Wassfire use URL shorteners for deal links?", 
+    "faqs_subtitle": "Can’t find the answer you’re looking for? Reach out to our <a href='mailto:hola@wassfire.com' class='font-semibold text-indigo-600 hover:text-indigo-500'>customer support</a> team.</p>",
+
+    "faqs_q1": "What kind of discounts can I expect from Wassfire deals?",
+    "faqs_a1": "At Wassfire, we're committed to bringing you the most significant savings. That's why every deal we publish offers a discount of 40% or more. We believe in offering real value, so you can trust that the deals popping up on your phone are always worth a look.",
+
+    "faqs_q2": "Does Wassfire sell products directly?",
+    "faqs_a2": "No, Wassfire does not sell products directly. All the deals we share link directly to the original source, typically the brand's own ecommerce site. For example, if we share a deal on Adidas sneakers, you'll be directed to their official site like <a href='https://www.adidas.com/shoe-oznova/HP6364.html' target='_blank'>https://www.adidas.com/shoe-oznova/HP6364.html</a> to make your purchase. This way, you shop directly from the brands you love, ensuring authenticity and quality.",
+
+    "faqs_q3": "Will following Wassfire fill my phone with SPAM?",
+    "faqs_a3": "Absolutely not! Wassfire respects your privacy and your peace of mind. You can follow or unfollow our channels at any time. WhatsApp Channels are designed with privacy in mind, meaning your number and details remain invisible to us and other followers. Your interactions on our channel, like reactions or poll votes, are private, and only limited information is accessible to us as channel admins. WhatsApp's end-to-end encryption ensures your personal messages stay private.",
+
+    "faqs_q4": "How often does Wassfire update its deals?",
+    "faqs_a4": "We update our channel three times per day to ensure you're always in the loop with the latest fashion deals.",
+
+    "faqs_q5": "Why does Wassfire use URL shorteners for deal links?",
     "faqs_a5": "We use URL shorteners, like 'wass.promo/abc123', for a couple of important reasons. Firstly, it helps us keep the messages concise and focused on the deal itself. More importantly, it allows us to track clicks and understand which deals interest our followers most. This tracking is crucial for improving our service and ensuring we're always offering deals that excite and benefit you.",
-    
+
     "spam_title": "No SPAM allowed",
     "spam_subtitle": "When you follow our channel, <span style='font-size: x-large; font-weight: bolder;'>notifications are muted by default.</span> You can <span style='font-size: x-large; font-weight: bolder;'>choose to unfollow</span> our channel at any time. <span style='font-size: x-large; font-weight: bolder;'>We can't see your phone number</span> or profile name unless you saved as a contact. You’re not visible to other channel followers. They can’t see your name, phone number, profile picture, reactions to channel content. It's your personal, <span style='font-size: x-large; font-weight: bolder;'>private</span>, daily fashion fix delevired to your phone.",
     "spam_button": "Start now",
@@ -44,16 +44,16 @@
     "brands_pre_title": "Make it personal",
     "brands_title": "From Excess to Success: Discover a new way to sell",
     "brands_subtitle": " Turn overstock into opportunity by connecting with an engaged audience ready to buy.",
-    "brands_value_prop": "A Community That Sells for You:", 
-    "brands_value_prop_des": "Our subscribers don't just buy; they share. With Wassfire, your products reach not only potential customers but their networks too. It's word-of-mouth marketing in the digital age, powered by genuine recommendations from friends to family.", 
+    "brands_value_prop": "A Community That Sells for You:",
+    "brands_value_prop_des": "Our subscribers don't just buy; they share. With Wassfire, your products reach not only potential customers but their networks too. It's word-of-mouth marketing in the digital age, powered by genuine recommendations from friends to family.",
     "brands_value_prop2": "Transform Surplus into Opportunity:",
     "brands_value_prop2_des": "Those mature products that don't sell, broken sizes, or seasonal leftovers? They're not dead weight—they're hidden gems. Wassfire offers an outlet to reduce waste and reclaim value, turning potential losses into profitable sales.",
     "brands_value_prop3": "Direct to Consumer",
     "brands_value_prop3_des": "Cut through the noise. Bring your products directly to consumers' phones, integrating your offerings into their daily lives and conversations. It's personal, it's direct, and it's effective.",
-    "brands_value_prop4": "Exclusive yet Inclusive:", 
+    "brands_value_prop4": "Exclusive yet Inclusive:",
     "brands_value_prop4_des": "Catering exclusively to top brands means your brand remains in good company. Yet, our platform's inclusivity in reaching various consumer segments enhances your brand's visibility and appeal.",
-    "brands_newsletter_title": "Get notified when we’re launching.", 
-    "brands_newsletter_subtitle": "We are working on a platform for Fashion Merchandisers.<br />Publish promotions and identify trends based on channel's engagements.", 
+    "brands_newsletter_title": "Get notified when we’re launching.",
+    "brands_newsletter_subtitle": "We are working on a platform for Fashion Merchandisers.<br />Publish promotions and identify trends based on channel's engagements.",
     "brands_newsletter_button": "Count me in!",
     "brands_newsletter_input": "Enter your work email",
     "brands_newsletter_claim": "Daily deals updates",
@@ -61,5 +61,6 @@
   },
   "config": {
     "whatsapp_channel": "https://whatsapp.com/channel/0029VaI8mEM65yDHPOfp362q"
-  }
+  },
+  "whatsapp_message": "🔥 *{discount_percentage}* discount! - {brand}\n🎁 {name}\n💰 Was {original_price}. Now at {sale_price}!\n👉🏼 Buy it directly from {brand}: {short_url}"
 }

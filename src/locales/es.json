@@ -9,8 +9,9 @@
     "cta_title": "Últimas Unidades.<br />Hasta un 70% de descuento.",
     "cta_button": "Caza la oferta",
     "logos_title": "Solo los mejores descuentos. Solo las mejores marcas",
+    
     "faqs_title": "Preguntas Frecuentes",
-    "faqs_subtitle": "¿No encuentras la respuesta que buscas? Contacta a nuestro equipo de <a href='#' class='font-semibold text-indigo-600 hover:text-indigo-500'>soporte al cliente</a>.</p>",
+    "faqs_subtitle": "¿No encuentras la respuesta que buscas? Contacta a nuestro equipo de <a href='mailto:hola@wassfire.com' class='font-semibold text-indigo-600 hover:text-indigo-500'>soporte al cliente</a>.</p>",
 
     "faqs_q1": "¿Qué tipo de descuentos puedo esperar de las ofertas de Wassfire?",
     "faqs_a1": "En Wassfire, estamos comprometidos a ofrecerte los mayores descuentos. Por eso, la oferta media que publicamos ofrece <strong>un descuento mínimo del 40% o más.</strong> Creemos en ofrecer un valor real, así que puedes confiar en que las ofertas que aparecen en tu teléfono siempre valen la pena.",
@@ -61,5 +62,6 @@
   },
   "config": {
     "whatsapp_channel": "https://whatsapp.com/channel/0029VaI8mEM65yDHPOfp362q"
-  }
+  },
+  "whatsapp_message": "🔥 *{discount_percentage}* descuento! - {brand}\n🎁 {name}\n💰 Eran {original_price}. ¡Ahora a {sale_price}!\n👉🏼 Cómpralo directamente en {brand}: {short_url}"
 }

@@ -9,8 +9,9 @@
       "cta_title": "Stock Final.<br />Até 70% de desconto.",
       "cta_button": "Aproveite a promoção", 
       "logos_title": "Apenas os melhores descontos. Apenas as melhores marcas",
+      
       "faqs_title": "Perguntas Frequentes",
-      "faqs_subtitle": "Não encontra a resposta que procura? Contacte a nossa equipa de <a href='#' class='font-semibold text-indigo-600 hover:text-indigo-500'>apoio ao cliente</a>.</p>",
+      "faqs_subtitle": "Não encontra a resposta que procura? Contacte a nossa equipa de <a href='mailto:hola@wassfire.com' class='font-semibold text-indigo-600 hover:text-indigo-500'>apoio ao cliente</a>.</p>",
       
       "faqs_q1": "Que tipo de descontos posso esperar das promoções Wassfire?", 
       "faqs_a1": "Na Wassfire, comprometemo-nos a trazer-lhe as maiores poupanças. Por isso, cada promoção que publicamos oferece um desconto de 40% ou mais. Acreditamos em oferecer valor real, por isso pode confiar que as promoções que surgem no seu telefone valem sempre a pena.", 
@@ -43,6 +44,8 @@
     },
     "config": {
       "whatsapp_channel": "https://whatsapp.com/channel/0029VaI8mEM65yDHPOfp362q"
-    }
+    },
+    "whatsapp_message": "🔥 *{discount_percentage}* de desconto! - {brand}\n🎁 {name}\n💰 Era {original_price}. Agora por apenas {sale_price}!\n👉🏼 Compra diretamente na {brand}: {short_url}"
+
   }
   

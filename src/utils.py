@@ -7,17 +7,24 @@ from datetime import datetime, timezone
 
 from fastapi import Request
 
-def load_translations(request: Request, directory: str = "src/locales") -> dict:
+
+def getWebVisitorLocale(request: Request):
     locale = getattr(request.state, "locale", "en")  # Default to English if not set
-    
+    return locale
+
+
+def load_translations(locale: str = None, directory: str = "src/locales"):
+    if not locale:
+        # Default to English if not set
+        locale = "en"
     try:
         with open(f"{directory}/{locale}.json", "r") as file:
             translations = json.load(file)
     except FileNotFoundError:
         with open(f"{directory}/en.json", "r") as file:
             translations = json.load(file)
-    
     return translations
+
 
 def format_euro_currency(value: float, locale_str: str = "es_ES.UTF-8") -> str:
     """

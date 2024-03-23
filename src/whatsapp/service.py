@@ -1,10 +1,16 @@
 # src.whatsapp.service.py
+
 import httpx
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.config import settings
 from src.products.service import queue_product_as_published
-from src.utils import format_discount_percentage, format_euro_currency, setup_logger
+from src.utils import (
+    format_discount_percentage,
+    format_euro_currency,
+    load_translations,
+    setup_logger,
+)
 
 logger = setup_logger(__name__)
 
@@ -12,9 +18,14 @@ logger = setup_logger(__name__)
 async def publish_product_to_whatsapp(product, db: AsyncSession):
     logger.info(f"Publishing product {product.id}...")
     url = f"{settings.WHAPI_BASE_URL}/messages/image"
+
+    # Extract locale from the product's country_lang field
+    locale = product.country_lang.split("_")[0]
+    translations = load_translations(locale)
+
     payload = {
-        "to": determine_channel(product),
-        "caption": format_message(product),
+        "to": determine_channel(locale),
+        "caption": format_message(product, translations),
         "media": product.image_url,
         "mime_type": "image/jpeg",
         "width": 500,
@@ -39,17 +50,36 @@ async def publish_product_to_whatsapp(product, db: AsyncSession):
         logger.error(f"HTTP request failed for product {product.id}: {http_error}")
 
 
-def determine_channel(product):
-    # TODO: channel mapping logic
-    return settings.TEST_CHANNEL_ES
+def determine_channel(locale):
+    # Assuming there's a way to check if it's a test environment
+    is_test = settings.ENVIRONMENT.is_debug
 
+    # Mapping logic based on locale
+    if locale == "es":
+        return settings.TEST_CHANNEL_ES if is_test else settings.WHATSAPP_CHANNEL_ES
+    elif locale == "pt":
+        return settings.TEST_CHANNEL_PT if is_test else settings.WHATSAPP_CHANNEL_PT
 
-def format_message(product):
-    # Create a message format that suits your needs
+    # Default channel or error handling if locale is not recognized
     return (
-        f"🔥 *{format_discount_percentage(product.discount_percentage)}* descuento! - {product.brand}\n"
-        f"🎁 {product.name}\n"
-        f"💰 Eran {format_euro_currency(product.original_price)}. ¡Ahora a {format_euro_currency(product.sale_price)}!\n"
-        f"👉🏼 Cómpralo directamente en {product.brand}:"
-        f"{product.short_url}"
+        settings.TEST_CHANNEL_ES if is_test else settings.WHATSAPP_CHANNEL_ES
+    )  # or any other default action
+
+
+def format_message(product, translations):
+    # Format dynamic parts of the message
+    discount_percentage = format_discount_percentage(product.discount_percentage)
+    original_price = format_euro_currency(product.original_price)
+    sale_price = format_euro_currency(product.sale_price)
+
+    # Use the loaded translations to construct the message
+    message = translations["whatsapp_message"].format(
+        discount_percentage=discount_percentage,
+        brand=product.brand,
+        name=product.name,
+        original_price=original_price,
+        sale_price=sale_price,
+        short_url=product.short_url,
     )
+
+    return message
