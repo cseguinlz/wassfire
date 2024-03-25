@@ -8,12 +8,19 @@ from datetime import datetime, timezone
 from fastapi import Request
 
 
+def get_user_locale(request: Request) -> str:
+    locale = request.headers.get("Accept-Language", "en").split(",")[0]
+    return locale
+
+
 def getWebVisitorLocale(request: Request):
     locale = getattr(request.state, "locale", "en")  # Default to English if not set
+    print(f"getWebVisitorLocale: {locale}")
     return locale
 
 
 def load_translations(locale: str = None, directory: str = "src/locales"):
+    print(f"load_translations: {locale}")
     if not locale:
         # Default to English if not set
         locale = "en"

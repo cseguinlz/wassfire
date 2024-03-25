@@ -1,7 +1,6 @@
 # src.main.py
-from typing import Callable
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
 from src.config import settings
@@ -16,21 +15,6 @@ if settings.ENVIRONMENT.is_deployed:
     app_configs["redoc_url"] = None
 
 app = FastAPI(**app_configs)
-
-
-# Middleware to detect user's locale
-def get_user_locale(request: Request) -> str:
-    return request.headers.get("Accept-Language", "en").split(",")[0]
-
-
-@app.middleware("http")
-async def add_process_locale(request: Request, call_next: Callable):
-    response = await call_next(request)
-    locale = get_user_locale(request)
-    # print(f"locale: {locale}")
-    request.state.locale = locale
-    return response
-
 
 # Setup scheduled tasks
 # setup_scheduler(app)
