@@ -14,7 +14,6 @@ def get_user_locale(request: Request) -> str:
 
 
 def load_translations(locale: str = None, directory: str = "src/locales"):
-    print(f"load_translations: {locale}")
     if not locale:
         # Default to English if not set
         locale = "en"
