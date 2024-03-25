@@ -8,35 +8,31 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.database import get_db
 from src.models import Subscriber
-from src.utils import getWebVisitorLocale, load_translations
+from src.utils import get_translations
 
 router = APIRouter()
 templates = Jinja2Templates(directory="src/templates/home")
 
 
 @router.get("/", response_class=HTMLResponse)
-async def get_home(request: Request):
-    translations = load_translations(getWebVisitorLocale(request))
+async def get_home(request: Request, translations: dict = Depends(get_translations)):
     return templates.TemplateResponse("home.html", {"request": request, **translations})
 
 
 @router.get("/tos", response_class=HTMLResponse)
-async def get_tos(request: Request):
-    translations = load_translations(request)
+async def get_tos(request: Request, translations: dict = Depends(get_translations)):
     return templates.TemplateResponse("tos.html", {"request": request, **translations})
 
 
 @router.get("/privacy", response_class=HTMLResponse)
-async def get_privacy(request: Request):
-    translations = load_translations(request)
+async def get_privacy(request: Request, translations: dict = Depends(get_translations)):
     return templates.TemplateResponse(
         "privacy.html", {"request": request, **translations}
     )
 
 
 @router.get("/brands", response_class=HTMLResponse)
-async def get_brands(request: Request):
-    translations = load_translations(request)
+async def get_brands(request: Request, translations: dict = Depends(get_translations)):
     return templates.TemplateResponse(
         "brands.html", {"request": request, **translations}
     )

@@ -13,12 +13,6 @@ def get_user_locale(request: Request) -> str:
     return locale
 
 
-def getWebVisitorLocale(request: Request):
-    locale = getattr(request.state, "locale", "en")  # Default to English if not set
-    print(f"getWebVisitorLocale: {locale}")
-    return locale
-
-
 def load_translations(locale: str = None, directory: str = "src/locales"):
     print(f"load_translations: {locale}")
     if not locale:
@@ -30,6 +24,12 @@ def load_translations(locale: str = None, directory: str = "src/locales"):
     except FileNotFoundError:
         with open(f"{directory}/en.json", "r") as file:
             translations = json.load(file)
+    return translations
+
+
+async def get_translations(request: Request) -> dict:
+    locale = get_user_locale(request)
+    translations = load_translations(locale)
     return translations
 
 
