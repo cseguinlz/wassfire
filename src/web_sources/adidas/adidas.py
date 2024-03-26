@@ -6,16 +6,15 @@ import re
 from datetime import datetime
 
 from bs4 import BeautifulSoup
-from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.config import settings
-from src.models import Product
 from src.products import service
 from src.products.url_shortener import shorten_url_with_tly
 from src.utils import setup_logger
 from src.web_sources.adidas.urls import ADIDAS_BASE_OUTLET_URLS
 from src.web_sources.utils import (
+    check_duplicate_product,
     encode_url,
     fetch_page,
     get_full_product_link,
@@ -29,9 +28,7 @@ BRAND = "Adidas"
 SOURCE_ID: int = 1
 
 
-async def parse_page(
-    html_content: str, country_code: str, section: str, db: AsyncSession
-):
+async def parse_page(html_content: str, country_code: str, section: str):
     soup = BeautifulSoup(html_content, "html.parser")
     products = []
     total_count = 0
@@ -105,19 +102,13 @@ async def parse_page(
     return products, total_count, view_size
 
 
-async def check_duplicate_product(db: AsyncSession, product_link: str) -> bool:
-    """Check if a product with the given link already exists in the database."""
-    result = await db.execute(select(Product).filter_by(product_link=product_link))
-    return result.scalars().first() is not None
-
-
 async def scrape_and_save_products(
     url: str, country_code: str, section: str, db: AsyncSession
 ):
     response = await fetch_page(url)
     if response.status_code == 200:
         products, total_count, view_size = await parse_page(
-            response.text, country_code, section, db
+            response.text, country_code, section
         )
         for product_data in products:
             # Check for duplicate before attempting to create a new product
