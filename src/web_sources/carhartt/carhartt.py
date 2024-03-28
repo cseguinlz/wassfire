@@ -23,7 +23,7 @@ SOURCE_NAME = "carhartt"
 SOURCE_ID: int = 2  # Example ID, should be unique
 
 
-async def scrape_carhartt(db: AsyncSession, start: int = 0):
+async def scrape_carhartt(db: AsyncSession):
     for entry in CARHARTT_BASE_OUTLET_URLS:
         country_code = entry["hreflang"]
         base_url = entry["url"]

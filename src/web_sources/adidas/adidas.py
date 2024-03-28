@@ -105,7 +105,10 @@ async def parse_page(html_content: str, country_code: str, section: str):
 async def scrape_and_save_products(
     url: str, country_code: str, section: str, db: AsyncSession
 ):
-    response = await fetch_page(url)
+    response = await fetch_page(
+        url,
+        "www.adidas.com",
+    )
     if response.status_code == 200:
         products, total_count, view_size = await parse_page(
             response.text, country_code, section

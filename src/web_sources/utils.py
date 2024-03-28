@@ -9,21 +9,36 @@ from src.config import settings
 from src.models import Product
 from src.web_sources.config import BASE_URL_MAPPING
 
+
 # Common headers used for HTTP requests
-COMMON_HEADERS = {
-    "authority": "www.adidas.com",
-    "accept": "application/json, text/plain, */*",
-    "accept-language": "en-US,en;q=0.9,es;q=0.8",
-    "dnt": "1",
-    "sec-ch-ua": '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"',
-    "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": '"Windows"',
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
-    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36",
-    "x-requested-with": "XMLHttpRequest",
-}
+def get_common_headers(url: str, authority: str):
+    """
+    Generates common headers with a dynamic authority.
+
+    Parameters:
+    - authority (str): The authority value to be set in the headers.
+
+    Returns:
+    - dict: A dictionary of common headers with the specified authority.
+    """
+    common_headers = {
+        "authority": authority,
+        "accept": "application/json, text/plain, */*",
+        "Origin": url,
+        "Referer": url,
+        "accept-language": "en-US,en;q=0.9,es;q=0.8",
+        "dnt": "1",
+        "sec-ch-ua": '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": '"Windows"',
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "Sec-Gpc": "1",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36",
+        "x-requested-with": "XMLHttpRequest",
+    }
+    return common_headers
 
 
 async def check_duplicate_product(db: AsyncSession, product_link: str) -> bool:
@@ -32,7 +47,7 @@ async def check_duplicate_product(db: AsyncSession, product_link: str) -> bool:
     return result.scalars().first() is not None
 
 
-async def fetch_page(url: str, headers=None):
+async def fetch_page(url: str, authority: str, headers=None):
     """
     Fetches a webpage's content.
 
@@ -42,9 +57,7 @@ async def fetch_page(url: str, headers=None):
     """
     if headers is None:
         if headers is None:
-            headers = COMMON_HEADERS.copy()
-            # Set the referer header dynamically based on the URL
-            headers["Referer"] = url
+            headers = get_common_headers(url, authority)
     async with AsyncSession() as session:
         response = await session.get(url, headers=headers)
         return response
@@ -125,20 +138,72 @@ async def fetch_ajax_carhartt_content(url: str):
         "resultType": "both",
         "pageSize": "100",
     }
-    headers = {
-        "Accept": "*/*",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "es;q=0.9",
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Origin": "https://www.carhartt.com",
-        "Referer": "https://www.carhartt.com/es/es-es/categoria/rebajas",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-        "X-Requested-With": "XMLHttpRequest",
-    }
+    headers = get_common_headers(url, "www.carhartt.com")
 
     async with httpx.AsyncClient() as client:
         response = await client.get(url, params=params, headers=headers)
         return response
+
+
+async def fetch_converse_products_page(url: str, start: int, size: int):
+    """
+    Fetches a page of products from the Converse website using AJAX-like request.
+
+    :param url: Base URL for the AJAX request.
+    :param start: The starting index of products to fetch.
+    :param size: Number of products to fetch. Máx 60 per call.
+    :param headers: Optional custom headers for the request.
+    :return: The HTTP response text containing the product listing.
+    """
+    # Update the URL with the query parameters for pagination
+    params = {
+        "lang": "es_ES",
+        "srule": "top-sellers",
+        "start": {start},
+        "sz": {size},
+        "format": "page-element",
+        "interrupterSize": 0,
+    }
+    # Use common headers if none are provided
+    headers = get_common_headers(url, "www.converse.com")
+
+    async with AsyncSession() as session:
+        response = await session.get(url, params=params, headers=headers)
+        return response
+
+
+def get_nike_params(anchor, count, country_code, lang):
+    return {
+        "queryid": "products",
+        "anonymousId": "B229650DD47D6D94D6EF3C40AEDB9815",
+        "country": "{country_code}",  # "pt"
+        "endpoint": f"/product_feed/rollup_threads/v2?filter=marketplace(PT)&filter=language(pt-PT)&filter=employeePrice(true)&filter=attributeIds(5b21a62a-0503-400c-8336-3ccfbff2a684)&anchor={anchor}&consumerChannelId=d9a5bc42-4b9c-4976-858a-f159cf99c647&count={count}&sort=effectiveStartViewDateDesc",
+        "language": "{lang}",  # "pt-PT"
+        "localizedRangeStr": "{lowestPrice} — {highestPrice}",
+    }
+
+
+async def fetch_nike_products_page(url, anchor, count, country_code, lang):
+    """
+    Fetches a page of Nike products.
+
+    :param url: The base URL for the Nike API request.
+    :param anchor: The pagination anchor.
+    :param count: The number of products to fetch.
+    :return: JSON response containing product information.
+    """
+    headers = get_common_headers(
+        "https://www.nike.com",
+        "api.nike.com",
+    )
+    params = get_nike_params(anchor, count, country_code, lang)
+    async with AsyncSession() as session:
+        response = await session.get(url, headers=headers, params=params)
+        if response.status_code == 200:
+            return response.json()  # Return the JSON response
+        else:
+            print(f"Failed to fetch products: HTTP {response.status_code}")
+            return None
 
 
 """
