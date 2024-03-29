@@ -25,6 +25,7 @@ class Product(Base):
     id = Column(Integer, primary_key=True, index=True)
     source_id = Column(Integer, ForeignKey("sources.id"))
     name = Column(String)
+    description = Column(String)
     country_lang = Column(String)
     brand = Column(String)
     section = Column(String)  # Column(Enum(Section)) TODO: when i18n ready

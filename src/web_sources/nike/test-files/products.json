@@ -1,0 +1,2448 @@
+{
+  "data": {
+    "products": {
+      "errors": null,
+      "products": [
+        {
+          "cardType": "default",
+          "cloudProductId": "5e227e53-f6a7-564e-97d5-2c523ba29bdf",
+          "colorDescription": "Preto",
+          "colorways": [
+            {
+              "colorDescription": "Preto",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3faa00f4-3869-4ded-8084-0f35af29d41c/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/bece315c-6488-427d-b082-1c73e6abbe16/conjunto-de-2-pecas-jordan-home-and-away-shorts-set-qjdflM.png"
+              },
+              "pdpUrl": "{countryLang}/t/conjunto-de-2-pecas-jordan-home-and-away-shorts-set-qjdflM/FQ0851-010",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 34.49,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 42.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "5e227e53-f6a7-564e-97d5-2c523ba29bdf",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1012759243",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "8f62e6a7-951c-4771-8ec3-32efb3945c89",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3faa00f4-3869-4ded-8084-0f35af29d41c/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/bece315c-6488-427d-b082-1c73e6abbe16/conjunto-de-2-pecas-jordan-home-and-away-shorts-set-qjdflM.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1012759243",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 34.49,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 42.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "APPAREL",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Conjunto de 2 peças para bebé",
+          "title": "Jordan Home and Away Shorts Set",
+          "url": "{countryLang}/t/conjunto-de-2-pecas-jordan-home-and-away-shorts-set-qjdflM/FQ0851-010"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "fe10ed80-7b01-5fc2-9a5a-06597db8fc94",
+          "colorDescription": "Castanho médio Legend/Legend Coffee/Castanho claro Legend/Castanho escuro Legend",
+          "colorways": [
+            {
+              "colorDescription": "Castanho médio Legend/Legend Coffee/Castanho claro Legend/Castanho escuro Legend",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d1824dca-6d5e-4e01-a1fc-763da80e52e8/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cd057100-873a-454e-8811-bcca6c03d087/sapatilhas-air-jordan-1-high-method-of-make-mulher-GjBCFh.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-air-jordan-1-high-method-of-make-mulher-GjBCFh/FB9891-200",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 111.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 159.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "fe10ed80-7b01-5fc2-9a5a-06597db8fc94",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014290021",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Vermelho Sport/Preto/Sail/Vermelho Dune",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e5700856-4bfe-4282-81e1-cd5dee98b658/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/94f80bf1-d568-47ed-b482-6d459571e4ea/sapatilhas-air-jordan-1-high-method-of-make-mulher-GjBCFh.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-air-jordan-1-high-method-of-make-mulher-GjBCFh/FB9891-600",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 111.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 159.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "a9afc0bc-7ff0-54e0-8a8f-122f14195b31",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014289432",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "1275539b-6fb5-4c93-b7fe-4009b3151638",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d1824dca-6d5e-4e01-a1fc-763da80e52e8/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cd057100-873a-454e-8811-bcca6c03d087/sapatilhas-air-jordan-1-high-method-of-make-mulher-GjBCFh.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1014290021",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 111.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 159.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "FOOTWEAR",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Sapatilhas para mulher",
+          "title": "Air Jordan 1 High Method of Make",
+          "url": "{countryLang}/t/sapatilhas-air-jordan-1-high-method-of-make-mulher-GjBCFh/FB9891-200"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "d13c5c14-91a5-54dd-be1d-7a038e96159d",
+          "colorDescription": "Azul Rush",
+          "colorways": [
+            {
+              "colorDescription": "Azul Rush",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/f7154676-776d-45bd-92a8-dbb60f917fa8/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/16723ffb-a4a8-4af4-987a-74058e71f057/camisola-nba-swingman-dri-fit-james-harden-philadelphia-76ers-2022-23-icon-edition-junior-Stl10r.png"
+              },
+              "pdpUrl": "{countryLang}/t/camisola-nba-swingman-dri-fit-james-harden-philadelphia-76ers-2022-23-icon-edition-junior-Stl10r/FN4352-495",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 37.49,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 74.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "d13c5c14-91a5-54dd-be1d-7a038e96159d",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1011852784",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "55e8260a-b0b8-4130-9ba1-fdb6cd4e7be8",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/f7154676-776d-45bd-92a8-dbb60f917fa8/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/16723ffb-a4a8-4af4-987a-74058e71f057/camisola-nba-swingman-dri-fit-james-harden-philadelphia-76ers-2022-23-icon-edition-junior-Stl10r.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1011852784",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 37.49,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 74.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "APPAREL",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Camisola NBA Swingman Nike Dri-FIT Júnior (Rapaz)",
+          "title": "James Harden Philadelphia 76ers 2022/23 Icon Edition",
+          "url": "{countryLang}/t/camisola-nba-swingman-dri-fit-james-harden-philadelphia-76ers-2022-23-icon-edition-junior-Stl10r/FN4352-495"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "2c357191-fcfa-5f3c-a499-30296d0e013d",
+          "colorDescription": "Anthracite",
+          "colorways": [
+            {
+              "colorDescription": "Anthracite",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/2c9fcda7-9132-4379-a33c-e602fb949725/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/3fb8651f-c65b-4ea4-8e59-6353f16e7d00/calcas-folgadas-de-la-cardada-sportswear-junior-0pHKpm.png"
+              },
+              "pdpUrl": "{countryLang}/t/calcas-folgadas-de-la-cardada-sportswear-junior-0pHKpm/FZ4720-060",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 35.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 44.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "2c357191-fcfa-5f3c-a499-30296d0e013d",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014440753",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Earth",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/77f8d052-b15a-482a-9412-ab3a44c85229/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/7e1f74c5-b1e3-4e06-9297-092a5a26abc8/calcas-folgadas-de-la-cardada-sportswear-junior-0pHKpm.png"
+              },
+              "pdpUrl": "{countryLang}/t/calcas-folgadas-de-la-cardada-sportswear-junior-0pHKpm/FZ4720-227",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 35.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 44.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "0f858b52-13df-5d77-91e0-4d0a2557dd74",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014445011",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "65295b30-5d33-4717-93e6-a2ddfadaf1c4",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/2c9fcda7-9132-4379-a33c-e602fb949725/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/3fb8651f-c65b-4ea4-8e59-6353f16e7d00/calcas-folgadas-de-la-cardada-sportswear-junior-0pHKpm.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1014440753",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 35.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 44.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "APPAREL",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Calças folgadas de lã cardada Júnior (Rapariga)",
+          "title": "Nike Sportswear",
+          "url": "{countryLang}/t/calcas-folgadas-de-la-cardada-sportswear-junior-0pHKpm/FZ4720-060"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "a0c2c09f-2b51-5706-a710-bef805f0d5c6",
+          "colorDescription": "Anthracite",
+          "colorways": [
+            {
+              "colorDescription": "Anthracite",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/7afa195f-05f3-4e43-9916-a70f3979c7e8/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/9114c2eb-0258-4ac0-ba4e-612d50bf4a01/sweatshirt-folgada-de-gola-redonda-em-la-cardada-sportswear-junior-s8xBK5.png"
+              },
+              "pdpUrl": "{countryLang}/t/sweatshirt-folgada-de-gola-redonda-em-la-cardada-sportswear-junior-s8xBK5/FZ4722-060",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 38.49,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 47.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "a0c2c09f-2b51-5706-a710-bef805f0d5c6",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014443464",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Earth",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/0568a400-71ce-4613-923c-5ed053b808ca/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/6f4a73cb-1a31-46e9-9be3-07dcddc49d14/sweatshirt-folgada-de-gola-redonda-em-la-cardada-sportswear-junior-s8xBK5.png"
+              },
+              "pdpUrl": "{countryLang}/t/sweatshirt-folgada-de-gola-redonda-em-la-cardada-sportswear-junior-s8xBK5/FZ4722-227",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 38.49,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 47.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "95191b98-c5c2-548b-b4fa-65495ba3dac4",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014443580",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "90c1b2e4-31c7-4fe7-b4b0-c41a503d5e53",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/7afa195f-05f3-4e43-9916-a70f3979c7e8/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/9114c2eb-0258-4ac0-ba4e-612d50bf4a01/sweatshirt-folgada-de-gola-redonda-em-la-cardada-sportswear-junior-s8xBK5.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1014443464",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 38.49,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 47.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "APPAREL",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Sweatshirt folgada de gola redonda em lã cardada Júnior (Rapariga)",
+          "title": "Nike Sportswear",
+          "url": "{countryLang}/t/sweatshirt-folgada-de-gola-redonda-em-la-cardada-sportswear-junior-s8xBK5/FZ4722-060"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "308266cc-3b15-55a4-9b2a-73ca95e3899b",
+          "colorDescription": "Amarelo Soft/Branco/Laranja Laser claro/Azul Photo claro",
+          "colorways": [
+            {
+              "colorDescription": "Amarelo Soft/Branco/Laranja Laser claro/Azul Photo claro",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/bbffcc1d-711a-42fc-89e5-0b775b175876/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/eb6cc06a-dcd6-451d-8edd-f51b6e81bead/sapatilhas-de-basquetebol-giannis-freak-5-FG92p5.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-de-basquetebol-giannis-freak-5-FG92p5/DX4985-700",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 94.49,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 134.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "308266cc-3b15-55a4-9b2a-73ca95e3899b",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014364585",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Preto/Pure Platinum/Cinzento Wolf/Vermelho University",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/e646db3a-dc9d-4319-b718-e3ce70410361/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/1f949db2-4469-4e3d-8c78-cc79f01f581a/sapatilhas-de-basquetebol-giannis-freak-5-FG92p5.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-de-basquetebol-giannis-freak-5-FG92p5/DX4985-004",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 94.49,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 134.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "d9363ea2-6520-54f5-8215-5111af0b47b9",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014163102",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Preto/Pure Platinum/Branco",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/0d3e413c-6861-4aff-9c57-5fd61bf9315b/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/96d7b635-7777-4d68-a94b-086a53182c43/sapatilhas-de-basquetebol-giannis-freak-5-FG92p5.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-de-basquetebol-giannis-freak-5-FG92p5/DX4985-003",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 94.49,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 134.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "f00306c5-b209-58b0-9ca6-be988f61f941",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1013249261",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Phantom/Ice Peach/Esmeralda Rise",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/4aefc264-c138-417a-b6dd-ddbd463d491b/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/a27b6f03-06f7-48fb-971d-b10f01229dc2/sapatilhas-de-basquetebol-giannis-freak-5-FG92p5.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-de-basquetebol-giannis-freak-5-FG92p5/DX4985-400",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 94.49,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 134.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "84e1ff14-00c5-5c8f-b83b-523a84616619",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1012299497",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Castanho Orewood claro/Rosa Soft médio/Esmeralda Rise",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/387b1edf-625d-4b04-9ec1-f10619ee7b8e/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/95ad0a68-0e88-4023-b4ab-4c7482eea9d4/sapatilhas-de-basquetebol-giannis-freak-5-FG92p5.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-de-basquetebol-giannis-freak-5-FG92p5/DX4985-100",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 94.49,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 134.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "f42d32a3-88b0-526b-bab7-63d15e056eb8",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1012256015",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "a430c623-c0de-492f-8a24-aab0743e7e63",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/bbffcc1d-711a-42fc-89e5-0b775b175876/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/eb6cc06a-dcd6-451d-8edd-f51b6e81bead/sapatilhas-de-basquetebol-giannis-freak-5-FG92p5.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": {
+            "colorDescription": "NBY",
+            "images": {
+              "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/bbffcc1d-711a-42fc-89e5-0b775b175876/image.jpg",
+              "squarishURL": "https://static.nike.com/a/images/t_default/eb6cc06a-dcd6-451d-8edd-f51b6e81bead/sapatilhas-de-basquetebol-giannis-freak-5-FG92p5.png"
+            },
+            "pdpUrl": "{countryLang}/u/custom-freak-5-by-you-10001704/8156204856",
+            "price": {
+              "currency": null,
+              "currentPrice": 164.99,
+              "discounted": null,
+              "employeePrice": null,
+              "fullPrice": 164.99,
+              "minimumAdvertisedPrice": null
+            }
+          },
+          "pid": "1014364585",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 94.49,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 134.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "FOOTWEAR",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Sapatilhas de basquetebol",
+          "title": "Giannis Freak 5",
+          "url": "{countryLang}/t/sapatilhas-de-basquetebol-giannis-freak-5-FG92p5/DX4985-700"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "7313c139-1f8d-54fd-bcaf-b6e774dab8a5",
+          "colorDescription": "Smokey Mauve/Preto",
+          "colorways": [
+            {
+              "colorDescription": "Smokey Mauve/Preto",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/d7ed6891-6e62-46b2-897e-3996fb278e4d/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/dc6214b3-8e4b-42f8-9f26-fe828c3f93be/camisola-sem-mangas-recortada-dri-fit-one-fitted-mulher-k73V7q.png"
+              },
+              "pdpUrl": "{countryLang}/t/camisola-sem-mangas-recortada-dri-fit-one-fitted-mulher-k73V7q/FN2806-208",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 26.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 29.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "7313c139-1f8d-54fd-bcaf-b6e774dab8a5",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014096796",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "2f659fb3-c4fc-41c4-91bc-ade7f047f5a4",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/d7ed6891-6e62-46b2-897e-3996fb278e4d/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/dc6214b3-8e4b-42f8-9f26-fe828c3f93be/camisola-sem-mangas-recortada-dri-fit-one-fitted-mulher-k73V7q.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": true,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1014096796",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 26.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 29.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "APPAREL",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Camisola sem mangas recortada Dri-FIT para mulher",
+          "title": "Nike One Fitted",
+          "url": "{countryLang}/t/camisola-sem-mangas-recortada-dri-fit-one-fitted-mulher-k73V7q/FN2806-208"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "6d5b44fc-29dc-5117-819d-03a412544756",
+          "colorDescription": "Borgonha Crush/Preto",
+          "colorways": [
+            {
+              "colorDescription": "Borgonha Crush/Preto",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/f1bf5b96-32bf-4916-b167-923946dd492a/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/f2c588ae-3128-4b17-b757-b5962be7675f/leggings-a-todo-o-comprimento-de-cintura-subida-e-suporte-firme-com-bolsos-go-mulher-pjFt88.png"
+              },
+              "pdpUrl": "{countryLang}/t/leggings-a-todo-o-comprimento-de-cintura-subida-e-suporte-firme-com-bolsos-go-mulher-pjFt88/DQ5668-652",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 98.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 109.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "6d5b44fc-29dc-5117-819d-03a412544756",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "14078197",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Castanho Baroque/Preto",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/7c9c38b2-f137-4ecc-aa1f-acc51af187eb/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/55fc8584-12e0-43ae-930c-31979b865ced/leggings-a-todo-o-comprimento-de-cintura-subida-e-suporte-firme-com-bolsos-go-mulher-pjFt88.png"
+              },
+              "pdpUrl": "{countryLang}/t/leggings-a-todo-o-comprimento-de-cintura-subida-e-suporte-firme-com-bolsos-go-mulher-pjFt88/DQ5668-237",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 98.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 109.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "2d061153-2a75-500e-9ccf-873234ebc7d5",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014045800",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Azul Diffused/Preto",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/1b8bf6fa-918d-4ea0-82c2-0b60ed875e56/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/5e48aae2-507c-49f5-a266-da14f2898201/leggings-a-todo-o-comprimento-de-cintura-subida-e-suporte-firme-com-bolsos-go-mulher-pjFt88.png"
+              },
+              "pdpUrl": "{countryLang}/t/leggings-a-todo-o-comprimento-de-cintura-subida-e-suporte-firme-com-bolsos-go-mulher-pjFt88/DQ5668-491",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 84.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 99.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "79134fa7-4974-52cb-a14f-ec859819a320",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1009760978",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "436dfd33-4e23-4304-a14e-3051ada436dd",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/f1bf5b96-32bf-4916-b167-923946dd492a/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/f2c588ae-3128-4b17-b757-b5962be7675f/leggings-a-todo-o-comprimento-de-cintura-subida-e-suporte-firme-com-bolsos-go-mulher-pjFt88.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": true,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "14078197",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 98.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 109.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "APPAREL",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Leggings a todo o comprimento de cintura subida e suporte firme com bolsos para mulher",
+          "title": "Nike Go",
+          "url": "{countryLang}/t/leggings-a-todo-o-comprimento-de-cintura-subida-e-suporte-firme-com-bolsos-go-mulher-pjFt88/DQ5668-652"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "25d65b79-2e05-5ece-bbc9-00731f82036e",
+          "colorDescription": "Cinzento Smoke/Cinzento Smoke escuro/Branco",
+          "colorways": [
+            {
+              "colorDescription": "Cinzento Smoke/Cinzento Smoke escuro/Branco",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/b014f8d8-8334-4c4d-8a1f-fbb19bcc346c/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/fe3f34d0-a1b1-4b4f-9868-86cc48f9a81f/calcoes-entrancados-de-cintura-subida-one-junior-gf0MWM.png"
+              },
+              "pdpUrl": "{countryLang}/t/calcoes-entrancados-de-cintura-subida-one-junior-gf0MWM/FQ4527-084",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 29.49,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 32.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "25d65b79-2e05-5ece-bbc9-00731f82036e",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1013978576",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "49705fef-cb52-45ea-978b-6c150ebdeb14",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/b014f8d8-8334-4c4d-8a1f-fbb19bcc346c/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/fe3f34d0-a1b1-4b4f-9868-86cc48f9a81f/calcoes-entrancados-de-cintura-subida-one-junior-gf0MWM.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": true,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1013978576",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 29.49,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 32.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "APPAREL",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Calções entrançados de cintura subida Júnior (Rapariga)",
+          "title": "Nike One",
+          "url": "{countryLang}/t/calcoes-entrancados-de-cintura-subida-one-junior-gf0MWM/FQ4527-084"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "e522efa9-2e85-547a-931c-0f2a9653963c",
+          "colorDescription": "Pure Platinum/Ashen Slate/Midnight Navy/Preto",
+          "colorways": [
+            {
+              "colorDescription": "Pure Platinum/Ashen Slate/Midnight Navy/Preto",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/b4196b78-054b-49a6-948b-08f3f9021158/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/d408be9d-1859-49b5-8fa4-2d8b54318d1e/sapatilhas-air-humara-mulher-JFpx3z.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-air-humara-mulher-JFpx3z/FB9982-002",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 127.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 159.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "e522efa9-2e85-547a-931c-0f2a9653963c",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014204090",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Sesame/Dourado Saturn/Sea Glass/Preto",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/ff5625bb-1aaa-4451-9a48-17d980ac2acb/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/b441c0b6-bec4-4b8a-a3e3-66d5c14b2281/sapatilhas-air-humara-mulher-JFpx3z.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-air-humara-mulher-JFpx3z/FB9982-200",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 127.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 159.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "44f9754d-b394-5409-9a32-dfe7f2070bff",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014196250",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "4ef177ca-f246-4d9c-a688-41068a50b62d",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/b4196b78-054b-49a6-948b-08f3f9021158/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/d408be9d-1859-49b5-8fa4-2d8b54318d1e/sapatilhas-air-humara-mulher-JFpx3z.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1014204090",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 127.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 159.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "FOOTWEAR",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Sapatilhas para mulher",
+          "title": "Nike Air Humara",
+          "url": "{countryLang}/t/sapatilhas-air-humara-mulher-JFpx3z/FB9982-002"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "706d9747-bd53-5bba-a317-179d3f6acb07",
+          "colorDescription": "Castanho Orewood claro/Dourado metalizado",
+          "colorways": [
+            {
+              "colorDescription": "Castanho Orewood claro/Dourado metalizado",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/3fdbf7f4-2e55-4be2-8eea-816f1da06482/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/0ccf33ed-4010-4a14-916c-91f02597fa55/calcas-desportivas-sportswear-tech-fleece-5p20Bf.png"
+              },
+              "pdpUrl": "{countryLang}/t/calcas-desportivas-sportswear-tech-fleece-5p20Bf/FZ4710-104",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 49.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 99.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "706d9747-bd53-5bba-a317-179d3f6acb07",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014450472",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Vermelho University/Preto",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/ca76a56d-9d73-4c33-a23b-f2abc52b7f62/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/eb7df430-14a4-4d49-b58d-063ba94f1114/calcas-desportivas-sportswear-tech-fleece-5p20Bf.png"
+              },
+              "pdpUrl": "{countryLang}/t/calcas-desportivas-sportswear-tech-fleece-5p20Bf/FZ4710-657",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 49.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 99.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "6a6b6ad8-178b-5438-bda1-45c18551d897",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014440300",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "64adbaf4-d98b-4628-b2b3-bb3639666cc8",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/3fdbf7f4-2e55-4be2-8eea-816f1da06482/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/0ccf33ed-4010-4a14-916c-91f02597fa55/calcas-desportivas-sportswear-tech-fleece-5p20Bf.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": true,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1014450472",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 49.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 99.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "APPAREL",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Calças desportivas para homem",
+          "title": "Nike Sportswear Tech Fleece",
+          "url": "{countryLang}/t/calcas-desportivas-sportswear-tech-fleece-5p20Bf/FZ4710-104"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "6914bc8e-7db9-501a-b71b-52952a13c09a",
+          "colorDescription": "Branco/Sanddrift/Cinzento Neutral/Cinzento Cement",
+          "colorways": [
+            {
+              "colorDescription": "Branco/Sanddrift/Cinzento Neutral/Cinzento Cement",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c4911e87-eac2-4e2c-84c9-e9929ef8c01b/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6b4d2077-0a98-4b5c-99f8-ce6dbc674308/sapatilhas-air-jordan-2-retro-low-Q5b92T.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-air-jordan-2-retro-low-Q5b92T/DV9956-100",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 79.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 159.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "6914bc8e-7db9-501a-b71b-52952a13c09a",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014364730",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Preto/Fir/Cinzento Cement/Vermelho Fire",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7e3bc744-fa10-401d-b036-eb0fbdebd0ba/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a4cf2242-bead-4519-8349-86899a69ff4b/sapatilhas-air-jordan-2-low-origins-Q5b92T.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-air-jordan-2-low-origins-Q5b92T/DV9956-006",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 79.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 159.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "618a6971-8a37-5e26-ad98-fd5962203fae",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1013271047",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Sail/Light Curry/Cobblestone/Melon Tint",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/18e48a78-6740-4f18-a103-04c299e37be5/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/684b56c2-454d-46c9-ae6a-32d685c30d67/sapatilhas-air-jordan-2-retro-low-Q5b92T.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-air-jordan-2-retro-low-Q5b92T/DV9956-118",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 79.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 159.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "3816b313-6baa-5fc7-a097-75d0e361e9fb",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1003838957",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "ce9ea8ab-3fe2-4e23-b4ac-8aa42334f4e2",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c4911e87-eac2-4e2c-84c9-e9929ef8c01b/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6b4d2077-0a98-4b5c-99f8-ce6dbc674308/sapatilhas-air-jordan-2-retro-low-Q5b92T.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1014364730",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 79.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 159.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "FOOTWEAR",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Sapatilhas para homem",
+          "title": "Air Jordan 2 Retro Low",
+          "url": "{countryLang}/t/sapatilhas-air-jordan-2-retro-low-Q5b92T/DV9956-100"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "0acdb4f9-4bd4-57e0-b946-d9b36dd83548",
+          "colorDescription": "Adobe/Branco",
+          "colorways": [
+            {
+              "colorDescription": "Adobe/Branco",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/afd257ee-02a8-4127-8807-66ca6a11ed5a/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/4714f8f2-ec8d-4c49-9b95-2f3ddebd04ff/hoodie-folgado-com-fecho-completo-sportswear-club-fleece-junior-7TsFjT.png"
+              },
+              "pdpUrl": "{countryLang}/t/hoodie-folgado-com-fecho-completo-sportswear-club-fleece-junior-7TsFjT/FD2931-655",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 39.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 49.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "0acdb4f9-4bd4-57e0-b946-d9b36dd83548",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1013989373",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "05bcb98f-318f-4b8f-a928-e485fbb35c57",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/afd257ee-02a8-4127-8807-66ca6a11ed5a/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/4714f8f2-ec8d-4c49-9b95-2f3ddebd04ff/hoodie-folgado-com-fecho-completo-sportswear-club-fleece-junior-7TsFjT.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1013989373",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 39.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 49.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "APPAREL",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Hoodie folgado com fecho completo Júnior (Rapariga)",
+          "title": "Nike Sportswear Club Fleece",
+          "url": "{countryLang}/t/hoodie-folgado-com-fecho-completo-sportswear-club-fleece-junior-7TsFjT/FD2931-655"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "35c29e63-062d-5a56-a321-944d5c96f085",
+          "colorDescription": "Azul Rush",
+          "colorways": [
+            {
+              "colorDescription": "Azul Rush",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/74d80a4c-2b92-4871-bca5-727f58deb32e/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/9bea7b22-c53f-43c3-bcb3-64422366ff10/t-shirt-nba-golden-state-warriors-junior-t50t4z.png"
+              },
+              "pdpUrl": "{countryLang}/t/t-shirt-nba-golden-state-warriors-junior-t50t4z/DR0781-495",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 23.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 29.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "35c29e63-062d-5a56-a321-944d5c96f085",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "13846763",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "aeaae69c-aa9b-46c9-81a1-955458f540c2",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/74d80a4c-2b92-4871-bca5-727f58deb32e/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/9bea7b22-c53f-43c3-bcb3-64422366ff10/t-shirt-nba-golden-state-warriors-junior-t50t4z.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "13846763",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 23.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 29.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "APPAREL",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "T-shirt NBA Nike Júnior",
+          "title": "Golden State Warriors",
+          "url": "{countryLang}/t/t-shirt-nba-golden-state-warriors-junior-t50t4z/DR0781-495"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "84d8af65-e2e9-5cc9-a4ab-3f90599192d4",
+          "colorDescription": "Azul-acinzentado",
+          "colorways": [
+            {
+              "colorDescription": "Azul-acinzentado",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c3cad876-12dd-46aa-94f6-99e723447d00/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9c55dec3-871c-4ddf-9cd1-c0659bda065d/calcas-jordan-brooklyn-fleece-mulher-qB89Vs.png"
+              },
+              "pdpUrl": "{countryLang}/t/calcas-jordan-brooklyn-fleece-mulher-qB89Vs/FN4494-436",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 48.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 69.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "84d8af65-e2e9-5cc9-a4ab-3f90599192d4",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014198158",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Vermelho Dune",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/19d285b6-5086-4eaa-970f-c825411411ef/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/64aee730-eeb3-43f7-998c-304613bc8e7f/calcas-jordan-brooklyn-fleece-mulher-qB89Vs.png"
+              },
+              "pdpUrl": "{countryLang}/t/calcas-jordan-brooklyn-fleece-mulher-qB89Vs/FN4494-615",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 48.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 69.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "d9351cda-3d21-5f47-bbfa-28ae76976eee",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014172840",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Cinzento Heather escuro/Branco",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/059ca5a0-0ed2-44f1-9036-554d5561e57b/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d36449be-bdfb-4b12-8d7e-b906bd9527ed/calcas-jordan-brooklyn-fleece-mulher-qB89Vs.png"
+              },
+              "pdpUrl": "{countryLang}/t/calcas-jordan-brooklyn-fleece-mulher-qB89Vs/FN4496-063",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 41.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 69.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "b4a5e99a-1eaa-5ea9-b84f-3ac4f80c728e",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1011998168",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Sunset Haze",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3c1d26ff-763a-4d97-9bdc-24e5a7275b9c/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/51ef434d-5116-4f0d-b65b-050b9c340a37/calcas-de-la-cardada-jordan-brooklyn-mulher-qB89Vs.png"
+              },
+              "pdpUrl": "{countryLang}/t/calcas-de-la-cardada-jordan-brooklyn-mulher-qB89Vs/DQ4478-885",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 34.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 69.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "669ba232-b3ce-55ca-8654-352355a9d2eb",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1006395720",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": true,
+          "id": "cecaca03-1bd4-48a1-8fed-d45f98546918",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c3cad876-12dd-46aa-94f6-99e723447d00/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9c55dec3-871c-4ddf-9cd1-c0659bda065d/calcas-jordan-brooklyn-fleece-mulher-qB89Vs.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1014198158",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 48.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 69.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "APPAREL",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Calças para mulher",
+          "title": "Lã cardada Jordan Brooklyn",
+          "url": "{countryLang}/t/calcas-jordan-brooklyn-fleece-mulher-qB89Vs/FN4494-436"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "1cf3198c-7f57-58ec-9941-aa8024ba568b",
+          "colorDescription": "Sail/Cinzento Smoke claro/Coconut Milk/Borgonha Crush",
+          "colorways": [
+            {
+              "colorDescription": "Sail/Cinzento Smoke claro/Coconut Milk/Borgonha Crush",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/02157ab2-d58b-484c-b0bd-e3f785d52f94/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/06248951-0ddb-417f-b786-ee13d88d2a41/sapatilhas-full-force-low-hth4Bp.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-full-force-low-hth4Bp/FZ4629-100",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 87.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 109.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "1cf3198c-7f57-58ec-9941-aa8024ba568b",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014367752",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "423b8190-d074-4bf8-ba4a-7bf868ac4627",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/02157ab2-d58b-484c-b0bd-e3f785d52f94/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/06248951-0ddb-417f-b786-ee13d88d2a41/sapatilhas-full-force-low-hth4Bp.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1014367752",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 87.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 109.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "FOOTWEAR",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Sapatilhas para homem",
+          "title": "Nike Full Force Low",
+          "url": "{countryLang}/t/sapatilhas-full-force-low-hth4Bp/FZ4629-100"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "5c7d365b-5c66-5852-8fec-be4dbfbcff63",
+          "colorDescription": "Azul Diffused/Sail",
+          "colorways": [
+            {
+              "colorDescription": "Azul Diffused/Sail",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/5a0170a8-a1d6-43ea-9eb8-b415d3b2aa98/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/b3657acf-bb7c-4c7f-bed9-57c6667b5d98/sutia-de-desporto-almofadado-de-linha-comprida-de-suporte-ligeiro-zenvy-mulher-6bxBbX.png"
+              },
+              "pdpUrl": "{countryLang}/t/sutia-de-desporto-almofadado-de-linha-comprida-de-suporte-ligeiro-zenvy-mulher-6bxBbX/DO6619-491",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 53.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 59.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "5c7d365b-5c66-5852-8fec-be4dbfbcff63",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1011881723",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "4f1dc39b-c2fa-49d9-b223-c0214107c96a",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/5a0170a8-a1d6-43ea-9eb8-b415d3b2aa98/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/b3657acf-bb7c-4c7f-bed9-57c6667b5d98/sutia-de-desporto-almofadado-de-linha-comprida-de-suporte-ligeiro-zenvy-mulher-6bxBbX.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": true,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1011881723",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 53.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 59.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "APPAREL",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Sutiã de desporto almofadado de linha comprida de suporte ligeiro para mulher",
+          "title": "Nike Zenvy",
+          "url": "{countryLang}/t/sutia-de-desporto-almofadado-de-linha-comprida-de-suporte-ligeiro-zenvy-mulher-6bxBbX/DO6619-491"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "e03086ab-6aa0-56c4-9b94-6a3b37af72e4",
+          "colorDescription": "Dark Stucco/Dark Stucco/Branco Summit",
+          "colorways": [
+            {
+              "colorDescription": "Dark Stucco/Dark Stucco/Branco Summit",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/8b62e746-2b3c-4ce7-9d1d-7d61e7fddb46/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/9fa89b3a-ad20-4a63-bde2-07fd353b7b93/camisola-de-running-dri-fit-com-fecho-ate-meio-trail-kjlf3f.png"
+              },
+              "pdpUrl": "{countryLang}/t/camisola-de-running-dri-fit-com-fecho-ate-meio-trail-kjlf3f/FB7535-053",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 62.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 89.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "e03086ab-6aa0-56c4-9b94-6a3b37af72e4",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014299359",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Anthracite/Preto/Branco",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/aa7687f1-a33f-4348-9369-38126374e99c/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/baa25434-9fcd-4609-97f9-aeff96ac9102/camisola-de-running-dri-fit-com-fecho-ate-meio-trail-kjlf3f.png"
+              },
+              "pdpUrl": "{countryLang}/t/camisola-de-running-dri-fit-com-fecho-ate-meio-trail-kjlf3f/FB7535-060",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 62.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 89.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "418a11a8-a17c-55a6-a9ef-b9bccd6e9260",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1013067825",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "585aae23-a5ae-4e73-9c31-01932412388f",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/8b62e746-2b3c-4ce7-9d1d-7d61e7fddb46/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/9fa89b3a-ad20-4a63-bde2-07fd353b7b93/camisola-de-running-dri-fit-com-fecho-ate-meio-trail-kjlf3f.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": true,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1014299359",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 62.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 89.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "APPAREL",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Camisola de running Dri-FIT com fecho até meio para homem",
+          "title": "Nike Trail",
+          "url": "{countryLang}/t/camisola-de-running-dri-fit-com-fecho-ate-meio-trail-kjlf3f/FB7535-053"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "97f14d26-0803-55ae-9bff-c816e2a292dd",
+          "colorDescription": "Dark Stucco/Castanho Orewood claro/Cosmic Clay/Preto",
+          "colorways": [
+            {
+              "colorDescription": "Dark Stucco/Castanho Orewood claro/Cosmic Clay/Preto",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/9b489664-ce52-48fb-9a61-cd3e6bfbb6cb/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/81198260-3eaa-4bd3-932b-b4f52a0a0371/sapatilhas-de-running-trilhos-pegasus-trail-4-3c1kBt.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-de-running-trilhos-pegasus-trail-4-3c1kBt/DJ6158-007",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 97.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 139.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "97f14d26-0803-55ae-9bff-c816e2a292dd",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014192063",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Azul Thunder/Chlorophyll/Verde Vapor/Azul Armony claro",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/acc7222f-ea1b-40de-b66f-987d269e5c33/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/e6a98e6b-6727-4b87-aac2-d967eab7a532/sapatilhas-de-running-trilhos-pegasus-trail-4-3c1kBt.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-de-running-trilhos-pegasus-trail-4-3c1kBt/DJ6158-403",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 97.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 139.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "2f9f157c-19a9-595d-9a79-b9e728b3c3e0",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014194257",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Phantom/Branco Summit/Castanho Orewood claro",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/edfd3439-18f0-4f79-8545-b3e2ca6919ff/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/bd5c2fad-6563-484f-9012-e323284fe4d2/sapatilhas-de-running-trilhos-pegasus-trail-4-3c1kBt.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-de-running-trilhos-pegasus-trail-4-3c1kBt/DJ6158-008",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 97.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 139.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "33267d0c-f260-5147-b81a-6521b731fb05",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014402196",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Preto/Cinzento escuro/Cinzento Wolf/Aura",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/f233a3a5-ff5d-44cd-a06c-12141596279e/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/ff949353-f7da-4e1c-acab-0ed5424b4e65/sapatilhas-de-running-trilhos-pegasus-trail-4-3c1kBt.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-de-running-trilhos-pegasus-trail-4-3c1kBt/DJ6158-001",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 97.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 139.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "05942f99-7914-568a-a8bd-9b0a16cd96c3",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "13935889",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "f93d2d61-a8ff-4cf2-9459-4b3337684a3c",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/9b489664-ce52-48fb-9a61-cd3e6bfbb6cb/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/81198260-3eaa-4bd3-932b-b4f52a0a0371/sapatilhas-de-running-trilhos-pegasus-trail-4-3c1kBt.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": {
+            "colorDescription": "NBY",
+            "images": {
+              "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/9b489664-ce52-48fb-9a61-cd3e6bfbb6cb/image.jpg",
+              "squarishURL": "https://static.nike.com/a/images/t_default/81198260-3eaa-4bd3-932b-b4f52a0a0371/sapatilhas-de-running-trilhos-pegasus-trail-4-3c1kBt.png"
+            },
+            "pdpUrl": "{countryLang}/u/custom-pegasus-trail-4-by-you-10001754/5003020435",
+            "price": {
+              "currency": null,
+              "currentPrice": 169.99,
+              "discounted": null,
+              "employeePrice": null,
+              "fullPrice": 169.99,
+              "minimumAdvertisedPrice": null
+            }
+          },
+          "pid": "1014192063",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 97.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 139.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "FOOTWEAR",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Sapatilhas de running para trilhos para homem",
+          "title": "Nike Pegasus Trail 4",
+          "url": "{countryLang}/t/sapatilhas-de-running-trilhos-pegasus-trail-4-3c1kBt/DJ6158-007"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "72e942a0-36a9-5754-84a4-f65f9dcffde7",
+          "colorDescription": "Lemonade/Preto",
+          "colorways": [
+            {
+              "colorDescription": "Lemonade/Preto",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/9f23d3eb-84f0-4e3b-9ba8-116e7818ab88/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/4427b4f1-b7a5-4050-b2b4-60e2f67f8bd7/sapatilhas-de-futebol-de-cano-alto-relva-jr-mercurial-superfly-9-academy-junior-Gr7735.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-de-futebol-de-cano-alto-relva-jr-mercurial-superfly-9-academy-junior-Gr7735/DJ5616-700",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 56.49,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 74.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "72e942a0-36a9-5754-84a4-f65f9dcffde7",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014144784",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "0777db33-0f00-4477-bd6f-da6363486376",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/9f23d3eb-84f0-4e3b-9ba8-116e7818ab88/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/4427b4f1-b7a5-4050-b2b4-60e2f67f8bd7/sapatilhas-de-futebol-de-cano-alto-relva-jr-mercurial-superfly-9-academy-junior-Gr7735.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": true,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1014144784",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 56.49,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 74.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "FOOTWEAR",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Sapatilhas de futebol de cano alto para relva para criança/Júnior",
+          "title": "Nike Jr. Mercurial Superfly 9 Academy",
+          "url": "{countryLang}/t/sapatilhas-de-futebol-de-cano-alto-relva-jr-mercurial-superfly-9-academy-junior-Gr7735/DJ5616-700"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "d14d2e4d-cb1b-5ec6-90a2-dffacbaa58fe",
+          "colorDescription": "Lemonade/Preto",
+          "colorways": [
+            {
+              "colorDescription": "Lemonade/Preto",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/7a1c55e4-fc1e-45de-a543-274a9619a7ae/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/736d9d4a-098b-463a-9a1c-6a2c9bc8fa5c/chuteiras-de-futebol-de-perfil-baixo-multiterreno-mercurial-vapor-15-academy-Pqrqr6.png"
+              },
+              "pdpUrl": "{countryLang}/t/chuteiras-de-futebol-de-perfil-baixo-multiterreno-mercurial-vapor-15-academy-Pqrqr6/DJ5631-700",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 59.49,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 84.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "d14d2e4d-cb1b-5ec6-90a2-dffacbaa58fe",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014150231",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Preto/Hyper Royal/Chrome",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/bc8f8da3-6133-4cd4-be8c-ee7055d78baf/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/d82f903a-b154-448d-ba3c-1c2848521018/chuteiras-de-futebol-de-perfil-baixo-multiterreno-mercurial-vapor-15-academy-Pqrqr6.png"
+              },
+              "pdpUrl": "{countryLang}/t/chuteiras-de-futebol-de-perfil-baixo-multiterreno-mercurial-vapor-15-academy-Pqrqr6/DJ5631-040",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 59.49,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 84.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "2d93c580-aa58-51dc-846f-9af4b55ce1a8",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1012328599",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "0d038af1-4853-4660-b9d5-0be220e1c493",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/7a1c55e4-fc1e-45de-a543-274a9619a7ae/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/736d9d4a-098b-463a-9a1c-6a2c9bc8fa5c/chuteiras-de-futebol-de-perfil-baixo-multiterreno-mercurial-vapor-15-academy-Pqrqr6.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": true,
+          "label": "IN_STOCK",
+          "nbyColorway": {
+            "colorDescription": "NBY",
+            "images": {
+              "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/7a1c55e4-fc1e-45de-a543-274a9619a7ae/image.jpg",
+              "squarishURL": "https://static.nike.com/a/images/t_default/736d9d4a-098b-463a-9a1c-6a2c9bc8fa5c/chuteiras-de-futebol-de-perfil-baixo-multiterreno-mercurial-vapor-15-academy-Pqrqr6.png"
+            },
+            "pdpUrl": "{countryLang}/u/custom-mercurial-vapor-15-academy-shoes-by-you-10001681/4622733687",
+            "price": {
+              "currency": null,
+              "currentPrice": 114.99,
+              "discounted": null,
+              "employeePrice": null,
+              "fullPrice": 114.99,
+              "minimumAdvertisedPrice": null
+            }
+          },
+          "pid": "1014150231",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 59.49,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 84.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "FOOTWEAR",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Chuteiras de futebol de perfil baixo multiterreno",
+          "title": "Nike Mercurial Vapor 15 Academy",
+          "url": "{countryLang}/t/chuteiras-de-futebol-de-perfil-baixo-multiterreno-mercurial-vapor-15-academy-Pqrqr6/DJ5631-700"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "7ba64f95-00ba-57f5-af15-3db4c50572e2",
+          "colorDescription": "Preto/Branco/Dourado Coin metalizado",
+          "colorways": [
+            {
+              "colorDescription": "Preto/Branco/Dourado Coin metalizado",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/94044785-1c03-4e43-b04b-15b7395df93a/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/df845283-36ad-4bd0-9741-8599b410fb69/luvas-de-guarda-redes-vapor-grip3-VH8vH2.png"
+              },
+              "pdpUrl": "{countryLang}/t/luvas-de-guarda-redes-vapor-grip3-VH8vH2/FB2999-011",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 107.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 119.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "7ba64f95-00ba-57f5-af15-3db4c50572e2",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1013959487",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "144d0639-d735-48b8-a3d0-36b535fe36af",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/94044785-1c03-4e43-b04b-15b7395df93a/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/df845283-36ad-4bd0-9741-8599b410fb69/luvas-de-guarda-redes-vapor-grip3-VH8vH2.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1013959487",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 107.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 119.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "EQUIPMENT",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Luvas de guarda-redes",
+          "title": "Nike Vapor Grip3",
+          "url": "{countryLang}/t/luvas-de-guarda-redes-vapor-grip3-VH8vH2/FB2999-011"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "bcdeaf9d-badb-5b9d-9eb8-25e4ae0ce143",
+          "colorDescription": "Branco/Preto/Dourado/Preto",
+          "colorways": [
+            {
+              "colorDescription": "Branco/Preto/Dourado/Preto",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/11d17347-2265-45ce-8eb6-a22b0282918a/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/705a4889-d435-4cf7-9e2b-2e400fd62976/bola-de-futebol-academy-CkKSGj.png"
+              },
+              "pdpUrl": "{countryLang}/t/bola-de-futebol-academy-CkKSGj/FB2894-103",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 26.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 29.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "bcdeaf9d-badb-5b9d-9eb8-25e4ae0ce143",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1013962672",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "260a5c92-9c4b-4314-b05b-8481b1c9b525",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/11d17347-2265-45ce-8eb6-a22b0282918a/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/705a4889-d435-4cf7-9e2b-2e400fd62976/bola-de-futebol-academy-CkKSGj.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1013962672",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 26.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 29.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "EQUIPMENT",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Bola de futebol",
+          "title": "Nike Academy",
+          "url": "{countryLang}/t/bola-de-futebol-academy-CkKSGj/FB2894-103"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "1ce92e82-789b-5a7d-a4be-1a83d7ca6463",
+          "colorDescription": "Lemonade/Dourado Coin metalizado/Preto",
+          "colorways": [
+            {
+              "colorDescription": "Lemonade/Dourado Coin metalizado/Preto",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/731b43b6-b42c-4af9-aa52-ddd23087b83f/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/75c8d9b5-dc61-4e33-9a7a-115d1d19654c/sapatilhas-de-futebol-de-perfil-baixo-relva-jr-tiempo-legend-10-academy-junior-R8hmDj.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-de-futebol-de-perfil-baixo-relva-jr-tiempo-legend-10-academy-junior-R8hmDj/DV4351-700",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 48.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 64.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "1ce92e82-789b-5a7d-a4be-1a83d7ca6463",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1013957970",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "2c72e405-4bb7-4e46-9528-d9ae7a1583e1",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/731b43b6-b42c-4af9-aa52-ddd23087b83f/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/75c8d9b5-dc61-4e33-9a7a-115d1d19654c/sapatilhas-de-futebol-de-perfil-baixo-relva-jr-tiempo-legend-10-academy-junior-R8hmDj.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": true,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1013957970",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 48.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 64.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "FOOTWEAR",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Sapatilhas de futebol de perfil baixo para relva para criança/Júnior",
+          "title": "Nike Jr. Tiempo Legend 10 Academy",
+          "url": "{countryLang}/t/sapatilhas-de-futebol-de-perfil-baixo-relva-jr-tiempo-legend-10-academy-junior-R8hmDj/DV4351-700"
+        }
+      ],
+      "pages": {
+        "prev": "/product_feed/rollup_threads/v2?filter=marketplace%28PT%29&filter=language%28pt-PT%29&filter=employeePrice%28true%29&filter=attributeIds%285b21a62a-0503-400c-8336-3ccfbff2a684%29&anchor=0&consumerChannelId=d9a5bc42-4b9c-4976-858a-f159cf99c647&count=24&sort=effectiveStartViewDateDesc",
+        "next": "/product_feed/rollup_threads/v2?filter=marketplace%28PT%29&filter=language%28pt-PT%29&filter=employeePrice%28true%29&filter=attributeIds%285b21a62a-0503-400c-8336-3ccfbff2a684%29&anchor=48&consumerChannelId=d9a5bc42-4b9c-4976-858a-f159cf99c647&count=24&sort=effectiveStartViewDateDesc",
+        "totalPages": 95,
+        "totalResources": 2268,
+        "searchSummary": null
+      },
+      "externalResponses": null,
+      "traceId": "a870bc9092357347, a870bc9092357347"
+    }
+  }
+}

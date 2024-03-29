@@ -176,9 +176,9 @@ def get_nike_params(anchor, count, country_code, lang):
     return {
         "queryid": "products",
         "anonymousId": "B229650DD47D6D94D6EF3C40AEDB9815",
-        "country": "{country_code}",  # "pt"
+        "country": country_code,  # "pt"
         "endpoint": f"/product_feed/rollup_threads/v2?filter=marketplace(PT)&filter=language(pt-PT)&filter=employeePrice(true)&filter=attributeIds(5b21a62a-0503-400c-8336-3ccfbff2a684)&anchor={anchor}&consumerChannelId=d9a5bc42-4b9c-4976-858a-f159cf99c647&count={count}&sort=effectiveStartViewDateDesc",
-        "language": "{lang}",  # "pt-PT"
+        "language": lang,  # "pt-PT"
         "localizedRangeStr": "{lowestPrice} — {highestPrice}",
     }
 
@@ -197,9 +197,18 @@ async def fetch_nike_products_page(url, anchor, count, country_code, lang):
         "api.nike.com",
     )
     params = get_nike_params(anchor, count, country_code, lang)
+
+    # Manually build the full URL for logging/debugging
+    # full_url = f"{url}?{urlencode(params)}"
+    # print(f"Requesting URL: {full_url}")
+
     async with AsyncSession() as session:
         response = await session.get(url, headers=headers, params=params)
+        print(f"response status: {response.status_code}")
         if response.status_code == 200:
+            # json_response = response.json()
+            # print(json_response)  # Print the JSON response
+            # return json_response
             return response.json()  # Return the JSON response
         else:
             print(f"Failed to fetch products: HTTP {response.status_code}")

@@ -54,6 +54,7 @@ class SubscriberResponse(SubscriberBase):
 
 class ProductBase(CustomBaseModel):
     name: str
+    description: str
     country_lang: str
     brand: str
     section: str

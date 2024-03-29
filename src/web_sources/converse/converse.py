@@ -20,7 +20,7 @@ SOURCE_NAME = "converse"
 SOURCE_ID: int = 3
 
 
-async def scrape_converse(db: AsyncSession, start: int = 0):
+async def scrape_converse(db: AsyncSession):
     for entry in CONVERSE_BASE_OUTLET_URLS:
         country_code = entry["hreflang"]
         base_url = entry["url"]

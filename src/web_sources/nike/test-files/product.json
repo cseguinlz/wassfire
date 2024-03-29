@@ -1,0 +1,186 @@
+{
+  "data": {
+    "products": {
+      "errors": null,
+      "products": [
+        {
+          "cardType": "default",
+          "cloudProductId": "5e227e53-f6a7-564e-97d5-2c523ba29bdf",
+          "colorDescription": "Preto",
+          "colorways": [
+            {
+              "colorDescription": "Preto",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3faa00f4-3869-4ded-8084-0f35af29d41c/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/bece315c-6488-427d-b082-1c73e6abbe16/conjunto-de-2-pecas-jordan-home-and-away-shorts-set-qjdflM.png"
+              },
+              "pdpUrl": "{countryLang}/t/conjunto-de-2-pecas-jordan-home-and-away-shorts-set-qjdflM/FQ0851-010",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 34.49,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 42.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "5e227e53-f6a7-564e-97d5-2c523ba29bdf",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1012759243",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "8f62e6a7-951c-4771-8ec3-32efb3945c89",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3faa00f4-3869-4ded-8084-0f35af29d41c/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/bece315c-6488-427d-b082-1c73e6abbe16/conjunto-de-2-pecas-jordan-home-and-away-shorts-set-qjdflM.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1012759243",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 34.49,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 42.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "APPAREL",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Conjunto de 2 peças para bebé",
+          "title": "Jordan Home and Away Shorts Set",
+          "url": "{countryLang}/t/conjunto-de-2-pecas-jordan-home-and-away-shorts-set-qjdflM/FQ0851-010"
+        },
+        {
+          "cardType": "default",
+          "cloudProductId": "fe10ed80-7b01-5fc2-9a5a-06597db8fc94",
+          "colorDescription": "Castanho médio Legend/Legend Coffee/Castanho claro Legend/Castanho escuro Legend",
+          "colorways": [
+            {
+              "colorDescription": "Castanho médio Legend/Legend Coffee/Castanho claro Legend/Castanho escuro Legend",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d1824dca-6d5e-4e01-a1fc-763da80e52e8/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cd057100-873a-454e-8811-bcca6c03d087/sapatilhas-air-jordan-1-high-method-of-make-mulher-GjBCFh.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-air-jordan-1-high-method-of-make-mulher-GjBCFh/FB9891-200",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 111.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 159.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "fe10ed80-7b01-5fc2-9a5a-06597db8fc94",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014290021",
+              "prebuildId": null,
+              "productInstanceId": null
+            },
+            {
+              "colorDescription": "Vermelho Sport/Preto/Sail/Vermelho Dune",
+              "images": {
+                "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e5700856-4bfe-4282-81e1-cd5dee98b658/image.jpg",
+                "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/94f80bf1-d568-47ed-b482-6d459571e4ea/sapatilhas-air-jordan-1-high-method-of-make-mulher-GjBCFh.png"
+              },
+              "pdpUrl": "{countryLang}/t/sapatilhas-air-jordan-1-high-method-of-make-mulher-GjBCFh/FB9891-600",
+              "price": {
+                "currency": "EUR",
+                "currentPrice": 111.99,
+                "discounted": true,
+                "employeePrice": null,
+                "fullPrice": 159.99,
+                "minimumAdvertisedPrice": null
+              },
+              "cloudProductId": "a9afc0bc-7ff0-54e0-8a8f-122f14195b31",
+              "inStock": true,
+              "isComingSoon": false,
+              "isBestSeller": false,
+              "isExcluded": false,
+              "isJPStrikethrough": null,
+              "isLaunch": false,
+              "isMemberExclusive": false,
+              "isNew": false,
+              "label": "IN_STOCK",
+              "pid": "1014289432",
+              "prebuildId": null,
+              "productInstanceId": null
+            }
+          ],
+          "customizable": false,
+          "hasExtendedSizing": false,
+          "id": "1275539b-6fb5-4c93-b7fe-4009b3151638",
+          "images": {
+            "portraitURL": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d1824dca-6d5e-4e01-a1fc-763da80e52e8/image.jpg",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cd057100-873a-454e-8811-bcca6c03d087/sapatilhas-air-jordan-1-high-method-of-make-mulher-GjBCFh.png"
+          },
+          "inStock": true,
+          "isComingSoon": false,
+          "isBestSeller": false,
+          "isExcluded": false,
+          "isGiftCard": false,
+          "isJersey": false,
+          "isJPStrikethrough": null,
+          "isLaunch": false,
+          "isMemberExclusive": false,
+          "isNBA": false,
+          "isNFL": false,
+          "isSustainable": false,
+          "label": "IN_STOCK",
+          "nbyColorway": null,
+          "pid": "1014290021",
+          "prebuildId": null,
+          "price": {
+            "currency": "EUR",
+            "currentPrice": 111.99,
+            "discounted": true,
+            "employeePrice": null,
+            "fullPrice": 159.99,
+            "minimumAdvertisedPrice": null
+          },
+          "productInstanceId": null,
+          "productType": "FOOTWEAR",
+          "properties": null,
+          "salesChannel": ["Nike Store Experiences", "Nike.com", "NikeApp"],
+          "subtitle": "Sapatilhas para mulher",
+          "title": "Air Jordan 1 High Method of Make",
+          "url": "{countryLang}/t/sapatilhas-air-jordan-1-high-method-of-make-mulher-GjBCFh/FB9891-200"
+        }
+      ]
+    }
+  }
+}
