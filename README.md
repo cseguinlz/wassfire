@@ -26,3 +26,6 @@
 
 ### Publish products to Whatsapp task:
 `main.py --> setup_scheduler(app)` --> `scheduler.py --> setup_scheduler(app)` --> `tasks.py --> publish_products_task()` --> `publisher.py --> process_unpublished_products(db: AsyncSession)` --> `whatsapp/service.py --> publish_product_to_whatsapp(product, db: AsyncSession)`
+
+### i18n
+`src/home/routers.py` --> `src/utils.py --> get_translations() --> get_user_locale(request) --> load_translations(locale)` ---> `src/locales/{locales}.json`

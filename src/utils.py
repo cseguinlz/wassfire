@@ -8,8 +8,41 @@ from datetime import datetime, timezone
 from fastapi import Request
 
 
+def setup_logger(name):
+    """
+    Set up and return a logger with the given name.
+    """
+    # Configure the logger
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.INFO)  # or DEBUG, ERROR, etc.
+
+    # Create console handler and set level
+    ch = logging.StreamHandler(sys.stdout)
+    ch.setLevel(logging.INFO)  # or DEBUG, ERROR, etc.
+
+    # Create formatter
+    formatter = logging.Formatter(
+        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    )
+
+    # Add formatter to ch
+    ch.setFormatter(formatter)
+
+    # Add ch to logger
+    if not logger.handlers:
+        logger.addHandler(ch)
+
+    return logger
+
+
+logger = setup_logger(__name__)
+
+
 def get_user_locale(request: Request) -> str:
+    # Get the first locale from the Accept-Language header
     locale = request.headers.get("Accept-Language", "en").split(",")[0]
+    # Split off any quality value and take only the locale part
+    locale = locale.split(";")[0]
     return locale
 
 
@@ -23,6 +56,7 @@ def load_translations(locale: str = None, directory: str = "src/locales"):
     except FileNotFoundError:
         with open(f"{directory}/en.json", "r") as file:
             translations = json.load(file)
+    logger.debug(f"Translations: {translations}")
     return translations
 
 
@@ -52,33 +86,6 @@ def format_euro_currency(value: float, locale_str: str = "es_ES.UTF-8") -> str:
     except (locale.Error, ValueError) as e:
         print(f"Error formatting currency: {e}")
         return str(value)
-
-
-def setup_logger(name):
-    """
-    Set up and return a logger with the given name.
-    """
-    # Configure the logger
-    logger = logging.getLogger(name)
-    logger.setLevel(logging.INFO)  # or DEBUG, ERROR, etc.
-
-    # Create console handler and set level
-    ch = logging.StreamHandler(sys.stdout)
-    ch.setLevel(logging.INFO)  # or DEBUG, ERROR, etc.
-
-    # Create formatter
-    formatter = logging.Formatter(
-        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-    )
-
-    # Add formatter to ch
-    ch.setFormatter(formatter)
-
-    # Add ch to logger
-    if not logger.handlers:
-        logger.addHandler(ch)
-
-    return logger
 
 
 async def convert_price_to_float(price_str):
