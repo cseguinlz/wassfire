@@ -23,3 +23,6 @@
 `alembic revision --autogenerate -m "some comment"`
 - 4: Review update script in `alembic/versions` and modify if needed
 - 5: Update DB schema: `alembic upgrade head`
+
+### Publish products to Whatsapp task:
+`main.py --> setup_scheduler(app)` --> `scheduler.py --> setup_scheduler(app)` --> `tasks.py --> publish_products_task()` --> `publisher.py --> process_unpublished_products(db: AsyncSession)` --> `whatsapp/service.py --> publish_product_to_whatsapp(product, db: AsyncSession)`
