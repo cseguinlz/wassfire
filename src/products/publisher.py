@@ -5,6 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.config import settings
 from src.products.service import get_unpublished_products
+from src.products.url_shortener import shorten_url_with_tly
 from src.utils import calculate_publish_delay, setup_logger
 from src.whatsapp.service import publish_product_to_whatsapp
 
@@ -22,6 +23,16 @@ async def process_unpublished_products(db: AsyncSession):
     for product in unpublished_products:
         try:
             if product.discount_percentage >= settings.DISCOUNT_THRESHOLD:
+                product.short_url = await shorten_url_with_tly(
+                    product.product_link,
+                    product.description,
+                    [
+                        product.brand,
+                        product.category,
+                        product.country_lang,
+                        product.section,
+                    ],
+                )
                 await publish_product_to_whatsapp(product, db)
                 await asyncio.sleep(delay_seconds)
         except Exception as e:

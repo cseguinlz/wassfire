@@ -84,7 +84,6 @@ async def parse_nike_products(json_data, country_lang):
 
         color_description = product.get("colorDescription", "").split("/")
         squarish_url = product.get("images", {}).get("squarishURL", "")
-
         product_details = {
             "source_id": SOURCE_ID,
             "name": title,
@@ -99,10 +98,8 @@ async def parse_nike_products(json_data, country_lang):
             "original_price": full_price,
             "sale_price": current_price,
             "product_link": product_url,
-            "short_url": "wass.promo/something",
             "image_url": squarish_url,
         }
-
         products.append(product_details)
 
     return products

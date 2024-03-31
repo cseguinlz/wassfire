@@ -5,7 +5,6 @@ from decimal import ROUND_HALF_UP, Decimal
 from bs4 import BeautifulSoup
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from src.config import settings
 from src.products import service
 from src.utils import setup_logger
 from src.web_sources.carhartt.urls import CARHARTT_BASE_OUTLET_URLS
@@ -91,29 +90,24 @@ async def parse_page(html_content: str, country_code: str):
                 ".color-swatches-overlay .product-cell-swatches li"
             )
         ]
-        # Check if the product meets the discount threshold before adding
-        if discount_percentage >= settings.DISCOUNT_THRESHOLD:
-            # short_url = await shorten_url_with_tly(product_link, name, [BRAND])
-            short_url = "wass.promo/something"
-            products.append(
-                {
-                    "source_id": SOURCE_ID,
-                    "name": name,
-                    "country_lang": country_code,
-                    "brand": BRAND,
-                    "section": "",  # Section is not defined in the provided HTML, may need to adapt based on actual use
-                    "category": "",  # Similarly, category is not directly available
-                    "type": "",  # Type information is also not available in the HTML snippet
-                    "color": ", ".join(color_variations),
-                    "discount_percentage": discount_percentage,
-                    "original_price": original_price_float,
-                    "sale_price": sale_price_float,
-                    "product_link": product_link,
-                    "short_url": short_url,
-                    "image_url": image_url,
-                    "second_image_url": "",  # Second image URL extraction logic needs adaptation if available
-                    "source_published_at": datetime.now(),  # Placeholder for actual published date if available
-                }
-            )
+        products.append(
+            {
+                "source_id": SOURCE_ID,
+                "name": name,
+                "country_lang": country_code,
+                "brand": BRAND,
+                "section": "",  # Section is not defined in the provided HTML, may need to adapt based on actual use
+                "category": "",  # Similarly, category is not directly available
+                "type": "",  # Type information is also not available in the HTML snippet
+                "color": ", ".join(color_variations),
+                "discount_percentage": discount_percentage,
+                "original_price": original_price_float,
+                "sale_price": sale_price_float,
+                "product_link": product_link,
+                "image_url": image_url,
+                "second_image_url": "",  # Second image URL extraction logic needs adaptation if available
+                "source_published_at": datetime.now(),  # Placeholder for actual published date if available
+            }
+        )
 
     return products

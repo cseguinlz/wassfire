@@ -13,7 +13,7 @@ ADIDAS_BASE_OUTLET_URLS = [
                 "category": "Ropa",
                 "url": "https://www.adidas.es/ropa-hombre-outlet",
             },
-            """ {
+            {
                 "section": "HOMBRE",
                 "category": "Sudaderas",
                 "url": "https://www.adidas.es/hoodies|sudaderas-hombre-outlet",
@@ -257,7 +257,7 @@ ADIDAS_BASE_OUTLET_URLS = [
                 "section": "COLECCIONES",
                 "category": "Adilette",
                 "url": "https://www.adidas.es/adilette-outlet",
-            }, """,
+            },
         ],
     },
     {
@@ -269,7 +269,7 @@ ADIDAS_BASE_OUTLET_URLS = [
                 "category": "Calçado",
                 "url": "https://www.adidas.pt/calcado-homem-outlet",
             },
-            """ {
+            {
                 "section": "HOMEM",
                 "category": "Vestuário",
                 "url": "https://www.adidas.pt/roupa-homem-outlet",
@@ -518,7 +518,7 @@ ADIDAS_BASE_OUTLET_URLS = [
                 "section": "COLEÇÕES",
                 "category": "Adilette",
                 "url": "https://www.adidas.pt/adilette,outlet",
-            }, """
+            },
         ],
     },
 ]

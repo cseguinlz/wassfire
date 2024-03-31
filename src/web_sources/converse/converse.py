@@ -153,9 +153,6 @@ async def parse_converse_page(html_content: str, country_code: str):
                 category = mapped_category
                 break
 
-        # Placeholder URLs and other informationg
-        short_url = "wass.promo/something"
-
         products.append(
             {
                 "source_id": SOURCE_ID,  # Adjust based on actual source ID system
@@ -166,7 +163,6 @@ async def parse_converse_page(html_content: str, country_code: str):
                 "category": category,
                 "color": ", ".join(color_variations),
                 "product_link": product_link,
-                "short_url": short_url,
                 "image_url": image_url,
                 "original_price": original_price,
                 "sale_price": sale_price,

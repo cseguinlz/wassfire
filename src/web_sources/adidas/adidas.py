@@ -8,9 +8,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from src.config import settings
 from src.products import service
-from src.products.url_shortener import shorten_url_with_tly
 from src.utils import setup_logger
 from src.web_sources.adidas.urls import ADIDAS_BASE_OUTLET_URLS
 from src.web_sources.utils import (
@@ -53,50 +51,41 @@ async def parse_page(html_content: str, country_code: str, section: str):
                     discount_percentage = parse_percentage(
                         item.get("salePercentage", "")
                     )
-                    # save only those > DISCOUNT_THRESHOLD
-                    if discount_percentage >= settings.DISCOUNT_THRESHOLD:
-                        logger.info(f"Discount: {discount_percentage*100:.2f}%")
-                        # get centered image:
-                        images = item.get("images", [])
-                        side_lateral_center_view_url = find_image_with_view(
-                            images, "Side Lateral Center View"
-                        )
-                        full_product_link = get_full_product_link(
-                            country_code, item.get("link", "")
-                        )
-                        category = item.get("category", "")
-                        type = item.get("sport", "")
-                        description = item.get("altText", "")
-                        # Create short url and tags for tl.y analitics
-                        tags = [BRAND, section, category, type]
-                        short_url = await shorten_url_with_tly(
-                            full_product_link, description, tags
-                        )
-                        logger.info(f"Short link: {short_url}")
-                        products.append(
-                            {
-                                "source_id": SOURCE_ID,
-                                "name": description,
-                                "country_lang": country_code,
-                                "brand": BRAND,
-                                "section": section,
-                                "category": category,
-                                "type": type,
-                                "color": "",  # NO color, only custom code: "colorVariations": ["HP5522", "HP5523"],
-                                "discount_percentage": discount_percentage,
-                                "original_price": parse_float(item.get("price", "")),
-                                "sale_price": parse_float(item.get("salePrice", "")),
-                                "product_link": f"{full_product_link}",
-                                "short_url": short_url,
-                                "image_url": side_lateral_center_view_url,
-                                "second_image_url": item.get("secondImage", {}).get(
-                                    "src", ""
-                                ),
-                                "source_published_at": datetime.fromisoformat(
-                                    item.get("onlineFrom", "").rstrip("Z")
-                                ),
-                            }
-                        )
+                    # get centered image:
+                    images = item.get("images", [])
+                    side_lateral_center_view_url = find_image_with_view(
+                        images, "Side Lateral Center View"
+                    )
+                    full_product_link = get_full_product_link(
+                        country_code, item.get("link", "")
+                    )
+                    category = item.get("category", "")
+                    type = item.get("sport", "")
+                    description = item.get("altText", "")
+                    products.append(
+                        {
+                            "source_id": SOURCE_ID,
+                            "name": description,
+                            "description": description,
+                            "country_lang": country_code,
+                            "brand": BRAND,
+                            "section": section,
+                            "category": category,
+                            "type": type,
+                            "color": "",  # NO color, only custom code: "colorVariations": ["HP5522", "HP5523"],
+                            "discount_percentage": discount_percentage,
+                            "original_price": parse_float(item.get("price", "")),
+                            "sale_price": parse_float(item.get("salePrice", "")),
+                            "product_link": f"{full_product_link}",
+                            "image_url": side_lateral_center_view_url,
+                            "second_image_url": item.get("secondImage", {}).get(
+                                "src", ""
+                            ),
+                            "source_published_at": datetime.fromisoformat(
+                                item.get("onlineFrom", "").rstrip("Z")
+                            ),
+                        }
+                    )
                 break  # Exit after processing the correct script tag
 
     return products, total_count, view_size
