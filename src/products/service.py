@@ -5,7 +5,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 
-from src.models import Product, Source
+from src.models import PriceHistory, Product, Source
 from src.utils import get_utc_time, setup_logger
 
 logger = setup_logger(__name__)
@@ -78,35 +78,56 @@ async def create_or_update_product(
         product_data["source_id"] = source_id
     product_link = product_data.get("product_link")
     if product_link:
-        # Query for an existing product by its unique link
         existing_product_query = await db.execute(
             select(Product).filter_by(product_link=product_link)
         )
         existing_product = existing_product_query.scalars().first()
 
-        # If the product exists, update its details
         if existing_product:
+            # Record a price change if there's a difference
+            price_or_discount_changed = (
+                existing_product.discount_percentage
+                != product_data.get("discount_percentage")
+                or existing_product.original_price != product_data.get("original_price")
+                or existing_product.sale_price != product_data.get("sale_price")
+            )
+            if price_or_discount_changed:
+                price_history_record = PriceHistory(
+                    product_id=existing_product.id,
+                    discount_percentage=product_data.get("discount_percentage"),
+                    original_price=product_data.get("original_price"),
+                    sale_price=product_data.get("sale_price"),
+                )
+                db.add(price_history_record)
+                print(f"Recorded price change for product: {product_link}")
+
+            # Update the product with the new details
             existing_product.discount_percentage = product_data.get(
-                "discount_percentage", existing_product.discount_percentage
+                "discount_percentage"
             )
-            existing_product.original_price = product_data.get(
-                "original_price", existing_product.original_price
-            )
-            existing_product.sale_price = product_data.get(
-                "sale_price", existing_product.sale_price
-            )
-            existing_product.updated_at = get_utc_time()
+            existing_product.original_price = product_data.get("original_price")
+            existing_product.sale_price = product_data.get("sale_price")
 
             await db.commit()
             print(f"Updated existing product: {product_link}")
             return existing_product
 
-    # If the product does not exist, create a new one
+    # If the product does not exist, create a new one and its initial price history record
     new_product = Product(**product_data)
     db.add(new_product)
     await db.commit()
     await db.refresh(new_product)
-    print(f"Created new product: {product_link}")
+
+    price_history_record = PriceHistory(
+        product_id=new_product.id,
+        discount_percentage=product_data.get("discount_percentage"),
+        original_price=product_data.get("original_price"),
+        sale_price=product_data.get("sale_price"),
+    )
+    db.add(price_history_record)
+    await db.commit()
+
+    print(f"Created new product and recorded its price: {product_link}")
     return new_product
 
 

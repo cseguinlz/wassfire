@@ -8,6 +8,7 @@ from sqlalchemy import (
     String,
     func,
 )
+from sqlalchemy.orm import relationship
 
 from src.database import Base
 
@@ -47,6 +48,26 @@ class Product(Base):
         DateTime(timezone=True), server_default=func.now(), nullable=False
     )
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+
+
+class PriceHistory(Base):
+    __tablename__ = "price_history"
+    id = Column(Integer, primary_key=True, index=True)
+    product_id = Column(Integer, ForeignKey("products.id"), nullable=False)
+    discount_percentage = Column(Float, nullable=True)
+    original_price = Column(Float, nullable=True)
+    sale_price = Column(Float, nullable=True)
+    recorded_at = Column(
+        DateTime(timezone=True), server_default=func.now(), nullable=False
+    )
+
+    product = relationship("Product", back_populates="price_history")
+
+
+# Establish the relationship.
+Product.price_history = relationship(
+    "PriceHistory", order_by=PriceHistory.id, back_populates="product"
+)
 
 
 class Source(Base):

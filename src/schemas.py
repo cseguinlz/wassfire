@@ -1,7 +1,7 @@
 # pydantic models
 
 from datetime import datetime, timezone
-from typing import Optional
+from typing import List, Optional
 
 from pydantic import BaseModel
 
@@ -72,6 +72,17 @@ class ProductBase(CustomBaseModel):
     second_image_url: str
 
 
+class PriceHistoryBase(CustomBaseModel):
+    discount_percentage: Optional[float] = None
+    original_price: float
+    sale_price: float
+    recorded_at: datetime
+
+
+class PriceHistoryResponse(PriceHistoryBase):
+    id: int
+
+
 class ProductCreate(ProductBase):
     source_id: Optional[int] = None
 
@@ -81,6 +92,9 @@ class ProductResponse(ProductBase):
     source_id: int
     created_at: datetime
     updated_at: Optional[datetime] = None
+    price_history: List[
+        PriceHistoryResponse
+    ] = []  # Assuming you want to include price history in your product responses
 
     class Config:
         from_attributes = True
