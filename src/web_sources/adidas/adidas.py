@@ -92,7 +92,7 @@ async def parse_page(html_content: str, country_code: str, section: str):
 
 
 async def scrape_and_save_products(
-    url: str, country_code: str, section: str, db: AsyncSession
+    url: str, country_code: str, section: str, category: str, db: AsyncSession
 ):
     response = await fetch_page(
         url,
@@ -110,7 +110,9 @@ async def scrape_and_save_products(
             await service.create_or_update_product(
                 db=db, product_data=product_data, source_name="adidas"
             )  # Save each product
-        print(f"Saved {len(products)} products for {section} in {country_code}.")
+        print(
+            f"Saved {len(products)} products for {section}-{category} in {country_code}."
+        )
 
         # Your existing logic to handle products...
         return total_count, view_size
@@ -132,7 +134,11 @@ async def scrape_adidas(db: AsyncSession, start: int = 0):
                 f"{encoded_base_url}?start={start}" if start > 0 else base_url
             )
             total_count, view_size = await scrape_and_save_products(
-                paginated_url, country_code, category["section"], db
+                paginated_url,
+                country_code,
+                category["section"],
+                category["category"],
+                db,
             )
 
             if total_count > 0 and view_size > 0:
@@ -141,7 +147,11 @@ async def scrape_adidas(db: AsyncSession, start: int = 0):
                     start_param = page * view_size
                     next_page_url = f"{encoded_base_url}?start={start_param}"
                     await scrape_and_save_products(
-                        next_page_url, country_code, category["section"], db
+                        next_page_url,
+                        country_code,
+                        category["section"],
+                        category["category"],
+                        db,
                     )
 
 

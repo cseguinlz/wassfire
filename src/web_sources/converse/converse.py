@@ -33,7 +33,7 @@ async def scrape_and_save_products(url: str, country_code: str, db: AsyncSession
     size = 60  # Max Number of products to fetch
     max_start = 180
     while start <= max_start:
-        response = await fetch_converse_products_page(url, start, size)
+        response = await fetch_converse_products_page(url, start, size, country_code)
         # Only for testing purpuses
         # await write_response_to_file(response.text, "test_converse_response.html")
         if response.status_code == 200:

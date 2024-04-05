@@ -82,7 +82,12 @@ async def parse_nike_products(json_data, country_lang):
             full_price = 0.0
             discount_percentage = 0.0
 
-        color_description = product.get("colorDescription", "").split("/")
+        color_description_raw = product.get("colorDescription")
+        if color_description_raw is None:
+            color_description = ""
+        else:
+            color_descriptions = color_description_raw.split("/")
+            color_description = ", ".join(color_descriptions)
         squarish_url = product.get("images", {}).get("squarishURL", "")
         product_details = {
             "source_id": SOURCE_ID,
@@ -106,11 +111,7 @@ async def parse_nike_products(json_data, country_lang):
 
 
 def format_product_url(product_url, country_lang="en"):
-    print(
-        f"Original pdpUrl: {product_url}, country_lang: {country_lang}"
-    )  # Debugging line
     if "{countryLang}" in product_url:
         product_url = product_url.replace("{countryLang}", country_lang)
     full_url = f"{BASE_URL}{product_url}"
-    print(f"Formatted URL: {full_url}")  # Debugging line
     return full_url

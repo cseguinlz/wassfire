@@ -65,11 +65,6 @@ ADIDAS_BASE_OUTLET_URLS = [
             },
             {
                 "section": "MUJER",
-                "category": "Todos los productos",
-                "url": "https://www.adidas.es/mujer-outlet",
-            },
-            {
-                "section": "MUJER",
                 "category": "Calzado",
                 "url": "https://www.adidas.es/calzado-mujer-outlet",
             },

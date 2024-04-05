@@ -145,7 +145,9 @@ async def fetch_ajax_carhartt_content(url: str):
         return response
 
 
-async def fetch_converse_products_page(url: str, start: int, size: int):
+async def fetch_converse_products_page(
+    url: str, start: int, size: int, country_code: str
+):
     """
     Fetches a page of products from the Converse website using AJAX-like request.
 
@@ -157,7 +159,7 @@ async def fetch_converse_products_page(url: str, start: int, size: int):
     """
     # Update the URL with the query parameters for pagination
     params = {
-        "lang": "es_ES",
+        "lang": {country_code},
         "srule": "top-sellers",
         "start": {start},
         "sz": {size},
