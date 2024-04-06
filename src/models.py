@@ -41,7 +41,7 @@ class Product(Base):
     source_published_at = Column(DateTime(timezone=True), nullable=True)
     published_at = Column(DateTime(timezone=True), nullable=True)
     image_url = Column(
-        String
+        String, nullable=False
     )  # TODO: Needs to get image, upload to cheap storage (aws) and link it here
     second_image_url = Column(String, nullable=True)
     created_at = Column(
