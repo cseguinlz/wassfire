@@ -6,6 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.config import settings
 from src.products.service import get_unpublished_products
+from src.products.url_shortener import shorten_url_with_tly
 from src.utils import setup_logger
 from src.whatsapp.service import publish_product_to_whatsapp
 
@@ -22,8 +23,8 @@ async def process_unpublished_products(db: AsyncSession) -> int:
     for index, product in enumerate(unpublished_products):
         try:
             if product.discount_percentage >= settings.DISCOUNT_THRESHOLD:
-                product.short_url = "wass.promo/something"
-                """ product.short_url = await shorten_url_with_tly(
+                # product.short_url = "wass.promo/something"
+                product.short_url = await shorten_url_with_tly(
                     product.product_link,
                     product.description,
                     [
@@ -32,7 +33,7 @@ async def process_unpublished_products(db: AsyncSession) -> int:
                         product.country_lang,
                         product.section,
                     ],
-                ) """
+                )
                 await publish_product_to_whatsapp(product, db)
                 # Only wait if this is not the last product
                 if index < len(unpublished_products) - 1:
