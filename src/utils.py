@@ -98,24 +98,6 @@ async def convert_price_to_float(price_str):
 def get_utc_time():
     return datetime.now(timezone.utc)
 
-
-def calculate_publish_delay(product_count: int, total_time_seconds: int) -> float:
-    """
-    Calculate a random delay within a specified range between publishing each product to ensure
-    all products are published within the specified total time while adhering to the min and max delay limits.
-
-    :param product_count: The total number of products to publish.
-    :param total_time_seconds: The total time in seconds within which all products should be published.
-    :return: The delay in seconds between publishing each product.
-    """
-    if product_count > 1:
-        # Calculate the maximum delay as the total time divided by the number of intervals
-        max_delay = total_time_seconds / max(1, product_count - 1)
-        min_delay = 2
-    # Generate a random delay within the min and dynamically calculated max range
-    return random.uniform(min_delay, max_delay)
-
-
 def format_discount_percentage(discount: float) -> str:
     """
     Formats a discount given as a float (e.g., 0.55 for 55% discount)

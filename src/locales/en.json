@@ -62,5 +62,5 @@
   "config": {
     "whatsapp_channel": "https://whatsapp.com/channel/0029VaI8mEM65yDHPOfp362q"
   },
-  "whatsapp_message": "🔥 *{discount_percentage}* discount! - {brand}\n🎁 {name}\n💰 Was {original_price}. Now at {sale_price}!\n👉🏼 Buy it directly from {brand}: {short_url}"
+  "whatsapp_message": "\n🔥 *{discount_percentage}* discount! - {brand}\n\n🎁 {name}\n💰 Was {original_price}. Now at {sale_price}!\n👉🏼 Buy it directly from {brand}: {short_url}"
 }

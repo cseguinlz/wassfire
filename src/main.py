@@ -9,6 +9,7 @@ from src.home.routers import router as home_router
 from src.products.routers import router as product_router
 
 # from src.scheduler import setup_scheduler
+from src.scheduler import setup_scheduler
 from src.web_sources.routers import router as web_sources_router
 from src.whatsapp.routers import router as whatsapp_router
 
@@ -30,7 +31,7 @@ def health_check():
 
 
 # Setup scheduled tasks
-# setup_scheduler(app)
+setup_scheduler(app)
 
 # routers
 app.include_router(product_router, prefix="/api/v1", tags=["crud"])

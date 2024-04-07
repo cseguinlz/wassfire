@@ -63,5 +63,5 @@
   "config": {
     "whatsapp_channel": "https://whatsapp.com/channel/0029VaI8mEM65yDHPOfp362q"
   },
-  "whatsapp_message": "🔥 *{discount_percentage}* descuento! - {brand}\n🎁 {name}\n💰 Eran {original_price}. ¡Ahora a {sale_price}!\n👉🏼 Cómpralo directamente en {brand}: {short_url}"
+  "whatsapp_message": "\n🔥 *{discount_percentage}* descuento! - {brand}\n\n🎁 {name}\n💰 Eran {original_price}. ¡Ahora a {sale_price}!\n👉🏼 Cómpralo directamente en {brand}: {short_url}"
 }

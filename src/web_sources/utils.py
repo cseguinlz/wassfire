@@ -1,3 +1,4 @@
+import base64
 from urllib.parse import quote
 
 import aiofiles
@@ -172,6 +173,18 @@ async def fetch_converse_products_page(
     async with AsyncSession() as session:
         response = await session.get(url, params=params, headers=headers)
         return response
+
+
+async def get_base64_image(url):
+    headers = get_common_headers(url, "www.converse.com")
+
+    async with AsyncSession() as session:
+        response = await session.get(url, headers=headers)
+    if response.status_code == 200:
+        # Convert the binary content to a base64-encoded string
+        return base64.b64encode(response.content).decode("utf-8")
+    else:
+        return None
 
 
 def get_nike_params(anchor, count, country_code, lang):

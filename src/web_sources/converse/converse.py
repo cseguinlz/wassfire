@@ -83,7 +83,7 @@ async def parse_converse_page(html_content: str, country_code: str):
         name = name_section["title"] if name_section else "No Name Found"
         product_link = name_section["href"] if name_section else ""
 
-        # For image URL, assuming the main image is what we want
+        # For image URL, the main image is what we want
         image_url_data = product_tile.select_one("img[data-src]")
         image_url = image_url_data["data-src"] if image_url_data else ""
         # Extracting pricing information

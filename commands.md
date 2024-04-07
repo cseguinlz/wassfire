@@ -24,3 +24,6 @@
 
 **Optimize images:**
 `cwebp [options] -q quality input.png -o output.webp`
+
+**Get whatsapp channel id from web.whatsapp.com**
+`document.querySelector("[data-id*='@newsletter']").getAttribute("data-id").split("_")`

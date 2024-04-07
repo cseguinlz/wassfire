@@ -11,6 +11,7 @@ from src.utils import (
     load_translations,
     setup_logger,
 )
+from src.web_sources.utils import get_base64_image
 
 logger = setup_logger(__name__)
 
@@ -18,15 +19,27 @@ logger = setup_logger(__name__)
 async def publish_product_to_whatsapp(product, db: AsyncSession):
     logger.info(f"Publishing product {product.id}...")
     url = f"{settings.WHAPI_BASE_URL}/messages/image"
+    if product.brand.lower() == "converse":
+        # Attempt to fetch and encode the image as base64
+        image = await get_base64_image(product.image_url)
+        if image:
+            # If successfully obtained the base64 image, return it
+            image = f"data:image/jpeg;base64,{image}"
+        else:
+            # Fallback in case fetching or encoding fails
+            image = product.image_url
+    else:
+        # For non-Converse brands, use the image URL directly
+        image = product.image_url
 
     # Extract locale from the product's country_lang field
-    locale = product.country_lang.split("_")[0]
+    locale = product.country_lang.split("-")[0]
+    country = product.country_lang.split("-")[1]
     translations = load_translations(locale)
-
     payload = {
-        "to": determine_channel(locale),
+        "to": determine_channel(country),
         "caption": format_message(product, translations),
-        "media": product.image_url,
+        "media": image,
         "mime_type": "image/jpeg",
         "width": 500,
         "height": 500,
@@ -50,17 +63,19 @@ async def publish_product_to_whatsapp(product, db: AsyncSession):
         logger.error(f"HTTP request failed for product {product.id}: {http_error}")
 
 
-def determine_channel(locale):
+def determine_channel(country):
     # Assuming there's a way to check if it's a test environment
     is_test = settings.ENVIRONMENT.is_debug
-
-    # Mapping logic based on locale
-    if locale == "es":
+    print(f"determine_channel: {country}")
+    # Mapping logic based on country
+    if country == "ES":
+        print(f"Channel ES: {settings.TEST_CHANNEL_ES}")
         return settings.TEST_CHANNEL_ES if is_test else settings.WHATSAPP_CHANNEL_ES
-    elif locale == "pt":
+    elif country == "PT":
+        print(f"Channel PT: {settings.TEST_CHANNEL_PT}")
         return settings.TEST_CHANNEL_PT if is_test else settings.WHATSAPP_CHANNEL_PT
 
-    # Default channel or error handling if locale is not recognized
+    # Default channel or error handling if country is not recognized
     return (
         settings.TEST_CHANNEL_ES if is_test else settings.WHATSAPP_CHANNEL_ES
     )  # or any other default action

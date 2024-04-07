@@ -1,10 +1,12 @@
 # crud.py
 
-from sqlalchemy import update
+
+from sqlalchemy import text, update
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 
+from src.config import settings
 from src.models import PriceHistory, Product, Source
 from src.utils import get_utc_time, setup_logger
 
@@ -131,13 +133,48 @@ async def create_or_update_product(
     return new_product
 
 
-async def get_unpublished_products(db: AsyncSession):
+async def get_unpublished_products(db: AsyncSession, country_lang: str):
     """
-    Queries the database for products that have not been published yet
+    Queries the database for a specific number of unpublished products for a given locale,
+    ensuring a variety of brands using a complex SQL query.
     """
-    query = select(Product).filter(Product.published_at.is_(None))
-    result = await db.execute(query)
-    products = result.scalars().all()
+    sql_query = text(
+        """
+    WITH unique_brands AS (
+        SELECT DISTINCT ON (brand) id
+        FROM products
+        WHERE published_at IS NULL
+          AND country_lang = :country_lang
+          AND discount_percentage >= :discount_threshold
+        ORDER BY brand, RANDOM()
+        LIMIT :limit
+    ), additional_products AS (
+        SELECT p.id
+        FROM products p
+        WHERE NOT EXISTS (SELECT 1 FROM unique_brands ub WHERE ub.id = p.id)
+          AND published_at IS NULL
+          AND country_lang = :country_lang
+          AND discount_percentage >= :discount_threshold
+        ORDER BY RANDOM()
+        LIMIT (:limit - (SELECT COUNT(*) FROM unique_brands))
+    )
+    SELECT * FROM products
+    WHERE id IN (SELECT id FROM unique_brands UNION ALL SELECT id FROM additional_products);
+    """
+    )
+
+    # Executing the complex SQL query
+    result = await db.execute(
+        sql_query,
+        {
+            "country_lang": country_lang,
+            "discount_threshold": settings.DISCOUNT_THRESHOLD,
+            "limit": settings.PRODUCTS_TO_PUBLISH,
+        },
+    )
+    # Directly map the SQL results to Product instances
+    products = [Product(**row) for row in result.mappings().all()]
+
     return products
 
 
