@@ -113,6 +113,10 @@ def get_full_product_link(country_lang, product_link):
     base_url = BASE_URL_MAPPING.get(
         country_lang, "https://www.adidas.com"
     )  # Default to .com if not found
+    if not product_link:
+        # in case no link, at least we show up as a traffic source and give something to the user
+        return f"{base_url}/outlet"
+
     return f"{base_url}{product_link}{settings.LEAD_SOURCE}"
 
 
