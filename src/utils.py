@@ -1,7 +1,6 @@
 import json
 import locale
 import logging
-import random
 import sys
 from datetime import datetime, timezone
 
@@ -84,7 +83,7 @@ def format_euro_currency(value: float, locale_str: str = "es_ES.UTF-8") -> str:
         locale.setlocale(locale.LC_ALL, current_locale)
         return formatted_value
     except (locale.Error, ValueError) as e:
-        print(f"Error formatting currency: {e}")
+        logger.debug(f"Error formatting currency: {e}")
         return str(value)
 
 
@@ -97,6 +96,7 @@ async def convert_price_to_float(price_str):
 
 def get_utc_time():
     return datetime.now(timezone.utc)
+
 
 def format_discount_percentage(discount: float) -> str:
     """

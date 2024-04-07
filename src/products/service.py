@@ -101,7 +101,7 @@ async def create_or_update_product(
                     sale_price=product_data.get("sale_price"),
                 )
                 db.add(price_history_record)
-                print(f"Recorded price change for product: {product_link}")
+                logger.info(f"Recorded price change for product: {product_link}")
 
             # Update the product with the new details
             existing_product.discount_percentage = product_data.get(
@@ -111,7 +111,7 @@ async def create_or_update_product(
             existing_product.sale_price = product_data.get("sale_price")
 
             await db.commit()
-            print(f"Updated existing product: {product_link}")
+            logger.info(f"Updated existing product: {product_link}")
             return existing_product
 
     # If the product does not exist, create a new one and its initial price history record
@@ -129,7 +129,7 @@ async def create_or_update_product(
     db.add(price_history_record)
     await db.commit()
 
-    print(f"Created new product and recorded its price: {product_link}")
+    logger.info(f"Created new product and recorded its price: {product_link}")
     return new_product
 
 
@@ -188,4 +188,4 @@ async def queue_product_as_published(db: AsyncSession, product_id: int):
         )
     except SQLAlchemyError as e:
         await db.rollback()
-        print(f"Database update failed: {e}")
+        logger.debug(f"Database update failed: {e}")

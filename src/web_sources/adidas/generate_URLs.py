@@ -3,7 +3,10 @@ import json
 
 from bs4 import BeautifulSoup
 
+from src.utils import setup_logger
 from src.web_sources.utils import fetch_page
+
+logger = setup_logger(__name__)
 
 
 async def extract_json_data(url: str):
@@ -20,7 +23,7 @@ async def extract_json_data(url: str):
             )  # Use .string to get the content of the tag
             return json_data
     else:
-        print(f"Failed to fetch the page: Status code {response.status_code}")
+        logger.debug(f"Failed to fetch the page: Status code {response.status_code}")
     return None
 
 
@@ -49,7 +52,7 @@ async def generate_urls(url: str, base_url: str):
 
     relevant_flyout_node = json_data["desktopData"][6]
     if not relevant_flyout_node:
-        print("Relevant flyout node not found.")
+        logger.debug("Relevant flyout node not found.")
         return []
 
     return await parse_category_links_from_flyout(relevant_flyout_node, base_url)
@@ -60,7 +63,7 @@ async def main():
     base_url = "https://www.adidas.pt"
     category_links = await generate_urls(url, base_url)
     for link in category_links:
-        print(link)
+        logger.debug(link)
 
 
 if __name__ == "__main__":

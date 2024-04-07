@@ -8,7 +8,10 @@ from sqlalchemy import select
 
 from src.config import settings
 from src.models import Product
+from src.utils import setup_logger
 from src.web_sources.config import BASE_URL_MAPPING
+
+logger = setup_logger(__name__)
 
 
 # Common headers used for HTTP requests
@@ -219,14 +222,13 @@ async def fetch_nike_products_page(url, anchor, count, country_code, lang):
 
     async with AsyncSession() as session:
         response = await session.get(url, headers=headers, params=params)
-        print(f"response status: {response.status_code}")
         if response.status_code == 200:
             # json_response = response.json()
             # print(json_response)  # Print the JSON response
             # return json_response
             return response.json()  # Return the JSON response
         else:
-            print(f"Failed to fetch products: HTTP {response.status_code}")
+            logger.debug(f"Failed to fetch products: HTTP {response.status_code}")
             return None
 
 

@@ -39,19 +39,19 @@ async def scrape_and_save_products(url: str, country_lang: str, db: AsyncSession
             or "products" not in products_json["data"]
             or not products_json["data"]["products"].get("products")
         ):
-            print("nothing here")
+            logger.info("nothing here")
             break  # Exit loop if no products are returned
         products = await parse_nike_products(products_json, country_lang)
-        print(f"Parsed {len(products)} products")
+        logger.info(f"Parsed {len(products)} products")
         for product_data in products:
             # Check for duplicate before attempting to create a new product
             if await check_duplicate_product(db, product_data["product_link"]):
-                print(f"Skipping duplicate product: {product_data['product_link']}")
+                logger.info(f"Skipping duplicate product: {product_data['product_link']}")
                 continue
             await service.create_or_update_product(
                 db=db, product_data=product_data, source_name=SOURCE_NAME
             )  # Save each product
-            print(f"Saved {len(products)} products for {BRAND} in {country_code}.")
+            logger.info(f"Saved {len(products)} products for {BRAND} in {country_code}.")
         anchor += count  # Adjust anchor param for next iteration
 
 
@@ -59,7 +59,7 @@ async def parse_nike_products(json_data, country_lang):
     products = []
     data = json_data.get("data", {})
     products_data = data.get("products", {}).get("products", [])
-    # print(f"in parse_nike, data: {products_data}")
+    # logger.info(f"in parse_nike, data: {products_data}")
     for product in products_data:
         title = product.get("title", "")
         description = product.get("subtitle", "")

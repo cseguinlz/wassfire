@@ -14,8 +14,6 @@ logger = setup_logger(__name__)
 
 async def process_unpublished_products(db: AsyncSession) -> int:
     for locale in settings.SUPPORTED_LOCALES.split(","):
-        print(f"SUPPORTED_LOCALES: {settings.SUPPORTED_LOCALES}")
-        print(f"locale: {locale}")
         unpublished_products = await get_unpublished_products(db, locale)
     if not unpublished_products:
         logger.info("No unpublished products found.")
@@ -65,8 +63,6 @@ async def process_unpublished_products(db: AsyncSession) -> int:
         ):
             continue
 
-        print(f"SUPPORTED_LOCALES: {settings.SUPPORTED_LOCALES}")
-        print(f"locale: {locale}")
         unpublished_products = await get_unpublished_products(db, locale)
 
         if not unpublished_products:

@@ -105,19 +105,19 @@ async def scrape_and_save_products(
         for product_data in products:
             # Check for duplicate before attempting to create a new product
             if await check_duplicate_product(db, product_data["product_link"]):
-                print(f"Skipping duplicate product: {product_data['product_link']}")
+                logger.info(f"Skipping duplicate product: {product_data['product_link']}")
                 continue
             await service.create_or_update_product(
                 db=db, product_data=product_data, source_name="adidas"
             )  # Save each product
-        print(
+        logger.info(
             f"Saved {len(products)} products for {section}-{category} in {country_code}."
         )
 
         # Your existing logic to handle products...
         return total_count, view_size
     else:
-        print(f"Failed with status code: {response.status_code}")
+        logger.info(f"Failed with status code: {response.status_code}")
         logger.error(
             f"Failed to fetch page: {url} with status code: {response.status_code}"
         )

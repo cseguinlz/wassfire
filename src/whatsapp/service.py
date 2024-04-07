@@ -66,13 +66,13 @@ async def publish_product_to_whatsapp(product, db: AsyncSession):
 def determine_channel(country):
     # Assuming there's a way to check if it's a test environment
     is_test = settings.ENVIRONMENT.is_debug
-    print(f"determine_channel: {country}")
+    logger.info(f"determine_channel: {country}")
     # Mapping logic based on country
     if country == "ES":
-        print(f"Channel ES: {settings.TEST_CHANNEL_ES}")
+        logger.info(f"Channel ES: {settings.TEST_CHANNEL_ES}")
         return settings.TEST_CHANNEL_ES if is_test else settings.WHATSAPP_CHANNEL_ES
     elif country == "PT":
-        print(f"Channel PT: {settings.TEST_CHANNEL_PT}")
+        logger.info(f"Channel PT: {settings.TEST_CHANNEL_PT}")
         return settings.TEST_CHANNEL_PT if is_test else settings.WHATSAPP_CHANNEL_PT
 
     # Default channel or error handling if country is not recognized

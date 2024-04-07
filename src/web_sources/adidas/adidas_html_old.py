@@ -79,27 +79,27 @@ async def scrape_and_save_products(
 ):
     # Encode the URL
     encoded_url = encode_url(url)
-    print(f"Scraping for url {encoded_url}...")
+    f"Scraping for url {encoded_url}...")
     response = await fetch_page(encoded_url)
     if response.status_code == 200:
         products = await parse_page(response.text, country_code, section)
         for product_data in products:
             # Check for duplicate before attempting to create a new product
             if await check_duplicate_product(db, product_data["product_link"]):
-                print(f"Skipping duplicate product: {product_data['product_link']}")
+                logger.debug(f"Skipping duplicate product: {product_data['product_link']}")
                 continue
             await service.create_or_update_product(
                 db=db, product_data=product_data, source_name="adidas"
             )  # Save each product
-        print(f"Saved {len(products)} products for {country_code}.")
+        logger.debug(f"Saved {len(products)} products for {country_code}.")
     else:
-        print(f"Failed with status code: {response.status_code}")
+        logger.debug(f"Failed with status code: {response.status_code}")
 
 
 async def scrape_adidas(db: AsyncSession):
     for entry in ADIDAS_BASE_OUTLET_URLS:
         country_code = entry["hreflang"]
-        print(f"Scraping for country {country_code}...")
+        logger.debug(f"Scraping for country {country_code}...")
         for category in entry.get("category_url", []):
             await scrape_and_save_products(
                 category["url"], country_code, category["section"], db

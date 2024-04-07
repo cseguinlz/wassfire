@@ -38,19 +38,19 @@ async def scrape_and_save_products(url: str, country_code: str, db: AsyncSession
         # await write_response_to_file(response.text, "test_converse_response.html")
         if response.status_code == 200:
             products = await parse_converse_page(response.text, country_code)
-            print(f"Parsed {len(products)} products")
+            logger.info(f"Parsed {len(products)} products")
             for product_data in products:
                 # Check for duplicate before attempting to create a new product
                 if await check_duplicate_product(db, product_data["product_link"]):
-                    print(f"Skipping duplicate product: {product_data['product_link']}")
+                    logger.info(f"Skipping duplicate product: {product_data['product_link']}")
                     continue
                 await service.create_or_update_product(
                     db=db, product_data=product_data, source_name=SOURCE_NAME
                 )  # Save each product
-            print(f"Saved {len(products)} products for {BRAND} in {country_code}.")
+            logger.info(f"Saved {len(products)} products for {BRAND} in {country_code}.")
             start += size
         else:
-            print(f"Failed with status code: {response.status_code}")
+            logger.info(f"Failed with status code: {response.status_code}")
             logger.error(
                 f"Failed to fetch page: {url} with status code: {response.status_code}"
             )
