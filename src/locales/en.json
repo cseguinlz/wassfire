@@ -60,7 +60,7 @@
     "brands_newsletter_claim2": "Enter your work email"
   },
   "config": {
-    "whatsapp_channel": "https://whatsapp.com/channel/0029VaI8mEM65yDHPOfp362q"
+    "whatsapp_channel": "https://whatsapp.com/channel/0029VaVzgeABfxoE9TdqBq0v"
   },
   "whatsapp_message": "\n🔥 *{discount_percentage}* discount! - {brand}\n\n🎁 {name}\n💰 Was {original_price}. Now at {sale_price}!\n👉🏼 Buy it directly from {brand}: {short_url}"
 }

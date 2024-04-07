@@ -43,7 +43,7 @@
       "footer_newsletter_button": "Inscrever-se"
     },
     "config": {
-      "whatsapp_channel": "https://whatsapp.com/channel/0029VaI8mEM65yDHPOfp362q"
+      "whatsapp_channel": "https://whatsapp.com/channel/0029VaaPkvD1nozBeh5dCL14"
     },
     "whatsapp_message": "\n🔥 *{discount_percentage}* de desconto! - {brand}\n\n🎁 {name}\n💰 Era {original_price}. Agora por apenas {sale_price}!\n👉🏼 Compra diretamente na {brand}: {short_url}"
 
