@@ -13,6 +13,8 @@ class Config(BaseSettings):
     SITE_DOMAIN: str
     TEST_CHANNEL_ES: str
     TEST_CHANNEL_PT: str
+    WHATSAPP_CHANNEL_ES: str
+    WHATSAPP_CHANNEL_PT: str
     WHAPI_BEARER: str
     WHAPI_BASE_URL: str
     WHAPI_TIMEOUT: int = 300  # Timeout in seconds
