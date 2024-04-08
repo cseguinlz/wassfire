@@ -69,11 +69,13 @@ def determine_channel(country):
     logger.info(f"determine_channel: {country}")
     # Mapping logic based on country
     if country == "ES":
-        logger.info(f"Channel ES: {settings.TEST_CHANNEL_ES}")
-        return settings.TEST_CHANNEL_ES if is_test else settings.WHATSAPP_CHANNEL_ES
+        channel = settings.TEST_CHANNEL_ES if is_test else settings.WHATSAPP_CHANNEL_ES
+        logger.info(f"Channel ES: {channel}")
+        return channel
     elif country == "PT":
-        logger.info(f"Channel PT: {settings.TEST_CHANNEL_PT}")
-        return settings.TEST_CHANNEL_PT if is_test else settings.WHATSAPP_CHANNEL_PT
+        channel = settings.TEST_CHANNEL_PT if is_test else settings.WHATSAPP_CHANNEL_PT
+        logger.info(f"Channel PT: {channel}")
+        return channel
 
     # Default channel or error handling if country is not recognized
     return (
