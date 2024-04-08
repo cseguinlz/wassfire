@@ -19,7 +19,8 @@ class Config(BaseSettings):
     WHAPI_BASE_URL: str
     WHAPI_TIMEOUT: int = 300  # Timeout in seconds
     DISCOUNT_THRESHOLD: float
-    T_LY_URL: str
+    T_LY_LINK_URL: str
+    T_LY_TAG_URL: str
     T_LY_API_KEY: str
     T_LY_DOMAIN: str
     LEAD_SOURCE: str
