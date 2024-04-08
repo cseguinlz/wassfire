@@ -45,7 +45,7 @@
     "config": {
       "whatsapp_channel": "https://whatsapp.com/channel/0029VaaPkvD1nozBeh5dCL14"
     },
-    "whatsapp_message": "\n🔥 *{discount_percentage}* de desconto! - {brand}\n\n🎁 {name}\n💰 Era {original_price}. Agora por apenas {sale_price}!\n👉🏼 Compra diretamente na {brand}: {short_url}"
+    "whatsapp_message": "\n🔥 *{discount_percentage}* de desconto! - {brand}\n\n🎁 {name}\n💰 Era {original_price} €. Agora por apenas {sale_price} €!\n👉🏼 Compra diretamente na {brand}: {short_url}"
 
   }
   

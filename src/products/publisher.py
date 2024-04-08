@@ -14,46 +14,6 @@ logger = setup_logger(__name__)
 
 
 async def process_unpublished_products(db: AsyncSession) -> int:
-    for locale in settings.SUPPORTED_LOCALES.split(","):
-        unpublished_products = await get_unpublished_products(db, locale)
-    if not unpublished_products:
-        logger.info("No unpublished products found.")
-        return 0
-
-    for index, product in enumerate(unpublished_products):
-        try:
-            if product.discount_percentage >= settings.DISCOUNT_THRESHOLD:
-                # product.short_url = "wass.promo/something"
-                product.short_url = await shorten_url_with_tly(
-                    product.product_link,
-                    product.description,
-                    [
-                        product.brand,
-                        product.category,
-                        product.country_lang,
-                        product.section,
-                    ],
-                )
-                await publish_product_to_whatsapp(product, db)
-                # Only wait if this is not the last product
-                if index < len(unpublished_products) - 1:
-                    delay_seconds = random.randint(
-                        45, 70
-                    )  # Random delay between 45 and 70 seconds
-                    await asyncio.sleep(delay_seconds)
-        except Exception as e:
-            logger.error(f"Failed to publish product {product.id}: {e}", exc_info=True)
-
-    try:
-        await db.commit()
-        return len(unpublished_products)
-    except Exception as e:
-        await db.rollback()
-        logger.error(f"Failed to commit product publications: {e}")
-        raise
-
-
-async def process_unpublished_products(db: AsyncSession) -> int:
     total_published = 0
     for locale in settings.SUPPORTED_LOCALES.split(","):
         # Special handling for Portuguese locales to prevent duplication
@@ -73,17 +33,17 @@ async def process_unpublished_products(db: AsyncSession) -> int:
         for index, product in enumerate(unpublished_products):
             try:
                 if product.discount_percentage >= settings.DISCOUNT_THRESHOLD:
-                    product.short_url = "wass.promo/something"
-                """ product.short_url = await shorten_url_with_tly(
-                    product.product_link,
-                    product.description,
-                    [
-                        product.brand,
-                        product.category,
-                        product.country_lang,
-                        product.section,
-                    ],
-                ) """
+                    # product.short_url = "wass.promo/something"
+                    product.short_url = await shorten_url_with_tly(
+                        product.product_link,
+                        product.description,
+                        [
+                            product.brand,
+                            product.category,
+                            product.country_lang,
+                            product.section,
+                        ],
+                    )
 
                 await publish_product_to_whatsapp(product, db)
                 # Only wait if this is not the last product
