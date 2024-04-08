@@ -52,15 +52,23 @@ async def publish_product_to_whatsapp(product, db: AsyncSession):
     }
     try:
         async with httpx.AsyncClient(timeout=settings.WHAPI_TIMEOUT) as client:
+            logger.debug(
+                f"Sending request to WhatsApp API with payload: {payload} and headers: {headers}"
+            )
             response = await client.post(url, json=payload, headers=headers)
             if response.status_code == 200:
                 logger.info(f"Product {product.id} published successfully.")
                 # Prepare the product as published without committing yet
                 await queue_product_as_published(db, product.id)
             else:
-                logger.error(f"Failed to publish product {product.id}: {response.text}")
+                logger.error(
+                    f"Failed to publish product {product.id}. Response: {response.status_code}, Headers: {response.headers}, Body: {response.text}"
+                )
+
     except httpx.HTTPError as http_error:
-        logger.error(f"HTTP request failed for product {product.id}: {http_error}")
+        logger.error(
+            f"HTTP request failed for product {product.id}: {type(http_error).__name__}: {http_error}"
+        )
 
 
 def determine_channel(country):
