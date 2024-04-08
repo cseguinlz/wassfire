@@ -10,6 +10,7 @@ class Config(BaseSettings):
     )  # Default to production if not specified
 
     DATABASE_URL: PostgresDsn
+    DATABASE_URL_PRE: PostgresDsn
     SITE_DOMAIN: str
     TEST_CHANNEL_ES: str
     TEST_CHANNEL_PT: str
