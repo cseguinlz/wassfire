@@ -512,7 +512,7 @@ ADIDAS_BASE_OUTLET_URLS = [
             {
                 "section": "COLEÇÕES",
                 "category": "Adilette",
-                "url": "https://www.adidas.pt/adilette,outlet",
+                "url": "https://www.adidas.pt/adilette-outlet",
             },
         ],
     },
