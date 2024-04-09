@@ -32,18 +32,23 @@ async def process_unpublished_products(db: AsyncSession) -> int:
 
         for index, product in enumerate(unpublished_products):
             try:
+                # Publish only products over 40% discount
                 if product.discount_percentage >= settings.DISCOUNT_THRESHOLD:
-                    # product.short_url = "wass.promo/something"
-                    product.short_url = await shorten_url_with_tly(
-                        product.product_link,
-                        product.description,
-                        [
-                            product.brand,
-                            product.category,
-                            product.country_lang,
-                            product.section,
-                        ],
-                    )
+                    is_dev = settings.ENVIRONMENT.is_debug
+                    # Generate short url only for PRO
+                    if is_dev:
+                        product.short_url = "wass.promo/something"
+                    else:
+                        product.short_url = await shorten_url_with_tly(
+                            product.product_link,
+                            product.description,
+                            [
+                                product.brand,
+                                product.category,
+                                product.country_lang,
+                                product.section,
+                            ],
+                        )
 
                 await publish_product_to_whatsapp(product, db)
                 # Only wait if this is not the last product
