@@ -78,13 +78,14 @@ def format_euro_currency(value: float, locale_str: str = "es_ES.UTF-8") -> str:
         current_locale = locale.getlocale()
         # Set the desired locale for currency formatting
         locale.setlocale(locale.LC_ALL, locale_str)
-        formatted_value = locale.currency(value, grouping=True)
+        # Use locale.currency to format the number, then replace the currency symbol with € manually
+        formatted_value = locale.currency(value, symbol=False, grouping=True) + " €"
         # Restore the original locale
         locale.setlocale(locale.LC_ALL, current_locale)
         return formatted_value
     except (locale.Error, ValueError) as e:
         logger.debug(f"Error formatting currency: {e}")
-        return str(value)
+        return f"{value} €"  # Fallback to a simple format
 
 
 async def convert_price_to_float(price_str):
