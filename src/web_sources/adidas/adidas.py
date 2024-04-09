@@ -17,7 +17,6 @@ from src.web_sources.utils import (
     get_full_product_link,
     parse_float,
     parse_percentage,
-    write_response_to_file,
 )
 
 logger = setup_logger(__name__)
@@ -42,7 +41,7 @@ async def parse_page(html_content: str, country_code: str, section: str):
                 json_string = json_string_match.group(1)
                 data_store = json.loads(json.loads(json_string))
                 # Debugging only
-                await write_response_to_file(data_store, "outlet.json")
+                # await write_response_to_file(data_store, "outlet.json")
                 plp_data = data_store.get("plp", {})
                 item_list_data = plp_data.get("itemList", {})
                 item_list = item_list_data.get("items", [])

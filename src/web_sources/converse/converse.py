@@ -139,8 +139,8 @@ async def parse_converse_page(html_content: str, country_code: str):
         # Extracting section and category
         badge_text = product_tile.select_one(".product-tile__secondary-badge")
         text = badge_text.text.strip() if badge_text else ""
-        section = "Unknown"
-        category = "Unknown"
+        section = ""
+        category = ""
         for keyword, mapped_section in section_mapping.items():
             if re.search(keyword, text, re.IGNORECASE):
                 section = mapped_section
