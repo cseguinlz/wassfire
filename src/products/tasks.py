@@ -7,6 +7,7 @@ logger = setup_logger(__name__)
 
 
 async def publish_products_task():
+    logger.info("Publishing task started...")
     async for db in get_db():
         try:
             processed_count = await process_unpublished_products(db)
