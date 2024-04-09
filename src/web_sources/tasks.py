@@ -9,7 +9,7 @@ logger = setup_logger(__name__)
 
 
 async def read_sources_task():
-    logger.info("Reading sources task started...")
+    logger.debug("Reading sources task started...")
     await scrape_adidas()
     await scrape_carhartt()
     await scrape_converse()
