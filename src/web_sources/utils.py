@@ -1,4 +1,5 @@
 import base64
+import json
 from urllib.parse import quote
 
 import aiofiles
@@ -120,10 +121,16 @@ def get_full_product_link(country_lang, product_link):
     return f"{base_url}{product_link}{settings.LEAD_SOURCE}"
 
 
-async def write_response_to_file(response_text, filename="response.html"):
-    # Use aiofiles to write the response text to a file asynchronously
+async def write_response_to_file(response_data, filename="response.json"):
+    # Use aiofiles to write the response data to a file asynchronously
     async with aiofiles.open(filename, mode="w") as file:
-        await file.write(response_text)
+        if filename.endswith(".json"):
+            # Serialize the dictionary to a JSON formatted string
+            response_text = json.dumps(response_data, indent=4)
+            await file.write(response_text)
+        else:
+            # If not a JSON file, assume response_data is already a string
+            await file.write(response_data)
 
 
 async def fetch_ajax_carhartt_content(url: str):

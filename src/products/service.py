@@ -75,24 +75,48 @@ async def get_products_by_source(db: AsyncSession, source_id: int) -> list[Produ
 async def create_or_update_product(
     db: AsyncSession, product_data: dict, source_name: str
 ) -> Product:
+    # Ensure source_id is set
     if not product_data["source_id"]:
         source_id = await get_source_id_by_name(db, source_name)
         product_data["source_id"] = source_id
+
     product_link = product_data.get("product_link")
     if product_link:
+        # Query for an existing product
         existing_product_query = await db.execute(
             select(Product).filter_by(product_link=product_link)
         )
         existing_product = existing_product_query.scalars().first()
 
         if existing_product:
-            # Record a price change if there's a difference
+            # Initialize a flag to track if any updates are needed
+            update_needed = False
+
+            # Check for price or discount changes
             price_or_discount_changed = (
                 existing_product.discount_percentage
                 != product_data.get("discount_percentage")
                 or existing_product.original_price != product_data.get("original_price")
                 or existing_product.sale_price != product_data.get("sale_price")
             )
+
+            # Check if image_url changed
+            image_url_changed = existing_product.image_url != product_data.get(
+                "image_url"
+            )
+
+            # Update product fields if changes are detected
+            if price_or_discount_changed or image_url_changed:
+                update_needed = True
+                existing_product.discount_percentage = product_data.get(
+                    "discount_percentage"
+                )
+                existing_product.original_price = product_data.get("original_price")
+                existing_product.sale_price = product_data.get("sale_price")
+                if image_url_changed:
+                    existing_product.image_url = product_data.get("image_url")
+
+            # Only create price history record if price changed
             if price_or_discount_changed:
                 price_history_record = PriceHistory(
                     product_id=existing_product.id,
@@ -101,17 +125,10 @@ async def create_or_update_product(
                     sale_price=product_data.get("sale_price"),
                 )
                 db.add(price_history_record)
-                logger.info(f"Recorded price change for product: {product_link}")
 
-            # Update the product with the new details
-            existing_product.discount_percentage = product_data.get(
-                "discount_percentage"
-            )
-            existing_product.original_price = product_data.get("original_price")
-            existing_product.sale_price = product_data.get("sale_price")
-
-            await db.commit()
-            logger.info(f"Updated existing product: {product_link}")
+            if update_needed:
+                await db.commit()
+                logger.info(f"Updated existing product: {product_link}")
             return existing_product
 
     # If the product does not exist, create a new one and its initial price history record

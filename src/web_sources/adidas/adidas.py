@@ -12,12 +12,12 @@ from src.products import service
 from src.utils import setup_logger
 from src.web_sources.adidas.urls import ADIDAS_BASE_OUTLET_URLS
 from src.web_sources.utils import (
-    check_duplicate_product,
     encode_url,
     fetch_page,
     get_full_product_link,
     parse_float,
     parse_percentage,
+    write_response_to_file,
 )
 
 logger = setup_logger(__name__)
@@ -41,6 +41,8 @@ async def parse_page(html_content: str, country_code: str, section: str):
             if json_string_match:
                 json_string = json_string_match.group(1)
                 data_store = json.loads(json.loads(json_string))
+                # Debugging only
+                await write_response_to_file(data_store, "outlet.json")
                 plp_data = data_store.get("plp", {})
                 item_list_data = plp_data.get("itemList", {})
                 item_list = item_list_data.get("items", [])
@@ -56,6 +58,13 @@ async def parse_page(html_content: str, country_code: str, section: str):
                     side_lateral_center_view_url = find_image_with_view(
                         images, "Side Lateral Center View"
                     )
+                    # Fallback to using items.image.src if side_lateral_center_view_url is empty
+                    if (
+                        not side_lateral_center_view_url
+                        and item.get("image")
+                        and item.get("image").get("src")
+                    ):
+                        side_lateral_center_view_url = item["image"]["src"]
                     full_product_link = get_full_product_link(
                         country_code, item.get("link", "")
                     )
@@ -103,10 +112,6 @@ async def scrape_and_save_products(
             response.text, country_code, section
         )
         for product_data in products:
-            # Check for duplicate before attempting to create a new product
-            if await check_duplicate_product(db, product_data["product_link"]):
-                logger.info(f"Skipping duplicate product: {product_data['product_link']}")
-                continue
             await service.create_or_update_product(
                 db=db, product_data=product_data, source_name="adidas"
             )  # Save each product
@@ -162,4 +167,4 @@ def find_image_with_view(images, view_name):
     for image in images:
         if image.get("metadata", {}).get("view") == view_name:
             return image.get("src")
-    return ""
+    return None

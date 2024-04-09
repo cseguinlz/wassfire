@@ -9,7 +9,6 @@ from src.products import service
 from src.utils import setup_logger
 from src.web_sources.carhartt.urls import CARHARTT_BASE_OUTLET_URLS
 from src.web_sources.utils import (
-    check_duplicate_product,
     encode_url,
     fetch_ajax_carhartt_content,
     parse_float,
@@ -38,10 +37,6 @@ async def scrape_and_save_products(url: str, country_code: str, db: AsyncSession
         products = await parse_page(response.text, country_code)
         logger.info(f"Parsed {len(products)} products")
         for product_data in products:
-            # Check for duplicate before attempting to create a new product
-            if await check_duplicate_product(db, product_data["product_link"]):
-                logger.info(f"Skipping duplicate product: {product_data['product_link']}")
-                continue
             await service.create_or_update_product(
                 db=db, product_data=product_data, source_name=SOURCE_NAME
             )  # Save each product
