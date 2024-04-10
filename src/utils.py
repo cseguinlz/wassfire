@@ -67,7 +67,6 @@ def load_translations(locale: str = None, directory: str = "src/locales"):
     except FileNotFoundError:
         with open(f"{directory}/en.json", "r") as file:
             translations = json.load(file)
-    logger.debug(f"Translations: {translations}")
     return translations
 
 

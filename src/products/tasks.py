@@ -7,11 +7,11 @@ logger = setup_logger(__name__)
 
 
 async def publish_products_task():
-    logger.debug("Publishing task started...")
+    logger.info("Publishing task started...")
     async for db in get_db():
         try:
             processed_count = await process_unpublished_products(db)
-            logger.debug(f"Processed count: {processed_count}")  # Log progress
+            logger.info(f"Processed count: {processed_count}")  # Log progress
             if processed_count > 0:
                 await db.commit()  # Commit changes after successfully processing
             else:
@@ -19,4 +19,4 @@ async def publish_products_task():
         except Exception as e:
             await db.rollback()
             logger.error(f"Error during publication task: {e}", exc_info=True)
-    logger.debug("Publishing task completed.")
+    logger.info("Publishing task completed.")
