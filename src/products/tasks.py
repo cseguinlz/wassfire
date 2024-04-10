@@ -11,6 +11,7 @@ async def publish_products_task():
     async for db in get_db():
         try:
             processed_count = await process_unpublished_products(db)
+            logger.debug(f"Processed count: {processed_count}")  # Log progress
             if processed_count > 0:
                 await db.commit()  # Commit changes after successfully processing
             else:
@@ -18,3 +19,4 @@ async def publish_products_task():
         except Exception as e:
             await db.rollback()
             logger.error(f"Error during publication task: {e}", exc_info=True)
+    logger.debug("Publishing task completed.")
