@@ -6,18 +6,29 @@ from datetime import datetime, timezone
 
 from fastapi import Request
 
+from src.config import settings
 
-def setup_logger(name):
+
+def setup_logger(name, level=None):
     """
-    Set up and return a logger with the given name.
+    Set up and return a logger with the given name and level.
     """
+    # Determine the logging level
+    if level is None:
+        level = settings.LOG_LEVEL  ## log level per environment
+
+    # Convert level from string to logging constant if necessary
+    numeric_level = getattr(logging, level, None)
+    if not isinstance(numeric_level, int):
+        raise ValueError(f"Invalid log level: {level}")
+
     # Configure the logger
     logger = logging.getLogger(name)
-    logger.setLevel(logging.INFO)  # or DEBUG, ERROR, etc.
+    logger.setLevel(numeric_level)
 
-    # Create console handler and set level
+    # Create console handler and set level to debug
     ch = logging.StreamHandler(sys.stdout)
-    ch.setLevel(logging.INFO)  # or DEBUG, ERROR, etc.
+    ch.setLevel(numeric_level)
 
     # Create formatter
     formatter = logging.Formatter(
@@ -34,6 +45,7 @@ def setup_logger(name):
     return logger
 
 
+# Initialize logger
 logger = setup_logger(__name__)
 
 

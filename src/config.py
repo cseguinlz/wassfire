@@ -29,6 +29,7 @@ class Config(BaseSettings):
     PUBLISH_HOURS: str
     SUPPORTED_LOCALES: str
     PRODUCTS_TO_PUBLISH: int
+    LOG_LEVEL: str
 
     class Config:
         env_file = ".env"
