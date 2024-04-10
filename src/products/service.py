@@ -1,7 +1,7 @@
 # crud.py
 
 
-from sqlalchemy import text, update
+from sqlalchemy import func, text, update
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
@@ -206,3 +206,23 @@ async def queue_product_as_published(db: AsyncSession, product_id: int):
     except SQLAlchemyError as e:
         await db.rollback()
         logger.debug(f"Database update failed: {e}")
+
+async def mark_product_as_unavailable(product_id: int, db: AsyncSession):
+    async with db.begin():
+        # Check if the product is already marked as unavailable
+        stmt = select(Product).where(Product.id == product_id)
+        result = await db.execute(stmt)
+        product = result.scalars().first()
+        
+        if product and not product.available:
+            # The product is already marked as unavailable, no need to update
+            return
+        
+        # Mark the product as unavailable
+        update_stmt = (
+            update(Product)
+            .where(Product.id == product_id)
+            .values(available=False, unavailable_since=func.now() if not product.unavailable_since else product.unavailable_since)
+        )
+        await db.execute(update_stmt)
+        await db.commit()

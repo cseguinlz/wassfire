@@ -24,6 +24,12 @@ from src.database import Base
 class Product(Base):
     __tablename__ = "products"
     id = Column(Integer, primary_key=True, index=True)
+    available = Column(
+        Boolean, default=True
+    )  # Indicates if the product is currently available
+    unavailable_since = Column(
+        DateTime(timezone=True), nullable=True
+    )  # The datetime the product became unavailable
     source_id = Column(Integer, ForeignKey("sources.id"))
     name = Column(String)
     description = Column(String)

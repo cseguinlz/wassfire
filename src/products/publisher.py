@@ -5,8 +5,9 @@ import random
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.config import settings
-from src.products.service import get_unpublished_products
+from src.products.service import get_unpublished_products, mark_product_as_unavailable
 from src.products.url_shortener import shorten_url_with_tly
+from src.products.utils import is_product_available
 from src.utils import setup_logger
 from src.whatsapp.service import publish_product_to_whatsapp
 
@@ -16,7 +17,7 @@ logger = setup_logger(__name__)
 async def process_unpublished_products(db: AsyncSession) -> int:
     total_published = 0
     for locale in settings.SUPPORTED_LOCALES.split(","):
-        # Special handling for Portuguese locales to prevent duplication
+        # Special handling for Portuguese locales to prevent duplication pt-PT, en-PT
         if (
             locale.startswith("pt")
             and "pt-PT" in settings.SUPPORTED_LOCALES.split(",")
@@ -32,6 +33,12 @@ async def process_unpublished_products(db: AsyncSession) -> int:
 
         for index, product in enumerate(unpublished_products):
             try:
+                # Check if the product is available
+                if not await is_product_available(product.id, db):
+                    # If the product is not available, skip publishing and possibly mark it
+                    logger.info(f"Product {product.id} is not available. Skipping...")
+                    await mark_product_as_unavailable(product.id, db)
+                    continue
                 # Publish only products over 40% discount
                 if product.discount_percentage >= settings.DISCOUNT_THRESHOLD:
                     is_dev = settings.ENVIRONMENT.is_debug
@@ -51,6 +58,7 @@ async def process_unpublished_products(db: AsyncSession) -> int:
                         )
 
                 await publish_product_to_whatsapp(product, db)
+                total_published += 1  # Increment here after successful processing
                 # Only wait if this is not the last product
                 if index < len(unpublished_products) - 1:
                     delay_seconds = random.randint(
@@ -61,7 +69,7 @@ async def process_unpublished_products(db: AsyncSession) -> int:
                 logger.error(
                     f"Failed to publish product {product.id}: {e}", exc_info=True
                 )
-        total_published += len(unpublished_products)
+        total_published
 
     try:
         await db.commit()
