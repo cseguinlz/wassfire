@@ -16,6 +16,7 @@ logger = setup_logger(__name__)
 
 def setup_scheduler(app):
     logger.info("Setting up scheduler...")
+    logger.info(f"Publishing hours: {settings.PUBLISH_HOURS}")
     # Schedule the task to run three times a day at 9 AM, 3 PM, and 9 PM
     scheduler.add_job(
         publish_products_task,

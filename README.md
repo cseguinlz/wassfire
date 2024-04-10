@@ -29,3 +29,18 @@
 
 ### i18n
 `src/home/routers.py` --> `src/utils.py --> get_translations() --> get_user_locale(request) --> load_translations(locale)` ---> `src/locales/{locales}.json`
+
+
+### Logs
+Create logger indicating name and level (info, debug, warning, error).
+`src/utils.py`--> `setup_logger(name, level=None)`
+
+Level is set by an environmental variable at `.env` and `src/config.py settings` as `LOG_LEVEL=DEBUG`
+
+# Usage:
+```from src.utils import setup_logger
+  # Initialize logger
+logger = setup_logger(__name__)
+
+async def read_sources_task():
+    logger.debug("Reading sources task started...")```
