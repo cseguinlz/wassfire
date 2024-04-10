@@ -12,9 +12,9 @@ from src.products import service
 from src.utils import setup_logger
 from src.web_sources.adidas.urls import ADIDAS_BASE_OUTLET_URLS
 from src.web_sources.utils import (
+    construct_full_product_link,
     encode_url,
     fetch_page,
-    get_full_product_link,
     parse_float,
     parse_percentage,
 )
@@ -22,6 +22,7 @@ from src.web_sources.utils import (
 logger = setup_logger(__name__)
 
 BRAND = "Adidas"
+SOURCE_NAME = "adidas"
 SOURCE_ID: int = 1
 
 
@@ -64,9 +65,12 @@ async def parse_page(html_content: str, country_code: str, section: str):
                         and item.get("image").get("src")
                     ):
                         side_lateral_center_view_url = item["image"]["src"]
-                    full_product_link = get_full_product_link(
-                        country_code, item.get("link", "")
+
+                    full_product_link = construct_full_product_link(
+                        SOURCE_NAME, country_code, item.get("link", "")
                     )
+                    logger.debug(f"Product url {SOURCE_NAME}: {full_product_link}")
+
                     category = item.get("category", "")
                     type = item.get("sport", "")
                     description = item.get("altText", "")
@@ -112,7 +116,7 @@ async def scrape_and_save_products(
         )
         for product_data in products:
             await service.create_or_update_product(
-                db=db, product_data=product_data, source_name="adidas"
+                db=db, product_data=product_data, source_name=SOURCE_NAME
             )  # Save each product
         logger.info(
             f"Saved {len(products)} products for {section}-{category} in {country_code}."

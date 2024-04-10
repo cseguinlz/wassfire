@@ -4,6 +4,7 @@ from src.products import service
 from src.utils import setup_logger
 from src.web_sources.nike.urls import NIKE_BASE_OUTLET_URLS
 from src.web_sources.utils import (
+    construct_full_product_link,
     encode_url,
     fetch_nike_products_page,
     parse_float,
@@ -62,9 +63,10 @@ async def parse_nike_products(json_data, country_lang):
         description = product.get("subtitle", "")
         category = product.get("productType", "")
 
-        product_url = format_product_url(
-            product.get("url", ""), country_lang.split("-")[0]
+        product_url = construct_full_product_link(
+            SOURCE_NAME, country_lang, product.get("url", "")
         )
+        logger.debug(f"Product url {SOURCE_NAME}: {product_url}")
 
         price_info = product.get("price", {})
         if price_info:
@@ -105,10 +107,3 @@ async def parse_nike_products(json_data, country_lang):
         products.append(product_details)
 
     return products
-
-
-def format_product_url(product_url, country_lang="en"):
-    if "{countryLang}" in product_url:
-        product_url = product_url.replace("{countryLang}", country_lang)
-    full_url = f"{BASE_URL}{product_url}"
-    return full_url

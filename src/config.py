@@ -24,7 +24,6 @@ class Config(BaseSettings):
     T_LY_TAG_URL: str
     T_LY_API_KEY: str
     T_LY_DOMAIN: str
-    LEAD_SOURCE: str
     SSL_CERT_PATH: str
     PUBLISH_HOURS: str
     SUPPORTED_LOCALES: str

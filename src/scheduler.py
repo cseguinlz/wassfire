@@ -28,7 +28,7 @@ def setup_scheduler(app):
     # New task: Scrape web sources once a week on Mon, Tue, or Wed at a random hour
     random_day_of_week = random.choice(["mon", "tue", "wed"])
     random_hour = random.randint(0, 23)  # Random hour of the day
-    logger.info("Running reading sources on: {random_day_of_week}, {random_hour}")
+    logger.info(f"Running reading sources on: {random_day_of_week}, {random_hour}")
     scheduler.add_job(
         read_sources_task,
         trigger=CronTrigger(day_of_week=random_day_of_week, hour=random_hour),

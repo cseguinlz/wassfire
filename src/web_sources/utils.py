@@ -1,13 +1,12 @@
 import base64
 import json
-from urllib.parse import quote
+from urllib.parse import parse_qs, quote, urlencode, urlparse, urlunparse
 
 import aiofiles
 import httpx
 from curl_cffi.requests import AsyncSession
 from sqlalchemy import select
 
-from src.config import settings
 from src.models import Product
 from src.utils import setup_logger
 from src.web_sources.config import BASE_URL_MAPPING
@@ -110,15 +109,41 @@ def parse_percentage(percentage_str):
         return None
 
 
-def get_full_product_link(country_lang, product_link):
-    base_url = BASE_URL_MAPPING.get(
-        country_lang, "https://www.adidas.com"
-    )  # Default to .com if not found
-    if not product_link:
-        # in case no link, at least we show up as a traffic source and give something to the user
-        return f"{base_url}/outlet"
+def construct_full_product_link(
+    brand: str, country_lang: str, product_link: str
+) -> str:
+    parsed_product_link = urlparse(product_link)
 
-    return f"{base_url}{product_link}{settings.LEAD_SOURCE}"
+    # Check if product_link is already a full URL
+    if parsed_product_link.scheme and parsed_product_link.netloc:
+        base_url = ""  # No need to prepend a base URL
+    else:
+        # Determine the base URL based on brand and country_lang
+        base_url = BASE_URL_MAPPING.get(brand, {}).get(
+            country_lang, BASE_URL_MAPPING[brand]["default"]
+        )
+
+        # For Nike, handle the countryLang placeholder
+        if brand == "nike":
+            if not product_link.startswith("/"):
+                product_link = "/" + product_link
+            product_link = product_link.format(countryLang=country_lang.split("-")[0])
+
+    # Construct the full product URL
+    full_url = f"{base_url}{product_link}"
+
+    # Parse the URL to check for existing query parameters
+    parsed_url = urlparse(full_url)
+    query_params = parse_qs(parsed_url.query)
+
+    # Append the 'source=wassfire.com' parameter
+    query_params["source"] = ["wassfire.com"]
+    new_query = urlencode(query_params, doseq=True)
+
+    # Reconstruct the URL with the new query string
+    new_url = urlunparse(parsed_url._replace(query=new_query))
+
+    return new_url
 
 
 async def write_response_to_file(response_data, filename="response.json"):

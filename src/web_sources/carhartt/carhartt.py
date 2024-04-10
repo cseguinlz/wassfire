@@ -9,6 +9,7 @@ from src.products import service
 from src.utils import setup_logger
 from src.web_sources.carhartt.urls import CARHARTT_BASE_OUTLET_URLS
 from src.web_sources.utils import (
+    construct_full_product_link,
     encode_url,
     fetch_ajax_carhartt_content,
     parse_float,
@@ -58,7 +59,10 @@ async def parse_page(html_content: str, country_code: str):
             "a", id=re.compile("^catalogEntry_imgOUT_")
         )
         if product_link_tag:
-            product_link = product_link_tag["href"]
+            product_link = construct_full_product_link(
+                SOURCE_NAME, country_code, product_link_tag["href"]
+            )
+        logger.debug(f"Product link {SOURCE_NAME}: {product_link}")
         name = product_cell.select_one(".product-description h5").text.strip()
         image_url = product_cell.select_one(".product-cell-image img.front")["src"]
         price_data = product_cell.select_one(".price span")

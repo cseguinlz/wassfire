@@ -8,6 +8,7 @@ from src.products import service
 from src.utils import setup_logger
 from src.web_sources.converse.urls import CONVERSE_BASE_OUTLET_URLS
 from src.web_sources.utils import (
+    construct_full_product_link,
     encode_url,
     fetch_converse_products_page,
     parse_float,
@@ -79,7 +80,10 @@ async def parse_converse_page(html_content: str, country_code: str):
         name_section = product_tile.select_one(".product-tile__img-url")
         name = name_section["title"] if name_section else "No Name Found"
         product_link = name_section["href"] if name_section else ""
-
+        product_url = construct_full_product_link(
+            SOURCE_NAME, country_code, product_link
+        )
+        logger.debug(f"Product url {SOURCE_NAME}: {product_url}")
         # For image URL, the main image is what we want
         image_url_data = product_tile.select_one("img[data-src]")
         image_url = image_url_data["data-src"] if image_url_data else ""
@@ -159,7 +163,7 @@ async def parse_converse_page(html_content: str, country_code: str):
                 "section": section,
                 "category": category,
                 "color": ", ".join(color_variations),
-                "product_link": product_link,
+                "product_link": product_url,
                 "image_url": image_url,
                 "original_price": original_price,
                 "sale_price": sale_price,
