@@ -26,6 +26,8 @@ class Config(BaseSettings):
     T_LY_DOMAIN: str
     SSL_CERT_PATH: str
     PUBLISH_HOURS: str
+    READING_SOURCES_DAY: str
+    READING_SOURCES_HOUR_RANGE: str
     SUPPORTED_LOCALES: str
     PRODUCTS_TO_PUBLISH: int
     LOG_LEVEL: str

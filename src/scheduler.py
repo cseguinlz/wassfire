@@ -26,8 +26,12 @@ def setup_scheduler(app):
     )
 
     # New task: Scrape web sources once a week on Mon, Tue, or Wed at a random hour
-    random_day_of_week = random.choice(["mon", "tue", "wed"])
-    random_hour = random.randint(0, 23)  # Random hour of the day
+    random_day_of_week = random.choice(settings.READING_SOURCES_DAY.split(","))
+
+    # Split the hour range, convert to integers, and choose a random hour within the range
+    hour_range = [int(hour) for hour in settings.READING_SOURCES_HOUR_RANGE.split(",")]
+    random_hour = random.randint(hour_range[0], hour_range[1])
+
     logger.info(f"Running reading sources on: {random_day_of_week}, {random_hour}")
     scheduler.add_job(
         read_sources_task,
