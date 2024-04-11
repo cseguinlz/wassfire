@@ -72,88 +72,69 @@ async def get_products_by_source(db: AsyncSession, source_id: int) -> list[Produ
     products = result.scalars().all()
     return products
 
-'''
-Retry up to 3 times with a fixed wait of 1 second between attempts if an OperationalError is encountered.
-'''
-@retry(stop=stop_after_attempt(3), wait=wait_fixed(1), reraise=True)
+
 async def create_or_update_product(
     db: AsyncSession, product_data: dict, source_name: str
 ) -> Product:
-    # Ensure source_id is set
-    if not product_data["source_id"]:
-        source_id = await get_source_id_by_name(db, source_name)
-        product_data["source_id"] = source_id
+    try:
+        # Ensure source_id is set
+        if not product_data["source_id"]:
+            source_id = await get_source_id_by_name(db, source_name)
+            product_data["source_id"] = source_id
 
-    product_link = product_data.get("product_link")
-    if product_link:
-        # Query for an existing product
-        existing_product_query = await db.execute(
-            select(Product).filter_by(product_link=product_link)
-        )
-        existing_product = existing_product_query.scalars().first()
+        product_link = product_data.get("product_link")
+        existing_product = None
+        if product_link:
+            # Query for an existing product
+            existing_product_query = await db.execute(
+                select(Product).filter_by(product_link=product_link)
+            )
+            existing_product = existing_product_query.scalars().first()
 
         if existing_product:
-            # Initialize a flag to track if any updates are needed
-            update_needed = False
-
-            # Check for price or discount changes
-            price_or_discount_changed = (
-                existing_product.discount_percentage
-                != product_data.get("discount_percentage")
-                or existing_product.original_price != product_data.get("original_price")
-                or existing_product.sale_price != product_data.get("sale_price")
+            # Function to update existing product
+            update_needed = await update_existing_product(
+                db, existing_product, product_data
             )
 
-            # Check if image_url changed
-            image_url_changed = existing_product.image_url != product_data.get(
-                "image_url"
-            )
-
-            # Update product fields if changes are detected
-            if price_or_discount_changed or image_url_changed:
-                update_needed = True
-                existing_product.discount_percentage = product_data.get(
-                    "discount_percentage"
-                )
-                existing_product.original_price = product_data.get("original_price")
-                existing_product.sale_price = product_data.get("sale_price")
-                if image_url_changed:
-                    existing_product.image_url = product_data.get("image_url")
-
-            # Only create price history record if price changed
-            if price_or_discount_changed:
-                price_history_record = PriceHistory(
-                    product_id=existing_product.id,
-                    discount_percentage=product_data.get("discount_percentage"),
-                    original_price=product_data.get("original_price"),
-                    sale_price=product_data.get("sale_price"),
-                )
-                db.add(price_history_record)
-
+            # Only commit if updates are made to minimize unnecessary commits
             if update_needed:
                 await db.commit()
                 logger.info(f"Updated existing product: {product_link}")
-            return existing_product
+        else:
+            # If the product does not exist, create a new one
+            new_product = Product(**product_data)
+            db.add(new_product)
+            await db.commit()  # Commit to ensure new_product gets an ID
+            await db.refresh(new_product)  # Refresh to load the ID
 
-    # If the product does not exist, create a new one and its initial price history record
-    new_product = Product(**product_data)
-    db.add(new_product)
-    await db.commit()
-    await db.refresh(new_product)
+            # Create initial price history record for new product
+            price_history_record = PriceHistory(
+                product_id=new_product.id,
+                discount_percentage=product_data.get("discount_percentage"),
+                original_price=product_data.get("original_price"),
+                sale_price=product_data.get("sale_price"),
+            )
+            db.add(price_history_record)
 
-    price_history_record = PriceHistory(
-        product_id=new_product.id,
-        discount_percentage=product_data.get("discount_percentage"),
-        original_price=product_data.get("original_price"),
-        sale_price=product_data.get("sale_price"),
-    )
-    db.add(price_history_record)
-    await db.commit()
+            await db.commit()
+            await db.refresh(new_product)
+            logger.info(f"Created new product and recorded its price: {product_link}")
 
-    logger.info(f"Created new product and recorded its price: {product_link}")
-    return new_product
+        return existing_product if existing_product else new_product
+
+    except Exception as e:
+        await db.rollback()
+        logger.error(f"Error processing product {product_link}: {e}")
+        raise
 
 
+"""
+Retry up to 3 times with a fixed wait of 1 second between attempts if an OperationalError is encountered.
+"""
+
+
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(1), reraise=True)
 async def get_unpublished_products(db: AsyncSession, country_lang: str):
     """
     Queries the database for a specific number of unpublished products for a given locale,
@@ -236,3 +217,42 @@ async def mark_product_as_unavailable(product_id: int, db: AsyncSession):
         )
         await db.execute(update_stmt)
         await db.commit()
+
+
+async def update_existing_product(
+    db: AsyncSession, existing_product: Product, product_data: dict
+) -> bool:
+    # Initialize a flag to track if any updates are needed
+    update_needed = False
+
+    # Check for price or discount changes
+    price_or_discount_changed = (
+        existing_product.discount_percentage != product_data.get("discount_percentage")
+        or existing_product.original_price != product_data.get("original_price")
+        or existing_product.sale_price != product_data.get("sale_price")
+    )
+
+    # Check if image_url changed
+    image_url_changed = existing_product.image_url != product_data.get("image_url")
+
+    # Update product fields if changes are detected
+    if price_or_discount_changed or image_url_changed:
+        update_needed = True
+        existing_product.discount_percentage = product_data.get("discount_percentage")
+        existing_product.original_price = product_data.get("original_price")
+        existing_product.sale_price = product_data.get("sale_price")
+        if image_url_changed:
+            existing_product.image_url = product_data.get("image_url")
+
+    # Only create a price history record if price changed
+    if price_or_discount_changed:
+        price_history_record = PriceHistory(
+            product_id=existing_product.id,
+            discount_percentage=product_data.get("discount_percentage"),
+            original_price=product_data.get("original_price"),
+            sale_price=product_data.get("sale_price"),
+        )
+        db.add(price_history_record)
+        # No need for a separate commit here; it will be handled in the calling function
+
+    return update_needed

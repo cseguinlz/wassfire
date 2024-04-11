@@ -66,7 +66,7 @@ async def parse_nike_products(json_data, country_lang):
         product_url = construct_full_product_link(
             SOURCE_NAME, country_lang, product.get("url", "")
         )
-        logger.debug(f"Product url {SOURCE_NAME}: {product_url}")
+        # logger.debug(f"Product url {SOURCE_NAME}: {product_url}")
 
         price_info = product.get("price", {})
         if price_info:

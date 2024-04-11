@@ -21,7 +21,7 @@ ssl_context.verify_mode = ssl.CERT_REQUIRED  # Ensure the certificate is require
 # Create the async engine with the SSL context
 engine = create_async_engine(
     DATABASE_URL,
-    echo=True,
+    echo=False,  # change to True for intensive logging!
     connect_args={"ssl": ssl_context},
     pool_size=20,
     max_overflow=10,
@@ -40,8 +40,17 @@ Base = declarative_base(metadata=metadata)
 async def get_db():
     async_session = AsyncSessionLocal()
     try:
+        # Begin a transaction by default at the start of the block
+        await async_session.begin()
         yield async_session
+        # Commit the transaction at the end of the block if no errors occurred
+        await async_session.commit()
+    except Exception as e:
+        # Rollback the transaction in case of an error
+        await async_session.rollback()
+        raise e
     finally:
+        # Close the session whether or not there were errors
         await async_session.close()
 
 

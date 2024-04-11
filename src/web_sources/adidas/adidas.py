@@ -69,7 +69,7 @@ async def parse_page(html_content: str, country_code: str, section: str):
                     full_product_link = construct_full_product_link(
                         SOURCE_NAME, country_code, item.get("link", "")
                     )
-                    logger.debug(f"Product url {SOURCE_NAME}: {full_product_link}")
+                    # logger.debug(f"Product url {SOURCE_NAME}: {full_product_link}")
 
                     category = item.get("category", "")
                     type = item.get("sport", "")

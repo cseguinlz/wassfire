@@ -83,7 +83,7 @@ async def parse_converse_page(html_content: str, country_code: str):
         product_url = construct_full_product_link(
             SOURCE_NAME, country_code, product_link
         )
-        logger.debug(f"Product url {SOURCE_NAME}: {product_url}")
+        # logger.debug(f"Product url {SOURCE_NAME}: {product_url}")
         # For image URL, the main image is what we want
         image_url_data = product_tile.select_one("img[data-src]")
         image_url = image_url_data["data-src"] if image_url_data else ""
