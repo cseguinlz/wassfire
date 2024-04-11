@@ -1,5 +1,4 @@
 import json
-import locale
 import logging
 import sys
 from datetime import datetime, timezone
@@ -76,27 +75,41 @@ async def get_translations(request: Request) -> dict:
     return translations
 
 
-def format_euro_currency(value: float, locale_str: str = "es_ES.UTF-8") -> str:
+def format_currency(value: float, locale: str = "es-ES") -> str:
     """
-    Format a float value as a currency string in euros, based on the specified locale.
-
+    Manually format a float value as a currency string, adjusting for locale.
+    Render doesn't provide custom locales.
+        Render Native Runtimes have a very limited set of locales to keep image sizes down, e.g.:
+        ~/project/src$ locale -a
+        C
+        C.UTF-8
+        POSIX
+        
+        If you need a custom locale you would need to create your own environment with Docker.>
+ 
     :param value: The float value to format.
-    :param locale_str: The locale to use for formatting.
-    :return: A string representing the value as a currency in euros.
+    :param locale: The locale code, which determines the formatting.
+    :return: A string representing the value as a currency.
     """
-    try:
-        # Save the current locale
-        current_locale = locale.getlocale()
-        # Set the desired locale for currency formatting
-        locale.setlocale(locale.LC_ALL, locale_str)
-        # Use locale.currency to format the number, then replace the currency symbol with € manually
-        formatted_value = locale.currency(value, symbol=False, grouping=True) + " €"
-        # Restore the original locale
-        locale.setlocale(locale.LC_ALL, current_locale)
-        return formatted_value
-    except (locale.Error, ValueError) as e:
-        logger.debug(f"Error formatting currency: {e}")
-        return f"{value} €"  # Fallback to a simple format
+    # Define locale-based formatting rules
+    if locale.lower().startswith("en"):
+        # English formatting: 1,234,567.89 €
+        thousands_sep, decimal_sep = ",", "."
+    else:
+        # European formatting: 1.234.567,89 €
+        thousands_sep, decimal_sep = ".", ","
+
+    # Format the number manually
+    value_str = f"{value:,.2f}"  # Use comma as the thousands separator by default
+    value_str = (
+        value_str.replace(",", "X")
+        .replace(".", thousands_sep)
+        .replace("X", decimal_sep)
+    )
+
+    # Add the euro symbol
+    formatted_value = value_str + " €"
+    return formatted_value
 
 
 async def convert_price_to_float(price_str):
