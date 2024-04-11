@@ -5,6 +5,7 @@ from sqlalchemy import func, text, update
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
+from tenacity import retry, stop_after_attempt, wait_fixed
 
 from src.config import settings
 from src.models import PriceHistory, Product, Source
@@ -71,7 +72,10 @@ async def get_products_by_source(db: AsyncSession, source_id: int) -> list[Produ
     products = result.scalars().all()
     return products
 
-
+'''
+Retry up to 3 times with a fixed wait of 1 second between attempts if an OperationalError is encountered.
+'''
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(1), reraise=True)
 async def create_or_update_product(
     db: AsyncSession, product_data: dict, source_name: str
 ) -> Product:
@@ -207,22 +211,28 @@ async def queue_product_as_published(db: AsyncSession, product_id: int):
         await db.rollback()
         logger.debug(f"Database update failed: {e}")
 
+
 async def mark_product_as_unavailable(product_id: int, db: AsyncSession):
     async with db.begin():
         # Check if the product is already marked as unavailable
         stmt = select(Product).where(Product.id == product_id)
         result = await db.execute(stmt)
         product = result.scalars().first()
-        
+
         if product and not product.available:
             # The product is already marked as unavailable, no need to update
             return
-        
+
         # Mark the product as unavailable
         update_stmt = (
             update(Product)
             .where(Product.id == product_id)
-            .values(available=False, unavailable_since=func.now() if not product.unavailable_since else product.unavailable_since)
+            .values(
+                available=False,
+                unavailable_since=func.now()
+                if not product.unavailable_since
+                else product.unavailable_since,
+            )
         )
         await db.execute(update_stmt)
         await db.commit()

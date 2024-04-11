@@ -6,8 +6,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from src.config import settings
 from src.products.service import queue_product_as_published
 from src.utils import (
+    format_currency,
     format_discount_percentage,
-    format_euro_currency,
     load_translations,
     setup_logger,
 )
@@ -94,8 +94,8 @@ def determine_channel(country):
 def format_message(product, translations):
     # Format dynamic parts of the message
     discount_percentage = format_discount_percentage(product.discount_percentage)
-    original_price = format_euro_currency(product.original_price)
-    sale_price = format_euro_currency(product.sale_price)
+    original_price = format_currency(product.original_price)
+    sale_price = format_currency(product.sale_price)
 
     # Use the loaded translations to construct the message
     message = translations["whatsapp_message"].format(

@@ -19,7 +19,13 @@ ssl_context.check_hostname = True  # Enable hostname verification
 ssl_context.verify_mode = ssl.CERT_REQUIRED  # Ensure the certificate is required
 
 # Create the async engine with the SSL context
-engine = create_async_engine(DATABASE_URL, connect_args={"ssl": ssl_context})
+engine = create_async_engine(
+    DATABASE_URL,
+    echo=True,
+    connect_args={"ssl": ssl_context},
+    pool_size=20,
+    max_overflow=10,
+)
 
 
 # Create a sessionmaker instance with AsyncSession
