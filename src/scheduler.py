@@ -1,12 +1,9 @@
-import random
-
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 
 from src.config import settings
 from src.products.tasks import publish_products_task
 from src.utils import setup_logger
-from src.web_sources.tasks import read_sources_task
 
 scheduler = AsyncIOScheduler()
 
@@ -25,7 +22,7 @@ def setup_scheduler(app):
         replace_existing=True,
     )
 
-    # New task: Scrape web sources once a week on Mon, Tue, or Wed at a random hour
+    """ # New task: Scrape web sources once a week on Mon, Tue, or Wed at a random hour
     random_day_of_week = random.choice(settings.READING_SOURCES_DAY.split(","))
 
     # Split the hour range, convert to integers, and choose a random hour within the range
@@ -38,7 +35,7 @@ def setup_scheduler(app):
         trigger=CronTrigger(day_of_week=random_day_of_week, hour=random_hour),
         id="read_sources",  # Unique ID for the job
         replace_existing=True,
-    )
+    ) """
 
     scheduler.start()
     logger.info("Scheduler setup complete.")
