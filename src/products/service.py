@@ -184,26 +184,21 @@ async def queue_product_as_published(db: AsyncSession, product_id: int):
 
 
 async def mark_product_as_unavailable(product_id: int, db: AsyncSession):
+    update_query = text(
+        """
+    UPDATE products 
+    SET available = False, unavailable_since = COALESCE(unavailable_since, NOW()) 
+    WHERE id = :id AND available = True
     """
-    Marks a product as unavailable in the database.
+    )  # Only update if currently available to avoid unnecessary writes
 
-    Args:
-        product_id (int): The ID of the product to mark as unavailable.
-        db (AsyncSession): The database session.
-    """
     try:
-        update_query = text("UPDATE products SET available = False WHERE id = :id")
-
         if not db.in_transaction():
-            # Start a new transaction if one isn't already in progress
             async with db.begin():
                 await db.execute(update_query, {"id": product_id})
         else:
-            # If already in a transaction, just execute the update
             await db.execute(update_query, {"id": product_id})
-
     except Exception as e:
-        # Rollback in case of an exception if a transaction is ongoing
         if db.in_transaction():
             await db.rollback()
         logger.error(f"Error marking product {product_id} as unavailable: {e}")
