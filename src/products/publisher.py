@@ -34,7 +34,7 @@ async def process_unpublished_products(db: AsyncSession) -> int:
         for index, product in enumerate(unpublished_products):
             try:
                 # Check if the product is available
-                if not await is_product_available(product.id, db):
+                if not await is_product_available(product.id):
                     # If the product is not available, skip publishing and possibly mark it
                     logger.info(f"Product {product.id} is not available. Skipping...")
                     await mark_product_as_unavailable(product.id, db)
