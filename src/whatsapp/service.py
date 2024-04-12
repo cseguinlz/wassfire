@@ -96,6 +96,8 @@ def format_message(product, translations):
     discount_percentage = format_discount_percentage(product.discount_percentage)
     original_price = format_currency(product.original_price)
     sale_price = format_currency(product.sale_price)
+    logger.debug(f"original_price: {original_price}")
+    logger.debug(f"sale_price: {sale_price}")
 
     # Use the loaded translations to construct the message
     message = translations["whatsapp_message"].format(
@@ -106,5 +108,4 @@ def format_message(product, translations):
         sale_price=sale_price,
         short_url=product.short_url,
     )
-
     return message

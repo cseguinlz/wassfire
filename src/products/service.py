@@ -1,7 +1,7 @@
 # crud.py
 
 
-from sqlalchemy import func, text, update
+from sqlalchemy import text, update
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
@@ -135,48 +135,38 @@ Retry up to 3 times with a fixed wait of 1 second between attempts if an Operati
 
 
 @retry(stop=stop_after_attempt(3), wait=wait_fixed(1), reraise=True)
-async def get_unpublished_products(db: AsyncSession, country_lang: str):
+async def get_unpublished_products(db: AsyncSession, locale: str):
     """
-    Queries the database for a specific number of unpublished products for a given locale,
-    ensuring a variety of brands using a complex SQL query.
+    Queries the database for unpublished products for a given locale,
+    ensuring up to settings.PRODUCTS_TO_PUBLISH products are selected.
     """
     sql_query = text(
         """
-    WITH unique_brands AS (
-        SELECT DISTINCT ON (brand) id
-        FROM products
-        WHERE published_at IS NULL
-          AND country_lang = :country_lang
-          AND discount_percentage >= :discount_threshold
-        ORDER BY brand, RANDOM()
-        LIMIT :limit
-    ), additional_products AS (
-        SELECT p.id
+        WITH ranked_products AS (
+            SELECT id, brand,
+                   ROW_NUMBER() OVER (PARTITION BY brand ORDER BY RANDOM()) as rank
+            FROM products
+            WHERE published_at IS NULL
+              AND country_lang = :country_lang
+              AND discount_percentage >= :discount_threshold
+        )
+        SELECT p.*
         FROM products p
-        WHERE NOT EXISTS (SELECT 1 FROM unique_brands ub WHERE ub.id = p.id)
-          AND published_at IS NULL
-          AND country_lang = :country_lang
-          AND discount_percentage >= :discount_threshold
-        ORDER BY RANDOM()
-        LIMIT (:limit - (SELECT COUNT(*) FROM unique_brands))
-    )
-    SELECT * FROM products
-    WHERE id IN (SELECT id FROM unique_brands UNION ALL SELECT id FROM additional_products);
-    """
+        JOIN ranked_products rp ON p.id = rp.id
+        WHERE rp.rank <= :limit;
+        """
     )
 
-    # Executing the complex SQL query
+    # Execute the query
     result = await db.execute(
         sql_query,
         {
-            "country_lang": country_lang,
+            "country_lang": locale,
             "discount_threshold": settings.DISCOUNT_THRESHOLD,
             "limit": settings.PRODUCTS_TO_PUBLISH,
         },
     )
-    # Directly map the SQL results to Product instances
     products = [Product(**row) for row in result.mappings().all()]
-
     return products
 
 
@@ -194,29 +184,30 @@ async def queue_product_as_published(db: AsyncSession, product_id: int):
 
 
 async def mark_product_as_unavailable(product_id: int, db: AsyncSession):
-    async with db.begin():
-        # Check if the product is already marked as unavailable
-        stmt = select(Product).where(Product.id == product_id)
-        result = await db.execute(stmt)
-        product = result.scalars().first()
+    """
+    Marks a product as unavailable in the database.
 
-        if product and not product.available:
-            # The product is already marked as unavailable, no need to update
-            return
+    Args:
+        product_id (int): The ID of the product to mark as unavailable.
+        db (AsyncSession): The database session.
+    """
+    try:
+        update_query = text("UPDATE products SET available = False WHERE id = :id")
 
-        # Mark the product as unavailable
-        update_stmt = (
-            update(Product)
-            .where(Product.id == product_id)
-            .values(
-                available=False,
-                unavailable_since=func.now()
-                if not product.unavailable_since
-                else product.unavailable_since,
-            )
-        )
-        await db.execute(update_stmt)
-        await db.commit()
+        if not db.in_transaction():
+            # Start a new transaction if one isn't already in progress
+            async with db.begin():
+                await db.execute(update_query, {"id": product_id})
+        else:
+            # If already in a transaction, just execute the update
+            await db.execute(update_query, {"id": product_id})
+
+    except Exception as e:
+        # Rollback in case of an exception if a transaction is ongoing
+        if db.in_transaction():
+            await db.rollback()
+        logger.error(f"Error marking product {product_id} as unavailable: {e}")
+        raise
 
 
 async def update_existing_product(

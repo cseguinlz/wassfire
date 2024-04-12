@@ -84,9 +84,9 @@ def format_currency(value: float, locale: str = "es-ES") -> str:
         C
         C.UTF-8
         POSIX
-        
+
         If you need a custom locale you would need to create your own environment with Docker.>
- 
+
     :param value: The float value to format.
     :param locale: The locale code, which determines the formatting.
     :return: A string representing the value as a currency.
@@ -94,21 +94,15 @@ def format_currency(value: float, locale: str = "es-ES") -> str:
     # Define locale-based formatting rules
     if locale.lower().startswith("en"):
         # English formatting: 1,234,567.89 €
-        thousands_sep, decimal_sep = ",", "."
+        formatted_value = f"{value:,.2f} €"
     else:
         # European formatting: 1.234.567,89 €
-        thousands_sep, decimal_sep = ".", ","
+        # Format the number manually with thousands as '.' and decimal as ','
+        formatted_value = (
+            f"{value:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+        )
+        formatted_value += " €"
 
-    # Format the number manually
-    value_str = f"{value:,.2f}"  # Use comma as the thousands separator by default
-    value_str = (
-        value_str.replace(",", "X")
-        .replace(".", thousands_sep)
-        .replace("X", decimal_sep)
-    )
-
-    # Add the euro symbol
-    formatted_value = value_str + " €"
     return formatted_value
 
 
