@@ -161,6 +161,7 @@ async def scrape_adidas(db: AsyncSession, start: int = 0):
                         category["category"],
                         db,
                     )
+    logger.info("********* Adidas read ✅ *************")
 
 
 def find_image_with_view(images, view_name):

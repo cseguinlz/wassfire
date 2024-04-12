@@ -26,6 +26,7 @@ async def scrape_converse(db: AsyncSession):
         base_url = entry["url"]
         encoded_base_url = encode_url(base_url)
         await scrape_and_save_products(encoded_base_url, country_code, db)
+    logger.info("********* Converse read ✅ *************")
 
 
 async def scrape_and_save_products(url: str, country_code: str, db: AsyncSession):

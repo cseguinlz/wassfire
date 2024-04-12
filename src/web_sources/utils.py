@@ -60,10 +60,12 @@ async def fetch_page(url: str, authority: str, headers=None):
     :return: The HTTP response.
     """
     if headers is None:
-        if headers is None:
-            headers = get_common_headers(url, authority)
+        headers = get_common_headers(url, authority)
+
+    # Encode the URL to handle special characters
+    encoded_url = encode_url(url, safe_chars="/:")
     async with AsyncSession() as session:
-        response = await session.get(url, headers=headers)
+        response = await session.get(encoded_url, headers=headers)
         return response
 
 

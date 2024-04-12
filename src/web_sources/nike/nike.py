@@ -23,6 +23,7 @@ async def scrape_nike(db: AsyncSession):
         base_url = entry["url"]
         encoded_base_url = encode_url(base_url)
         await scrape_and_save_products(encoded_base_url, country_lang, db)
+    logger.info("********* Nike read ✅ - Just do it! *************")
 
 
 async def scrape_and_save_products(url: str, country_lang: str, db: AsyncSession):
