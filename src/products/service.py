@@ -156,18 +156,27 @@ async def get_unpublished_products(db: AsyncSession, locale: str):
         WHERE rp.rank <= :limit;
         """
     )
-
-    # Execute the query
-    result = await db.execute(
-        sql_query,
-        {
-            "country_lang": locale,
-            "discount_threshold": settings.DISCOUNT_THRESHOLD,
-            "limit": settings.PRODUCTS_TO_PUBLISH,
-        },
-    )
-    products = [Product(**row) for row in result.mappings().all()]
-    return products
+    try:
+        # Execute the query
+        result = await db.execute(
+            sql_query,
+            {
+                "country_lang": locale,
+                "discount_threshold": settings.DISCOUNT_THRESHOLD,
+                "limit": settings.PRODUCTS_TO_PUBLISH,
+            },
+        )
+        products = [Product(**row) for row in result.mappings().all()]
+        await db.commit()  # Commit to finalize the transaction
+        return products
+    except SQLAlchemyError as e:
+        await db.rollback()  # Rollback in case of an error
+        logger.error(f"SQLAlchemy Error in get_unpublished_products: {str(e)}")
+        raise
+    except Exception as e:
+        await db.rollback()  # Rollback in case of any other errors
+        logger.error(f"Unexpected error in get_unpublished_products: {str(e)}")
+        raise
 
 
 async def queue_product_as_published(db: AsyncSession, product_id: int):
