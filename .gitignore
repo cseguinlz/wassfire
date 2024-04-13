@@ -27,3 +27,4 @@ var/
 .installed.cfg
 *.egg
 tests/web_sources/.DS_Store
+static/images/.DS_Store
