@@ -52,9 +52,6 @@ async def publish_product_to_whatsapp(product, db: AsyncSession):
     }
     try:
         async with httpx.AsyncClient(timeout=settings.WHAPI_TIMEOUT) as client:
-            logger.debug(
-                f"Sending request to WhatsApp API with payload: {payload} and headers: {headers}"
-            )
             response = await client.post(url, json=payload, headers=headers)
             if response.status_code == 200:
                 logger.info(f"Product {product.id} published successfully.")
