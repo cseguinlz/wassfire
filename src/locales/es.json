@@ -3,34 +3,34 @@
     "header_brands": "Para Marcas",
     "header_faqs": "Preguntas Frecuentes",
 
-    "hero_title": "Donde las Ofertas de Moda te Encuentran",
-    "hero_subtitle": "No busques más. Exclusivos <span class='text-2xl' style='color: #20B256; font-weight: bold;'>descuentos de hasta el 70%</span> en tus marcas favoritas, directamente en tu WhatsApp.",
-    "hero_button": "Sigue para Ofertas Exclusivas",
+    "hero_title": "Tu outlet de bolsillo.",
+    "hero_subtitle": "Grandes marcas y <span class='text-2xl' style='color: #20B256; font-weight: bold;'>descuentos de hasta el 70%</span> directamente en tu WhatsApp.",
+    "hero_button": "Suscríbete para ofertas increíbles",
     "cta_title": "Últimas Unidades.<br />Hasta un 70% de descuento.",
-    "cta_button": "Caza la oferta",
+    "cta_button": "¡Empieza ya!",
     "logos_title": "Solo los mejores descuentos. Solo las mejores marcas",
     
     "faqs_title": "Preguntas Frecuentes",
-    "faqs_subtitle": "¿No encuentras la respuesta que buscas? Contacta a nuestro equipo de <a href='mailto:hola@wassfire.com' class='font-semibold text-indigo-600 hover:text-indigo-500'>soporte al cliente</a>.</p>",
+    "faqs_subtitle": "¿No encuentras la respuesta que buscas? Contacta con nuestro equipo en <a href='mailto:hola@wassfire.com' class='font-semibold text-indigo-600 hover:text-indigo-500'>soporte al cliente</a>.</p>",
 
     "faqs_q1": "¿Qué tipo de descuentos puedo esperar de las ofertas de Wassfire?",
-    "faqs_a1": "En Wassfire, estamos comprometidos a ofrecerte los mayores descuentos. Por eso, la oferta media que publicamos ofrece <strong>un descuento mínimo del 40% o más.</strong> Creemos en ofrecer un valor real, así que puedes confiar en que las ofertas que aparecen en tu teléfono siempre valen la pena.",
+    "faqs_a1": "En Wassfire, nos comprometemos a ofrecerte solo los mejores descuentos. Por eso, nuestra oferta media comienza en <strong>un descuento mínimo del 40% llegando hasta el 70%.</strong> Nuestro objetivo es eso, solo los mejores descuentos, que las ofertas que aparecen en nuestros canales siempre merezcan la pena.",
 
     "faqs_q2": "¿Wassfire vende productos directamente?",
-    "faqs_a2": "No, Wassfire no vende productos directamente. Todas las ofertas que compartimos enlazan directamente con la fuente original, típicamente el sitio de comercio electrónico de la propia marca. Por ejemplo, si compartimos una oferta de zapatillas Adidas, serás dirigido a su sitio oficial como <a href='https://www.adidas.com/shoe-oznova/HP6364.html' target='_blank'>https://www.adidas.com/shoe-oznova/HP6364.html</a> para realizar tu compra. De esta manera, compras directamente de las marcas que amas, asegurando autenticidad y calidad.",
+    "faqs_a2": "No, Wassfire no vende productos directamente. Todas las ofertas que compartimos enlazan directamente con su fuente original, es decir, la web de la propia marca. Por ejemplo, si compartimos una oferta de zapatillas Adidas, serás dirigido al página del producto dentro de su sitio oficial como <a href='https://www.adidas.com/?source=wassfire.com' target='_blank'>www.adidas.com</a> para realizar tu compra. De esta manera, compras directamente a tus marcas favoritas, asegurando autenticidad y calidad.",
 
-    "faqs_q3": "¿Seguir a Wassfire llenará mi teléfono de SPAM?",
-    "faqs_a3": "¡Absolutamente no! Wassfire respeta tu privacidad y tu tranquilidad. Puedes seguir o dejar de seguir nuestros canales en cualquier momento. Los Canales de WhatsApp están diseñados teniendo en mente la privacidad, lo que significa que tu número y detalles permanecen invisibles para nosotros y otros seguidores. Tus interacciones en nuestro canal, como reacciones o votos en encuestas, son privadas, y solo una información limitada es accesible para nosotros como administradores del canal. La encriptación de extremo a extremo de WhatsApp asegura que tus mensajes personales permanezcan privados.",
+    "faqs_q3": "¿Seguir un canal Wassfire llenará mi teléfono de SPAM?",
+    "faqs_a3": "Nunca. Cuando te unes a un canal Wassfire las notificaciones están silenciadas por defecto. Puedes dejar de seguir nuestros canales en cualquier momento. Tu número y detalles NO son visibles, ni para nosotros, ni para otros seguidores. Tus interacciones en nuestro canal, como reacciones, son anónimas.",
 
     "faqs_q4": "¿Con qué frecuencia actualiza Wassfire sus ofertas?",
-    "faqs_a4": "Actualizamos nuestro canal tres veces al día para asegurarnos de que siempre estás al tanto de las últimas ofertas de moda.",
+    "faqs_a4": "Depende, en general actualizamos nuestro canal tres veces al día para asegurarnos de que siempre ofrecemos los descuentos más recientes, antes que nadie.",
 
-    "faqs_q5": "¿Por qué Wassfire utiliza acortadores de URL para los enlaces de las ofertas?",
-    "faqs_a5": "Utilizamos acortadores de URL, como 'wass.promo/abc123', por un par de razones importantes. Primero, nos ayuda a mantener los mensajes concisos y centrados en la oferta en sí. Más importante aún, nos permite rastrear clics y entender qué ofertas interesan más a nuestros seguidores. Este seguimiento es crucial para mejorar nuestro servicio y asegurarnos de que siempre estamos ofreciendo ofertas que emocionan y benefician a ti.",
+    "faqs_q5": "¿Por qué Wassfire utiliza atajos de URL para los enlaces de las ofertas?",
+    "faqs_a5": "Utilizamos atajos de URL, como 'wass.promo/abc123', por dos razones. Primero, nos ayuda a mantener los mensajes concisos y centrados en la oferta en sí. Además, nos permite contabilizar el número de clics en cada oferta, y entender cuáles interesan más a nuestros seguidores. De este modo podemos ofrecer ofertas que de verdad importan a nuestra comunidad, mejorando nuestro servicio.",
 
     "spam_title": "Aquí no se permite SPAM",
-    "spam_subtitle": "Cuando sigues nuestro canal, <span style='font-size: x-large; font-weight: bolder;'>las notificaciones están silenciadas por defecto.</span> Puedes <span style='font-size: x-large; font-weight: bolder;'>elegir dejar de seguir</span> nuestro canal en cualquier momento. <span style='font-size: x-large; font-weight: bolder;'>No podemos ver tu número de teléfono</span> o nombre de perfil a menos que te hayas guardado como contacto. No eres visible para otros seguidores del canal. No pueden ver tu nombre, número de teléfono, foto de perfil, reacciones al contenido del canal. Es tu arreglo personal, <span style='font-size: x-large; font-weight: bolder;'>privado</span>, de moda diaria entregado a tu teléfono.",
-    "spam_button": "Comienza ahora",
+    "spam_subtitle": "Cuando sigues nuestro canal, <span style='font-size: x-large; font-weight: bolder;'>las notificaciones están silenciadas por defecto.</span> Puedes <span style='font-size: x-large; font-weight: bolder;'>dejar de seguir</span> nuestro canal en cualquier momento. <span style='font-size: x-large; font-weight: bolder;'>No podemos ver tu número de teléfono</span> o nombre de perfil a menos que te nos hayas guardado como contacto. No eres visible para otros seguidores del canal. No pueden ver ni tu nombre, ni tu número, ni tu foto de perfil, reacciones al contenido del canal. Es tu arreglo personal, <span style='font-size: x-large; font-weight: bolder;'>privado</span>, de moda diaria entregado a tu teléfono.",
+    "spam_button": "Empieza ahora",
 
     "footer_legal": "Legal",
     "footer_terms": "Términos y Condiciones de uso",
