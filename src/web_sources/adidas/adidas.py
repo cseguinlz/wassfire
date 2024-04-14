@@ -112,7 +112,7 @@ async def scrape_and_save_products(
     )
     if response.status_code == 200:
         products, total_count, view_size = await parse_page(
-            response.text, country_code, section
+            response.text, country_code, section.lower()
         )
         for product_data in products:
             await service.create_or_update_product(

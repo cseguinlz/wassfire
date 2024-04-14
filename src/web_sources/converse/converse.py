@@ -59,10 +59,10 @@ async def scrape_and_save_products(url: str, country_code: str, db: AsyncSession
 
 # Mappings based on known patterns in the text.
 section_mapping = {
-    "Unisex": "Unisex",
-    "Hombre": "Men",
-    "Mujer": "Women",
-    "Infantil": "Kids",
+    "Unisex": "unisex",
+    "Hombre": "men",
+    "Mujer": "women",
+    "Infantil": "kids",
 }
 
 category_mapping = {
