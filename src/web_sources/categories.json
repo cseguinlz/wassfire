@@ -1,0 +1,24 @@
+{
+    "sections": {
+        "Men": ["homem", "para homem", "men", "hombre", "caballero"],
+        "Women": ["mulher", "para mulher", "women", "mujer", "señora", "senora"],
+        "Kids": ["criança", "crianças", "júnior", "kids", "niño", "niña", "nino", "nina","infantil"],
+        "Unisex": ["unissexo", "unisex"]
+    },
+    "sports": {
+        "Basketball": ["basquetebol", "basketball", "baloncesto"],
+        "Football": ["futebol", "football", "fútbol", "soccer"],
+        "Running": ["running", "corrida", "correr"],
+        "Gym": ["training", "treino", "entrenamiento", "halterofilia", "gimnasio", "ginásio", "hiit", "crossfit", "cross training", "fitness"],
+        "Golf": ["golf", "golfe"],
+        "Yoga": ["yoga", "ioga"],
+        "Skateboard": ["skateboard", "skate"],
+        "Tennis": ["tennis", "tenis", "ténis"],
+        "Baseball": ["baseball", "béisbol", "basebol"],
+        "Swimming": ["swimming", "natación", "natação"],
+        "Volleyball": ["volleyball", "voleibol"],
+        "Rugby": ["râguebi", "rugby", "fútbol americano"],
+        "Hiking": ["senderismo", "caminar", "caminhada", "caminhar", "hiking", "trail"],
+        "Cycling": ["cycling", "ciclismo"]
+    }
+}

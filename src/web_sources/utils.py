@@ -6,6 +6,7 @@ import aiofiles
 import httpx
 from curl_cffi.requests import AsyncSession
 from sqlalchemy import select
+from tenacity import retry, stop_after_attempt, wait_fixed
 
 from src.models import Product
 from src.utils import setup_logger
@@ -51,6 +52,7 @@ async def check_duplicate_product(db: AsyncSession, product_link: str) -> bool:
     return result.scalars().first() is not None
 
 
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(1), reraise=True)
 async def fetch_page(url: str, authority: str, headers=None):
     """
     Fetches a webpage's content.
@@ -268,6 +270,28 @@ async def fetch_nike_products_page(url, anchor, count, country_code, lang):
         else:
             logger.debug(f"Failed to fetch products: HTTP {response.status_code}")
             return None
+
+
+def load_categories(filename="src/web_sources/categories.json"):
+    with open(filename, "r") as file:
+        return json.load(file)
+
+
+def find_category(description, categories):
+    description_lower = description.lower()
+    for category, keywords in categories.items():
+        if any(keyword in description_lower for keyword in keywords):
+            return category
+    return None
+
+
+def categorize_product(description):
+    categories = load_categories()
+    category_data = {
+        "section": find_category(description, categories["sections"]),
+        "sport": find_category(description, categories["sports"]),
+    }
+    return category_data
 
 
 """

@@ -9,6 +9,7 @@ from src.products import service
 from src.utils import setup_logger
 from src.web_sources.carhartt.urls import CARHARTT_BASE_OUTLET_URLS
 from src.web_sources.utils import (
+    categorize_product,
     construct_full_product_link,
     encode_url,
     fetch_ajax_carhartt_content,
@@ -65,6 +66,10 @@ async def parse_page(html_content: str, country_code: str):
             )
         logger.debug(f"Product link {SOURCE_NAME}: {product_link}")
         name = product_cell.select_one(".product-description h5").text.strip()
+        # Try to find categories
+        category_info = categorize_product(name)
+        # logger.debug(f"Categories: {category_info}")
+
         image_url = product_cell.select_one(".product-cell-image img.front")["src"]
         price_data = product_cell.select_one(".price span")
         original_price = product_cell.select_one("del").text.strip()
@@ -96,9 +101,13 @@ async def parse_page(html_content: str, country_code: str):
                 "name": name,
                 "country_lang": country_code,
                 "brand": BRAND,
-                "section": "",  # Section is not defined in the provided HTML, may need to adapt based on actual use
+                "section": category_info[
+                    "section"
+                ],  # Section is not defined in the HTML
                 "category": "",  # Similarly, category is not directly available
-                "type": "",  # Type information is also not available in the HTML snippet
+                "type": category_info[
+                    "sport"
+                ],  # Type information is also not available in the HTML snippet
                 "color": ", ".join(color_variations),
                 "discount_percentage": discount_percentage,
                 "original_price": original_price_float,

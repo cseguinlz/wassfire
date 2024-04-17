@@ -4,6 +4,7 @@ from src.products import service
 from src.utils import setup_logger
 from src.web_sources.nike.urls import NIKE_BASE_OUTLET_URLS
 from src.web_sources.utils import (
+    categorize_product,
     construct_full_product_link,
     encode_url,
     fetch_nike_products_page,
@@ -62,6 +63,12 @@ async def parse_nike_products(json_data, country_lang):
     for product in products_data:
         title = product.get("title", "")
         description = product.get("subtitle", "")
+
+        # Combine title and description for categorization
+        combined_description = f"{title} {description}"
+        category_info = categorize_product(combined_description)
+        # logger.debug(f"Categories: {category_info}")
+
         category = product.get("productType", "")
 
         product_url = construct_full_product_link(
@@ -95,9 +102,9 @@ async def parse_nike_products(json_data, country_lang):
             "description": description,
             "country_lang": country_lang,
             "brand": BRAND,
-            "section": "",
+            "section": category_info["section"],  # Set section from categorization
             "category": category,
-            "type": "",
+            "type": category_info["sport"],  # Set type (sport) from categorization
             "color": color_description,
             "discount_percentage": discount_percentage,
             "original_price": full_price,

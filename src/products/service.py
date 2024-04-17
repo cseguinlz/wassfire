@@ -220,27 +220,27 @@ async def update_existing_product(
     # Initialize a flag to track if any updates are needed
     update_needed = False
 
-    # Check for price or discount changes
-    price_or_discount_changed = (
-        existing_product.discount_percentage != product_data.get("discount_percentage")
-        or existing_product.original_price != product_data.get("original_price")
-        or existing_product.sale_price != product_data.get("sale_price")
-    )
+    # Check for any changes in the relevant fields
+    fields_to_check = [
+        "discount_percentage",
+        "original_price",
+        "sale_price",
+        "image_url",
+        "section",
+        "type",
+    ]
 
-    # Check if image_url changed
-    image_url_changed = existing_product.image_url != product_data.get("image_url")
+    # Determine if any field has changed
+    for field in fields_to_check:
+        if getattr(existing_product, field) != product_data.get(field):
+            setattr(existing_product, field, product_data.get(field))
+            update_needed = True
 
-    # Update product fields if changes are detected
-    if price_or_discount_changed or image_url_changed:
-        update_needed = True
-        existing_product.discount_percentage = product_data.get("discount_percentage")
-        existing_product.original_price = product_data.get("original_price")
-        existing_product.sale_price = product_data.get("sale_price")
-        if image_url_changed:
-            existing_product.image_url = product_data.get("image_url")
-
-    # Only create a price history record if price changed
-    if price_or_discount_changed:
+    # If there's a price or discount change, add a new price history record
+    if any(
+        getattr(existing_product, field) != product_data.get(field)
+        for field in ["discount_percentage", "original_price", "sale_price"]
+    ):
         price_history_record = PriceHistory(
             product_id=existing_product.id,
             discount_percentage=product_data.get("discount_percentage"),
@@ -248,6 +248,5 @@ async def update_existing_product(
             sale_price=product_data.get("sale_price"),
         )
         db.add(price_history_record)
-        # No need for a separate commit here; it will be handled in the calling function
 
     return update_needed

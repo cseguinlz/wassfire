@@ -8,6 +8,7 @@ from src.products import service
 from src.utils import setup_logger
 from src.web_sources.converse.urls import CONVERSE_BASE_OUTLET_URLS
 from src.web_sources.utils import (
+    categorize_product,
     construct_full_product_link,
     encode_url,
     fetch_converse_products_page,
@@ -58,13 +59,6 @@ async def scrape_and_save_products(url: str, country_code: str, db: AsyncSession
 
 
 # Mappings based on known patterns in the text.
-section_mapping = {
-    "Unisex": "unisex",
-    "Hombre": "men",
-    "Mujer": "women",
-    "Infantil": "kids",
-}
-
 category_mapping = {
     "Zapatillas": "Sneakers",
     "Camiseta": "T-Shirt",
@@ -80,6 +74,22 @@ async def parse_converse_page(html_content: str, country_code: str):
     for product_tile in soup.select(".plp-grid__item"):
         name_section = product_tile.select_one(".product-tile__img-url")
         name = name_section["title"] if name_section else "No Name Found"
+
+        # Categorization based on name and description
+        badge_text = product_tile.select_one(".product-tile__secondary-badge")
+        description = badge_text.text.strip() if badge_text else ""
+        combined_description = f"{name} {description}"
+        category_info = categorize_product(combined_description)
+        logger.debug(f"Categories: {category_info}")
+
+        # Initialize category
+        category = ""
+        # Extracting Category
+        for keyword, mapped_category in category_mapping.items():
+            if re.search(keyword, description, re.IGNORECASE):
+                category = mapped_category
+                break
+
         product_link = name_section["href"] if name_section else ""
         product_url = construct_full_product_link(
             SOURCE_NAME, country_code, product_link
@@ -141,28 +151,16 @@ async def parse_converse_page(html_content: str, country_code: str):
         # Color variations are simplified in this example, extracted from data attribute
         color_variations = product_tile.get("data-colors-to-show", "").split("/")
 
-        # Extracting section and category
-        badge_text = product_tile.select_one(".product-tile__secondary-badge")
-        text = badge_text.text.strip() if badge_text else ""
-        section = ""
-        category = ""
-        for keyword, mapped_section in section_mapping.items():
-            if re.search(keyword, text, re.IGNORECASE):
-                section = mapped_section
-                break
-        for keyword, mapped_category in category_mapping.items():
-            if re.search(keyword, text, re.IGNORECASE):
-                category = mapped_category
-                break
-
         products.append(
             {
                 "source_id": SOURCE_ID,  # Adjust based on actual source ID system
                 "name": name,
+                "description": description,
                 "country_lang": country_code,
                 "brand": "Converse",
-                "section": section,
+                "section": category_info["section"],
                 "category": category,
+                "type": category_info["sport"],
                 "color": ", ".join(color_variations),
                 "product_link": product_url,
                 "image_url": image_url,
