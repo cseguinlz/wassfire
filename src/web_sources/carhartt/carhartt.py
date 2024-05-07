@@ -72,7 +72,10 @@ async def parse_page(html_content: str, country_code: str):
 
         image_url = product_cell.select_one(".product-cell-image img.front")["src"]
         price_data = product_cell.select_one(".price span")
-        original_price = product_cell.select_one("del").text.strip()
+        original_price_tag = product_cell.select_one("del")
+        if not original_price_tag:
+            continue  # Skip products without a crossed-out original price
+        original_price = original_price_tag.text.strip()
         sale_price = price_data.text.strip().split("\n")[0]
 
         # Parsing price to float
