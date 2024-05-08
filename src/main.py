@@ -5,6 +5,7 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from src.config import settings
+from src.email.routers import router as email_router
 from src.home.routers import router as home_router
 from src.products.routers import router as product_router
 
@@ -38,6 +39,7 @@ app.include_router(product_router, prefix="/api/v1", tags=["crud"])
 app.include_router(web_sources_router, prefix="/web-sources", tags=["web-sources"])
 app.include_router(whatsapp_router, prefix="/whatsapp", tags=["whatsapp"])
 app.include_router(home_router, tags=["home"])
+app.include_router(email_router, prefix="/notifications", tags=["notifications"])
 
 
 app.mount("/static", StaticFiles(directory="static"), name="static")

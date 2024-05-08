@@ -1,4 +1,4 @@
-<header class=" relative overflow-hidden">
+<header class="relative overflow-hidden">
   <!-- Top navigation -->
   <nav
     aria-label="Top"
@@ -33,7 +33,11 @@
         <!-- Logo -->
         <div class="ml-4 flex items-center lg:ml-0">
           <a href="/" class="flex items-center">
-            <img src="/static/images/wassfire.svg" alt="Wassfire Logo" class="h-8 w-auto">
+            <img
+              src="/static/images/wassfire.svg"
+              alt="Wassfire Logo"
+              class="h-8 w-auto"
+            />
             <span class="ml-2 text-xl font-semibold">Wassfire</span>
           </a>
         </div>
@@ -41,28 +45,38 @@
         <!-- Flyout menus -->
         <div class="hidden lg:ml-8 lg:block lg:self-stretch">
           <div class="flex h-full space-x-8">
-            <div class="flex">
-              
-
-            </div>
+            <div class="flex"></div>
             <div class="flex">
               <div class="relative flex">
                 <a
-              href="/brands"
-              class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-              >{{home.header_brands}}</a
-            >
+                  href="/brands"
+                  class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                  >{{home.header_brands}}</a
+                >
               </div>
-
             </div>
             <a
               href="/#faq"
               class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
               >{{home.header_faqs}}</a
             >
-          </div>  
+            <a
+                href="/contact"
+                class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+              >
+              {{home.header_contact}}
+              </a>
+          </div>
         </div>
       </div>
     </div>
   </nav>
 </header>
+<script>
+  document.getElementById("openModal").addEventListener("click", function () {
+    document.getElementById("contactModal").style.display = "block";
+  });
+  document.getElementById("closeModal").addEventListener("click", function () {
+    document.getElementById("contactModal").style.display = "none";
+  });
+</script>

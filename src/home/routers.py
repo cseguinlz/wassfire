@@ -38,6 +38,13 @@ async def get_brands(request: Request, translations: dict = Depends(get_translat
     )
 
 
+@router.get("/contact", response_class=HTMLResponse)
+async def get_contact(request: Request, translations: dict = Depends(get_translations)):
+    return templates.TemplateResponse(
+        "contact.html", {"request": request, **translations}
+    )
+
+
 @router.post("/submit-email")
 async def submit_email(email: str = Form(...), db: AsyncSession = Depends(get_db)):
     try:

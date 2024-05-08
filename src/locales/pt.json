@@ -1,51 +1,62 @@
 {
-    "home": {
-      "header_brands": "Para Marcas",
-      "header_faqs": "FAQs",
-  
-      "hero_title": "Onde as Promoções de Moda Encontram Você",
-      "hero_subtitle": "Evite a busca. Descontos exclusivos <span class='text-2xl' style='color: #20B256; font-weight: bold;'>até 70%</span> nas suas marcas favoritas, entregues diretamente no seu WhatsApp.",
-      "hero_button": "Siga para Ofertas Exclusivas",
-      "cta_title": "Stock Final.<br />Até 70% de desconto.",
-      "cta_button": "Aproveite a promoção", 
-      "logos_title": "Apenas os melhores descontos. Apenas as melhores marcas",
-      
-      "faqs_title": "Perguntas Frequentes",
-      "faqs_subtitle": "Não encontra a resposta que procura? Contacte a nossa equipa de <a href='mailto:hola@wassfire.com' class='font-semibold text-indigo-600 hover:text-indigo-500'>apoio ao cliente</a>.</p>",
-      
-      "faqs_q1": "Que tipo de descontos posso esperar das promoções Wassfire?", 
-      "faqs_a1": "Na Wassfire, comprometemo-nos a trazer-lhe as maiores poupanças. Por isso, cada promoção que publicamos oferece um desconto de 40% ou mais. Acreditamos em oferecer valor real, por isso pode confiar que as promoções que surgem no seu telefone valem sempre a pena.", 
-      
-      "faqs_q2": "A Wassfire vende produtos diretamente?", 
-      "faqs_a2": "Não, a Wassfire não vende produtos diretamente. Todas as promoções que partilhamos ligam diretamente à fonte original, normalmente o próprio site de comércio eletrónico da marca. Por exemplo, se partilharmos uma promoção de sapatilhas Adidas, será direcionado para o seu site oficial como <a href='https://www.adidas.com/shoe-oznova/HP6364.html' target='_blank'>https://www.adidas.com/shoe-oznova/HP6364.html</a> para fazer a sua compra. Desta forma, compra diretamente das marcas que ama, garantindo autenticidade e qualidade.", 
-      
-      "faqs_q3": "Seguir a Wassfire vai encher o meu telefone de SPAM?", 
-      "faqs_a3": "Absolutamente não! A Wassfire respeita a sua privacidade e a sua paz de espírito. Pode seguir ou deixar de seguir os nossos canais a qualquer momento. Os Canais do WhatsApp são projetados com a privacidade em mente, o que significa que o seu número e detalhes permanecem invisíveis para nós e outros seguidores. As suas interações no nosso canal, como reações ou votações em sondagens, são privadas, e apenas informações limitadas são acessíveis a nós enquanto administradores do canal. A encriptação de ponta-a-ponta do WhatsApp garante que as suas mensagens pessoais permaneçam privadas.", 
-      
-      "faqs_q4": "Com que frequência a Wassfire atualiza as suas promoções?", 
-      "faqs_a4": "Atualizamos o nosso canal três vezes por dia para garantir que está sempre a par das últimas promoções de moda.", 
-      
-      "faqs_q5": "Porque é que a Wassfire utiliza encurtadores de URL para os links das promoções?", 
-      "faqs_a5": "Utilizamos encurtadores de URL, como 'wass.promo/abc123', por algumas razões importantes. Primeiro, ajuda-nos a manter as mensagens concisas e focadas na própria promoção. Mais importante ainda, permite-nos rastrear cliques e compreender quais promoções interessam mais aos nossos seguidores. Este rastreamento é crucial para melhorar o nosso serviço e garantir que estamos sempre a oferecer promoções que entusiasmam e beneficiam você.",
-      
-      "spam_title": "SPAM Não Permitido",
-      "spam_subtitle": "Quando segue o nosso canal, <span style='font-size: x-large; font-weight: bolder;'>as notificações são silenciadas por padrão.</span> Pode <span style='font-size: x-large; font-weight: bolder;'>escolher deixar de seguir</span> o nosso canal a qualquer momento. <span style='font-size: x-large; font-weight: bolder;'>Não podemos ver o seu número de telefone</span> ou nome de perfil a menos que tenha guardado como contacto. Não é visível para outros seguidores do canal. Eles não podem ver o seu nome, número de telefone, foto de perfil, reações ao conteúdo do canal. É o seu arranjo pessoal, <span style='font-size: x-large; font-weight: bolder;'>privado</span>, de moda diária entregue ao seu telefone.",
-      "spam_button": "Comece agora",
-  
-      "footer_legal": "Legal",
-      "footer_terms": "Termos e Condições",
-      "footer_privacy": "Privacidade",
-      "footer_connect": "Conectar",
-      "footer_contact": "Contacte-nos",
-      "footer_twitter": "Twitter (X)",
-      "footer_newsletter": "Inscreva-se na nossa newsletter",
-      "footer_newsletter_subtitle": "As últimas promoções e poupanças, enviadas para o seu email semanalmente.",
-      "footer_newsletter_button": "Inscrever-se"
-    },
-    "config": {
-      "whatsapp_channel": "https://whatsapp.com/channel/0029VaaPkvD1nozBeh5dCL14"
-    },
-    "whatsapp_message": "\n🔥 *{discount_percentage}* de desconto! - {brand}\n\n🎁 {name}\n💰 Era {original_price}. Agora por apenas {sale_price}!\n👉🏼 Compra diretamente na {brand}: {short_url}"
+  "home": {
+    "header_brands": "Para Marcas",
+    "header_faqs": "FAQs",
+    "header_contact": "Fale conosco",
 
-  }
-  
+    "hero_title": "Onde as Promoções de Moda Encontram Você",
+    "hero_subtitle": "Evite a busca. Descontos exclusivos <span class='text-2xl' style='color: #20B256; font-weight: bold;'>até 70%</span> nas suas marcas favoritas, entregues diretamente no seu WhatsApp.",
+    "hero_button": "Siga para Ofertas Exclusivas",
+    "cta_title": "Stock Final.<br />Até 70% de desconto.",
+    "cta_button": "Aproveite a promoção",
+    "logos_title": "Apenas os melhores descontos. Apenas as melhores marcas",
+
+    "faqs_title": "Perguntas Frequentes",
+    "faqs_subtitle": "Não encontra a resposta que procura? Contacte a nossa equipa de <a href='/contact' class='font-semibold text-indigo-600 hover:text-indigo-500'>apoio ao cliente</a>.</p>",
+
+    "faqs_q1": "Que tipo de descontos posso esperar das promoções Wassfire?",
+    "faqs_a1": "Na Wassfire, comprometemo-nos a trazer-lhe as maiores poupanças. Por isso, cada promoção que publicamos oferece um desconto de 40% ou mais. Acreditamos em oferecer valor real, por isso pode confiar que as promoções que surgem no seu telefone valem sempre a pena.",
+
+    "faqs_q2": "A Wassfire vende produtos diretamente?",
+    "faqs_a2": "Não, a Wassfire não vende produtos diretamente. Todas as promoções que partilhamos ligam diretamente à fonte original, normalmente o próprio site de comércio eletrónico da marca. Por exemplo, se partilharmos uma promoção de sapatilhas Adidas, será direcionado para o seu site oficial como <a href='https://www.adidas.com/shoe-oznova/HP6364.html' target='_blank'>https://www.adidas.com/shoe-oznova/HP6364.html</a> para fazer a sua compra. Desta forma, compra diretamente das marcas que ama, garantindo autenticidade e qualidade.",
+
+    "faqs_q3": "Seguir a Wassfire vai encher o meu telefone de SPAM?",
+    "faqs_a3": "Absolutamente não! A Wassfire respeita a sua privacidade e a sua paz de espírito. Pode seguir ou deixar de seguir os nossos canais a qualquer momento. Os Canais do WhatsApp são projetados com a privacidade em mente, o que significa que o seu número e detalhes permanecem invisíveis para nós e outros seguidores. As suas interações no nosso canal, como reações ou votações em sondagens, são privadas, e apenas informações limitadas são acessíveis a nós enquanto administradores do canal. A encriptação de ponta-a-ponta do WhatsApp garante que as suas mensagens pessoais permaneçam privadas.",
+
+    "faqs_q4": "Com que frequência a Wassfire atualiza as suas promoções?",
+    "faqs_a4": "Atualizamos o nosso canal três vezes por dia para garantir que está sempre a par das últimas promoções de moda.",
+
+    "faqs_q5": "Porque é que a Wassfire utiliza encurtadores de URL para os links das promoções?",
+    "faqs_a5": "Utilizamos encurtadores de URL, como 'wass.promo/abc123', por algumas razões importantes. Primeiro, ajuda-nos a manter as mensagens concisas e focadas na própria promoção. Mais importante ainda, permite-nos rastrear cliques e compreender quais promoções interessam mais aos nossos seguidores. Este rastreamento é crucial para melhorar o nosso serviço e garantir que estamos sempre a oferecer promoções que entusiasmam e beneficiam você.",
+
+    "spam_title": "SPAM Não Permitido",
+    "spam_subtitle": "Quando segue o nosso canal, <span style='font-size: x-large; font-weight: bolder;'>as notificações são silenciadas por padrão.</span> Pode <span style='font-size: x-large; font-weight: bolder;'>escolher deixar de seguir</span> o nosso canal a qualquer momento. <span style='font-size: x-large; font-weight: bolder;'>Não podemos ver o seu número de telefone</span> ou nome de perfil a menos que tenha guardado como contacto. Não é visível para outros seguidores do canal. Eles não podem ver o seu nome, número de telefone, foto de perfil, reações ao conteúdo do canal. É o seu arranjo pessoal, <span style='font-size: x-large; font-weight: bolder;'>privado</span>, de moda diária entregue ao seu telefone.",
+    "spam_button": "Comece agora",
+
+    "footer_legal": "Legal",
+    "footer_terms": "Termos e Condições",
+    "footer_privacy": "Privacidade",
+    "footer_connect": "Conectar",
+    "footer_contact": "Contacte-nos",
+    "footer_twitter": "Twitter (X)",
+    "footer_newsletter": "Inscreva-se na nossa newsletter",
+    "footer_newsletter_subtitle": "As últimas promoções e poupanças, enviadas para o seu email semanalmente.",
+    "footer_newsletter_button": "Inscrever-se"
+  },
+  "config": {
+    "whatsapp_channel": "https://whatsapp.com/channel/0029VaaPkvD1nozBeh5dCL14"
+  },
+  "whatsapp_message": "\n🔥 *{discount_percentage}* de desconto! - {brand}\n\n🎁 {name}\n💰 Era {original_price}. Agora por apenas {sale_price}!\n👉🏼 Compra diretamente na {brand}: {short_url}",
+  "contact_title": "Fale conosco",
+  "contact_subtitle": "Solicite ofertas da sua marca favorita, publique suas ofertas, ou simplesmente compartilhe algo conosco.",
+  "contact_form_name": "Nome *",
+  "contact_form_email": "E-mail *",
+  "contact_form_reason": "Assunto",
+  "contact_form_reason_option1": "Solicitar ofertas da sua marca favorita",
+  "contact_form_reason_option2": "Gostaria de publicar uma promoção para minha marca",
+  "contact_form_reason_option3": "Gostaria de acessar os dados dos produtos publicados",
+  "contact_form_reason_other": "Outra",
+  "contact_form_message": "Mensagem *",
+  "contact_form_button": "Vamos conversar!",
+  "contact_form_response": "<p>Obrigado {name}, recebemos sua mensagem ✅, responderemos o mais breve possível<p>"
+}

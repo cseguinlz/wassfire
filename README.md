@@ -1,8 +1,8 @@
 # README - WassFire Project Overview
- Wassfire is Instant Messaging-commerce platform. 
+ Wassfire is an Instant Messaging-commerce platform. 
  
  It syndicates highly discounted products from top brands e-commerce sites and publish them on WhatsApp channels. Those published products link directly to their original brand listing, so basically, Wasfire generates traffic for those deals
- 
+
 ## Main Components
 
 ### Web Scraping

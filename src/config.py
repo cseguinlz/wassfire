@@ -1,4 +1,4 @@
-from pydantic import PostgresDsn
+from pydantic import EmailStr, PostgresDsn
 from pydantic_settings import BaseSettings
 
 from src.constants import Environment
@@ -31,6 +31,17 @@ class Config(BaseSettings):
     SUPPORTED_LOCALES: str
     PRODUCTS_TO_PUBLISH: int
     LOG_LEVEL: str
+    # Email configurations (Add these)
+    MAIL_USERNAME: EmailStr
+    MAIL_PASSWORD: str
+    MAIL_FROM: EmailStr
+    MAIL_PORT: int
+    MAIL_SERVER: str
+    MAIL_FROM_NAME: str
+    MAIL_STARTTLS: bool
+    MAIL_SSL_TLS: bool
+    MAIL_USE_CREDENTIALS: bool
+    VALIDATE_CERTS: bool
 
     class Config:
         env_file = ".env"

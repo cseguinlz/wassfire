@@ -2,6 +2,7 @@
   "home": {
     "header_brands": "Para Marcas",
     "header_faqs": "Preguntas Frecuentes",
+    "header_contact": "Contáctanos",
 
     "hero_title": "Tu outlet de bolsillo.",
     "hero_subtitle": "Grandes marcas y <span class='text-2xl' style='color: #20B256; font-weight: bold;'>descuentos de hasta el 70%</span> directamente en tu WhatsApp.",
@@ -11,7 +12,7 @@
     "logos_title": "Solo los mejores descuentos. Solo las mejores marcas",
     
     "faqs_title": "Preguntas Frecuentes",
-    "faqs_subtitle": "¿No encuentras la respuesta que buscas? Contacta con nuestro equipo en <a href='mailto:hola@wassfire.com' class='font-semibold text-indigo-600 hover:text-indigo-500'>soporte al cliente</a>.</p>",
+    "faqs_subtitle": "¿No encuentras la respuesta que buscas? Contacta con nuestro equipo en <a href='/contact' class='font-semibold text-indigo-600 hover:text-indigo-500'>soporte al cliente</a>.</p>",
 
     "faqs_q1": "¿Qué tipo de descuentos puedo esperar de las ofertas de Wassfire?",
     "faqs_a1": "En Wassfire, nos comprometemos a ofrecerte solo los mejores descuentos. Por eso, nuestra oferta media comienza en <strong>un descuento mínimo del 40% llegando hasta el 70%.</strong> Nuestro objetivo es eso, solo los mejores descuentos, que las ofertas que aparecen en nuestros canales siempre merezcan la pena.",
@@ -61,5 +62,18 @@
   "config": {
     "whatsapp_channel": "https://whatsapp.com/channel/0029VaVzgeABfxoE9TdqBq0v"
   },
-  "whatsapp_message": "\n🔥 *{discount_percentage}* descuento! - {brand}\n\n🎁 {name}\n💰 Eran {original_price}. ¡Ahora a {sale_price}!\n👉🏼 Cómpralo directamente en {brand}: {short_url}"
+  "whatsapp_message": "\n🔥 *{discount_percentage}* descuento! - {brand}\n\n🎁 {name}\n💰 Eran {original_price}. ¡Ahora a {sale_price}!\n👉🏼 Cómpralo directamente en {brand}: {short_url}",
+  "contact_title": "Cuéntanos",
+  "contact_subtitle": "Solicita ofertas de tu marca favorita o simplemente comparte algo con nosotros.",
+  "contact_form_name": "Nombre *",
+  "contact_form_email": "Correo *",
+  "contact_form_reason": "Asunto",
+  "contact_form_reason_option1": "Solicitar ofertas de tu marca favorita",
+  "contact_form_reason_option2": "Me gustaría publicar una promoción para mi marca",
+  "contact_form_reason_option3": "Me encantaría acceder a los datos de productos publicados",
+  "contact_form_reason_other": "Otra",
+  "contact_form_message": "Mensaje *",
+  "contact_form_button": "¡Hablemos!",
+  "contact_form_response": "<p>Gracias {name}, nos llegó tu mensaje ✅, responderemos lo antes posible<p>"
+
 }
