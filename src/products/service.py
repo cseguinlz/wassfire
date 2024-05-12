@@ -210,8 +210,8 @@ async def get_unpublished_kids_products(db: AsyncSession, locale: str):
             },
         )
         # Print compiled query for debugging
-        compiled_query = sql_query.compile(compile_kwargs={"literal_binds": True})
-        print(compiled_query)
+        """ compiled_query = sql_query.compile(compile_kwargs={"literal_binds": True})
+        print(compiled_query) """
         products = [Product(**row) for row in result.mappings().all()]
         logger.info(f"Fetched {len(products)} products")
         return products
