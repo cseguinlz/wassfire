@@ -167,7 +167,6 @@ async def get_unpublished_products(db: AsyncSession, locale: str):
             },
         )
         products = [Product(**row) for row in result.mappings().all()]
-        await db.commit()  # Commit to finalize the transaction
         return products
     except SQLAlchemyError as e:
         await db.rollback()  # Rollback in case of an error
@@ -176,6 +175,53 @@ async def get_unpublished_products(db: AsyncSession, locale: str):
     except Exception as e:
         await db.rollback()  # Rollback in case of any other errors
         logger.error(f"Unexpected error in get_unpublished_products: {str(e)}")
+        raise
+
+
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(1), reraise=True)
+async def get_unpublished_kids_products(db: AsyncSession, locale: str):
+    sql_query = text(
+        """
+        WITH ranked_kids_products AS (
+            SELECT id, brand,
+                   ROW_NUMBER() OVER (PARTITION BY brand ORDER BY RANDOM()) as rank
+            FROM products
+            WHERE (section IN ('Kids', 'Niños', 'Crianças', 'CRIANÇA', 'NIÑOS') OR
+                   category IN ('Kids', 'Niños', 'Crianças') OR
+                   type IN ('Kids', 'Niños', 'Crianças'))
+              AND discount_percentage >= :discount_threshold
+              AND country_lang LIKE :country_lang
+              AND published_at IS NULL
+        )
+        SELECT p.*
+        FROM products p
+        JOIN ranked_kids_products rkp ON p.id = rkp.id
+        WHERE rkp.rank <= :limit;
+        """
+    )
+    try:
+        # Execute the query with parameters for locale and limits on the number of products per brand
+        result = await db.execute(
+            sql_query,
+            {
+                "country_lang": f"%{locale}%",  # Formats to %PT% so Like () works cause local=pt, so we include also pt-EU, pt-EN
+                "discount_threshold": settings.DISCOUNT_THRESHOLD,
+                "limit": settings.PRODUCTS_TO_PUBLISH,
+            },
+        )
+        # Print compiled query for debugging
+        compiled_query = sql_query.compile(compile_kwargs={"literal_binds": True})
+        print(compiled_query)
+        products = [Product(**row) for row in result.mappings().all()]
+        logger.info(f"Fetched {len(products)} products")
+        return products
+    except SQLAlchemyError as e:
+        await db.rollback()  # Rollback in case of an error
+        logger.error(f"SQLAlchemy Error in get_unpublished_kids_products: {str(e)}")
+        raise
+    except Exception as e:
+        await db.rollback()  # Rollback in case of any other errors
+        logger.error(f"Unexpected error in get_unpublished_kids_products: {str(e)}")
         raise
 
 

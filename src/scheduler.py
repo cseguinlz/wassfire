@@ -2,7 +2,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 
 from src.config import settings
-from src.products.tasks import publish_products_task
+from src.products.tasks import publish_kids_products_task, publish_products_task
 from src.utils import setup_logger
 
 scheduler = AsyncIOScheduler()
@@ -19,6 +19,16 @@ def setup_scheduler(app):
         publish_products_task,
         trigger=CronTrigger(hour=settings.PUBLISH_HOURS),
         id="publish_products",  # Unique ID for the job
+        replace_existing=True,
+    )
+
+    logger.info(f"Publishing hours for kids products: {settings.KIDS_PUBLISH_HOURS}")
+
+    # Schedule the kids product publishing task
+    scheduler.add_job(
+        publish_kids_products_task,
+        trigger=CronTrigger(hour=settings.KIDS_PUBLISH_HOURS),
+        id="publish_kids_products",  # Unique ID for this job
         replace_existing=True,
     )
 

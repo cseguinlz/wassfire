@@ -5,7 +5,11 @@ import random
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.config import settings
-from src.products.service import get_unpublished_products, mark_product_as_unavailable
+from src.products.service import (
+    get_unpublished_kids_products,
+    get_unpublished_products,
+    mark_product_as_unavailable,
+)
 from src.products.url_shortener import shorten_url_with_tly
 from src.products.utils import is_product_available
 from src.utils import setup_logger
@@ -79,5 +83,32 @@ async def process_unpublished_products(db: AsyncSession) -> int:
         await db.rollback()
         logger.error(f"Failed to commit product publications: {e}")
         raise
+
+    return total_published
+
+
+async def process_kids_products(db: AsyncSession, locale: str) -> int:
+    total_published = 0
+    unpublished_kids_products = await get_unpublished_kids_products(db, locale)
+
+    if not unpublished_kids_products:
+        logger.info("No unpublished kids products found for Portugal.")
+        return 0
+
+    for product in unpublished_kids_products:
+        try:
+            if await is_product_available(
+                product.product_link, product.brand.lower(), product.image_url
+            ):
+                if product.discount_percentage >= settings.DISCOUNT_THRESHOLD:
+                    await publish_product_to_whatsapp(product, db)
+                    total_published += 1
+                    await asyncio.sleep(
+                        random.randint(45, 70)
+                    )  # Random delay between posts
+        except Exception as e:
+            logger.error(
+                f"Failed to publish kids product {product.id}: {e}", exc_info=True
+            )
 
     return total_published

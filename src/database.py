@@ -11,11 +11,11 @@ from src.config import settings
 from src.constants import DB_NAMING_CONVENTION
 
 # Uncomment to test
-""" is_pre = settings.ENVIRONMENT.is_debug
+is_pre = settings.ENVIRONMENT.is_debug
 DATABASE_URL = str(settings.DATABASE_URL_PRE) if is_pre else str(settings.DATABASE_URL)
- """
+
 # Used only to read from sources from local, 403s in Pro for Adidas and Carhartt
-DATABASE_URL = str(settings.DATABASE_URL)
+# DATABASE_URL = str(settings.DATABASE_URL)
 
 
 # Create an SSL context with path depending on environment
