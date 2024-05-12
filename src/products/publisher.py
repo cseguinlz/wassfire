@@ -101,11 +101,27 @@ async def process_kids_products(db: AsyncSession, locale: str) -> int:
                 product.product_link, product.brand.lower(), product.image_url
             ):
                 if product.discount_percentage >= settings.DISCOUNT_THRESHOLD:
+                    # Generate short url only for PRO or as fallback in DEV
+                    if not settings.ENVIRONMENT.is_debug:
+                        product.short_url = await shorten_url_with_tly(
+                            product.product_link,
+                            product.description,
+                            [
+                                product.brand,
+                                product.category,
+                                product.country_lang,
+                                product.section,
+                            ],
+                        )
+                    else:
+                        product.short_url = (
+                            "wass.promo/something"  # Development placeholder URL
+                        )
+
                     await publish_product_to_whatsapp(product, db)
                     total_published += 1
-                    await asyncio.sleep(
-                        random.randint(45, 70)
-                    )  # Random delay between posts
+                    # Random delay between posts
+                    await asyncio.sleep(random.randint(45, 70))
         except Exception as e:
             logger.error(
                 f"Failed to publish kids product {product.id}: {e}", exc_info=True

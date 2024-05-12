@@ -32,9 +32,10 @@ async def shorten_url_with_tly(long_url: str, description: str, tags: list[str])
             data = response.json()
             return data.get("short_url")
         else:
-            raise Exception(
+            logger.error(
                 f"Failed to shorten URL. Status code: {response.status_code}, Response: {response.text}"
             )
+            return long_url
 
 
 async def get_or_create_tag(tag: str, http_client: httpx.AsyncClient) -> int:
